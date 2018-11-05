@@ -24,6 +24,8 @@
 
         <link rel="stylesheet" href="{{url('css/style_back.css') }}" >
 
+        @yield('css')
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -59,8 +61,8 @@
 
                 <!-- Logo -->
                 <a href="{{ route("dashboard") }}" class="logo">
-                   <!-- mini logo for sidebar mini 50x50 pixels -->
-                   <span class="logo-mini">[[TODO]]</span>
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini">[[TODO]]</span>
                     <!-- logo for regular state and mobile devices -->
                     <!-- TODO <span class="logo-lg">[[TODO NOM DU PROJET]]</span> -->
                     <span class="logo-lg">PROJET</span>
@@ -80,23 +82,17 @@
                             <li class="dropdown user user-menu">
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <!-- The user image in the navbar-->
-                                    <img src="{{url('img/profil-default.png') }}" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <!-- TODO <span class="hidden-xs">{Auth::user()->nom } {Auth::user()->prenom }</span> -->
-                                    <span class="hidden-xs">COURBEZ Julian</span>
-                                    
+                                    <span class="hidden-xs">{{Auth::user()->nom }} {{Auth::user()->prenom }}</span>
+
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="{{url('img/profil-default.png') }}" class="img-circle" alt="User Image">
-
                                         <p>
-                                            <!-- TODO {Auth::user()->nom} &nbsp {Auth::user()->prenom}
-                                            <small>Inscrit le : {Auth::user()->created_at->format('d/m/Y')}</small> -->
-                                            COURBEZ Julian
-                                            <small>Inscrit le : 30/09/2015</small>
+                                            {{Auth::user()->nom}}&nbsp {{Auth::user()->prenom}}
+                                            <small>Inscrit le : {{Auth::user()->created_at->format('d/m/Y')}}</small>
                                         </p>
                                     </li>
                                     <!-- Menu Body -->
@@ -124,19 +120,15 @@
 
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="{{url('img/profil-default.png') }}" class="img-circle" alt="User Image">
-                        </div>
-                        <div class="pull-left info">
-                            <!-- TODO <p>{Auth::user()->nom} &nbsp {Auth::user()->prenom}</p> -->
-                            <p>COURBEZ Julian</p>
-                        </div>
+                        <center><h5 style="color:white">{{Auth::user()->nom}}&nbsp {{Auth::user()->prenom}}</h5></center>
                     </div>
 
                     <!-- Sidebar Menu -->
-                    <ul class="sidebar-menu">
+                    <ul class="sidebar-menu" data-widget="tree">
+
                         <li class="header">Menu principal</li>
                         <!-- Optionally, you can add icons to the links -->
+
                         <li class="treeview">
                             <a href="{{ route("dashboard") }}"><i class="fa fa-picture-o"></i> <span>Offres d'emplois</span>  </a>
                         </li>
@@ -144,13 +136,15 @@
                         <li class="header">Partie Admin</li>
 
                         <li class="treeview">
-                            <a href="{{ route("dashboard") }}"><i class="fa fa-picture-o"></i> <span>Stats</span>  </a>
-                        </li>
-                        <li class="treeview">
-                            <a href="{{ route("dashboard") }}"><i class="fa fa-picture-o"></i> <span>Gestion des classes</span>  </a>
-                        </li>
-                        <li class="treeview">
-                            <a href="{{ route("dashboard") }}"><i class="fa fa-picture-o"></i> <span>Gestion des comptes</span>  </a>
+                            <a href="#"><i class="fa fa-users"></i><span>Utilisateurs</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">                            
+                                <li><a href="{{ route("user.create") }}"><i classe="fa fa-user"></i>Ajouter</a></li>
+                                <li><a href="{{ route("user.index") }}"><i classe="fa fa-user"></i>Administrer</a></li>
+                            </ul>	
                         </li>
 
                     </ul>
@@ -177,6 +171,18 @@
                         </div>
                     </div>
                     @endif
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
                     @if(Session::has('success'))
                     <div class="row">
                         <div class="alert alert-success">

@@ -13,8 +13,21 @@
 
 Route::get('/', function () {
     return view('dashboard');
-})->name('dashboard');
-
-Route::get('dashboard', function () {
-    route('dashboard');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', 'HomeController@toDashboard')->name('dashboard');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('dashboard', 'HomeController@toDashboard');
+
+    Route::get('dashboard', function () {
+        route('dashboard');
+    });
+    
+        //User
+    Route::resource('user', 'UserController')->except([
+        'show'
+    ]);
+});
+
+Auth::routes();

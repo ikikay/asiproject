@@ -1,0 +1,38 @@
+<?php
+if (Auth::user()) {
+    if ($leUser->id) {
+        $lesOptions = ['method' => 'put', 'url' => route('user.update', $leUser->id)];
+        $action = "Modifier";
+    } else {
+        $lesOptions = ['method' => 'post', 'url' => route('user.store')];
+        $action = "Créer";
+    }
+} else {
+    $lesOptions = ['method' => 'post', 'url' => route('register')];
+    $action = "S'inscrire";
+}
+?>
+
+{!! Form::model($leUser, $lesOptions) !!}
+
+{!! Form::label('nom', 'Nom') !!}
+{!! Form::text('nom', null,['class'=> 'form-control'] ) !!}
+
+{!! Form::label('prenom', 'Prenom') !!}
+{!! Form::text('prenom', null,['class'=> 'form-control'] ) !!}
+
+{!! Form::label('email', 'E-mail') !!}
+{!! Form::text('email', null,['class'=> 'form-control'] ) !!}
+
+{!! Form::label('password', 'Mot de passe') !!}
+<input id="password" type="password" class="form-control" name="password" value="">
+
+{!! Form::label('password-confirm', 'Confirmation du mot de passe') !!}
+<input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+
+
+</br>
+
+{!! Form::submit($action, ['class'=> 'btn bg-blue btn-lg btn-block']) !!}
+
+{!! Form::close()!!}

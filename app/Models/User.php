@@ -10,22 +10,8 @@ class User extends Authenticatable {
     use Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
+     * - - - - - Spécifique à Users - - - - -  
      */
-    protected $fillable = [
-        'nom',
-        'prenom',
-        'dteNaissance',
-        'rue',
-        'codePostal',
-        'ville',
-        'telephoneFixe',
-        'telephonePortable',
-        'email',
-        'password',
-    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -36,6 +22,41 @@ class User extends Authenticatable {
         'password', 'remember_token',
     ];
 
+    /**
+     * - - - - - static - - - - -  
+     */
+    public static $rulesOnCreate = [
+        'nom' => 'nullable|min:0|max:75|regex:/^[\p{L}\s\-]+$/u', // Anecdote, le noms le plus long actuellement en France fait 47 lettres(sans espaces):  Pourroy de L'Auberivière de Quinsonas-Oudinot de Reggio
+        'prenom' => 'nullable|min:0|max:75|regex:/^[\pL\s\-]+$/u',
+        'email' => 'required|min:8|max:75|email|unique:users,email',
+        'password' => 'required|min:8|max:255|confirmed',
+    ];
+    public static $rulesOnUpdate = [
+        'nom' => 'nullable|min:0|max:75|regex:/^[\p{L}\s\-]+$/u', // Anecdote, le noms le plus long actuellement en France fait 47 lettres(sans espaces):  Pourroy de L'Auberivière de Quinsonas-Oudinot de Reggio
+        'prenom' => 'nullable|min:0|max:75|regex:/^[\p{L}\s\-]+$/u',
+        'email' => 'required|min:8|max:75|email',
+        'password' => 'nullable|min:8|max:255|confirmed',
+    ];
+
+    /**
+     * - - - - - fillable - - - - -  
+     */
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'nom',
+        'prenom',
+        'email',
+        'password',
+    ];
+
+    /**
+     * - - - - - Relations - - - - -  
+     */
     public function promo() {
         return $this->hasMany('App\Models\Promo');
     }
