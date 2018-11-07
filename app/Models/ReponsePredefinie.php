@@ -6,12 +6,33 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReponsePredefinie extends Model {
 
-    public function question(){
+    /**
+     * - - - - - static - - - - -  
+     */
+    public static $rules = [
+    ];
+
+    /**
+     * - - - - - fillable - - - - -  
+     */
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+    ];
+
+    /**
+     * - - - - - Relations - - - - -  
+     */
+    public function question() {
         return $this->hasOne('App\Models\Question');
     }
-    
-    public function reponse() {
+
+    public function reponses() {
         return $this->belongsToMany('App\Models\Reponse');
     }
-    
+
 }

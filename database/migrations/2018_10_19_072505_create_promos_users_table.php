@@ -4,21 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePromosTable extends Migration
-{
+class CreatePromosUsersTable extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('promos', function (Blueprint $table) {
+    public function up() {
+        Schema::create('promos_users', function (Blueprint $table) {
             $table->increments('id');
-            
-             $table->string('label');
-             $table->string('libelle');
-            
+
+            $table->integer('promo_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+
             $table->timestamps();
         });
     }
@@ -28,8 +27,8 @@ class CreatePromosTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('promos');
+    public function down() {
+        Schema::dropIfExists('promos_users');
     }
+
 }
