@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Categorie extends Model {
+class Offre extends Model {
 
     /**
      * - - - - - static - - - - -  
@@ -27,8 +27,8 @@ class Categorie extends Model {
     /**
      * - - - - - Relations - - - - -  
      */
-    public function questionnaires() {
-        return $this->belongsToMany('App\Models\Questionnaire');
+    public function contrat() {
+        return $this->hasOne('App\Models\Contrat');
     }
 
 }

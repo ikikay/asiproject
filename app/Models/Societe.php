@@ -43,4 +43,8 @@ class Societe extends Model {
         return $this->belongsToMany('App\Models\Contact');
     }
 
+    public function offre() {
+        return $this->belongsToMany('App\Models\Offre');
+    }
+
 }
