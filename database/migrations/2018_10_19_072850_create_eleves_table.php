@@ -15,7 +15,8 @@ class CreateElevesTable extends Migration
     {
         Schema::create('eleves', function (Blueprint $table) {
             $table->increments('id');
-            
+            $table->string('annee_debut',20);
+            $table->string('annee_fin',100);
             
             
             $table->timestamps();
