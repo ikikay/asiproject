@@ -27,6 +27,10 @@ class Eleve extends Model {
     /**
      * - - - - - Relations - - - - -  
      */
+    public function user() {
+        return $this->hasOne('App\Models\User');
+    }
+
     public function contact() {
         return $this->hasOne('App\Models\Contact');
     }

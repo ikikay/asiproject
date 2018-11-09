@@ -27,4 +27,8 @@ class Professeur extends Model {
     /**
      * - - - - - Relations - - - - -  
      */
+    public function user() {
+        return $this->hasOne('App\Models\User');
+    }
+
 }

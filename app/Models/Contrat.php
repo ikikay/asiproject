@@ -31,8 +31,4 @@ class Contrat extends Model {
         return $this->belongsToMany('App\Models\Offre');
     }
 
-    public function societe() {
-        return $this->hasOne('App\Models\Societe');
-    }
-
 }

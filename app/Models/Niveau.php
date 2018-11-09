@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Niveau extends Model
-{
+class Niveau extends Model {
+
     /**
      * - - - - - static - - - - -  
      */
@@ -27,5 +27,8 @@ class Niveau extends Model
     /**
      * - - - - - Relations - - - - -  
      */
+    public function offres() {
+        return $this->belongsToMany('App\Models\Offre');
+    }
 
 }

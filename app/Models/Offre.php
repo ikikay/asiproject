@@ -27,8 +27,16 @@ class Offre extends Model {
     /**
      * - - - - - Relations - - - - -  
      */
-    public function contrat() {
-        return $this->hasOne('App\Models\Contrat');
+    public function contrats() {
+        return $this->hasMany('App\Models\Contrat');
+    }
+
+    public function niveau() {
+        return $this->hasOne('App\Models\Niveau');
+    }
+
+    public function contact() {
+        return $this->hasOne('App\Models\Contact');
     }
 
 }

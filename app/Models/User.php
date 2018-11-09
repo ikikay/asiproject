@@ -84,4 +84,11 @@ class User extends Authenticatable {
         return $this->belongsToMany('App\Models\Reponse');
     }
 
+    public function eleve() {
+        return $this->belongsTo('App\Models\Eleve');
+    }
+
+    public function professeur() {
+        return $this->belongsTo('App\Models\Professeur');
+    }
 }

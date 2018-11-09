@@ -36,4 +36,9 @@ class Contact extends Model {
     public function societe() {
         return $this->hasOne('App\Models\Societe');
     }
+
+    public function offres() {
+        return $this->belongsToMany('App\Models\Offre');
+    }
+
 }
