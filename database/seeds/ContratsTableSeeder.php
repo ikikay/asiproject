@@ -19,9 +19,9 @@ class ContratsTableSeeder extends Seeder {
             ], [
                 'libelle' => "Interim"
             ], [
-                'name' => "Alternance"
+                'libelle' => "Alternance"
             ], [
-                'name' => "Autres"
+                'libelle' => "Autres"
             ]
         ]);
     }

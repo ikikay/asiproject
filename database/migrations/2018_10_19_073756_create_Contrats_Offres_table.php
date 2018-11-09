@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategorieQuestionnaireTable extends Migration {
+class CreateContratsOffresTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateCategorieQuestionnaireTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('categorie_questionnaire', function (Blueprint $table) {
+        Schema::create('contrats_offres', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('categorie_id')->unsigned();
-            $table->integer('questionnaire_id')->unsigned();
+            $table->integer('contrat_id')->unsigned();
+            $table->integer('offre_id')->unsigned();
 
             $table->timestamps();
         });
@@ -28,7 +28,7 @@ class CreateCategorieQuestionnaireTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('categorie_questionnaire');
+        Schema::dropIfExists('contrats');
     }
 
 }

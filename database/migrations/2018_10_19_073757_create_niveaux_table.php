@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContratsTable extends Migration
+class CreateNiveauxTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateContratsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contrats', function (Blueprint $table) {
+        Schema::create('niveaux', function (Blueprint $table) {
             $table->increments('id');
             
             $table->string('libelle');
