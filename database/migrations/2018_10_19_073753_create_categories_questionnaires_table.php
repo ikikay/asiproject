@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategorieQuestionnaireTable extends Migration {
+class CreateCategoriesQuestionnairesTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateCategorieQuestionnaireTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('categories_questionnaires', function (Blueprint $table) {
+        Schema::create('categorie_questionnaire', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('categorie_id')->unsigned();

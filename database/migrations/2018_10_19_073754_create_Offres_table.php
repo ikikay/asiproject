@@ -16,7 +16,8 @@ class CreateOffresTable extends Migration
         Schema::create('offres', function (Blueprint $table) {
             $table->increments('id');
             
-            
+            $table->integer('contact_id')->unsigned();
+            $table->integer('niveau_id')->unsigned();
             
             $table->timestamps();
         });

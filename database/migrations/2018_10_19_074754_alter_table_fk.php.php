@@ -38,12 +38,12 @@ class AlterTableFk extends Migration {
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
 
-        Schema::table('reponses_reponses_predefinies', function (Blueprint $table) {
+        Schema::table('reponse_reponsesPredefinie', function (Blueprint $table) {
             $table->foreign('reponse_id')->references('id')->on('reponses')->onDelete('cascade');
-            $table->foreign('reponse_predefinie_id')->references('id')->on('reponses_predefinies')->onDelete('cascade');
+            $table->foreign('reponse_predefinie_id')->references('id')->on('reponsesPredefinies')->onDelete('cascade');
         });
 
-        Schema::table('reponses_predefinies', function (Blueprint $table) {
+        Schema::table('reponsesPredefinies', function (Blueprint $table) {
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
 
@@ -51,7 +51,7 @@ class AlterTableFk extends Migration {
             $table->foreign('questionnaire_id')->references('id')->on('questionnaires')->onDelete('cascade');
         });
 
-        Schema::table('categories_questionnaires', function (Blueprint $table) {
+        Schema::table('categorie_questionnaire', function (Blueprint $table) {
             $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('questionnaire_id')->references('id')->on('questionnaires')->onDelete('cascade');
         });
