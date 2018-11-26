@@ -17,6 +17,13 @@ class CreateContactsTable extends Migration
             $table->increments('id');
             
             $table->string('fonction');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('ville');
+            $table->string('rue');
+            $table->string('code_postal');
+            $table->string('telephone');
+            $table->string('mail');
             $table->integer('societe_id')->unsigned();            
             
             $table->timestamps();

@@ -17,6 +17,8 @@ class CreateElevesTable extends Migration
             $table->increments('id');
             $table->string('annee_debut',20);
             $table->string('annee_fin',100);
+            $table->integer('contact_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             
             
             $table->timestamps();
