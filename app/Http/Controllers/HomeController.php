@@ -25,7 +25,7 @@ class HomeController extends Controller {
     }
 
     public function toDashboard() {
-        return view('dashboard');
+        return view('user.show');
     }
 
 }
