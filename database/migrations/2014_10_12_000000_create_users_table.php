@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration {
 
             $table->string('nom')->nullable();
             $table->string('prenom')->nullable();
-            $table->dateTime('date_de_naissance');
+            $table->dateTime('date_de_naissance')->nullable();
             $table->string('rue')->nullable();
             $table->string('code_postal')->nullable();
             $table->string('ville')->nullable();

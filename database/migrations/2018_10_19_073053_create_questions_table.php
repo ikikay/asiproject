@@ -18,7 +18,7 @@ class CreateQuestionsTable extends Migration
             
             $table->string('ordre');
             $table->string('libelle');
-            $table->integer('questionnaire_id')->nullable();
+            $table->integer('questionnaire_id')->unsigned()->nullable();
             
             $table->timestamps();
         });
