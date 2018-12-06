@@ -6,6 +6,7 @@
         <div class="row">
             <a class="navbar-brand" href="{{ route('dashboard') }}"></a>
             <h1>Accueil - Profil de l'utilisateur</h1>   
+            <p>Damn nico</p>
         </div>
     </div>    
 </div>
