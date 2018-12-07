@@ -130,7 +130,7 @@
                         <!-- Optionally, you can add icons to the links -->
 
                         <li class="treeview">
-                            <a href="{{ route("dashboard") }}"><i class="fa fa-picture-o"></i> <span>Offres d'emplois</span>  </a>
+                            <a href="{{ route("offre.index") }}"><i classe="fa fa-user"></i><span>Offres d'emplois</span></a>
                         </li>
 
                         <li class="header">Partie Admin</li>

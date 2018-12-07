@@ -23,9 +23,19 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         route('dashboard');
     });
-    
-        //User
+
+//    //Example
+//    Route::resource('model', 'Controller')->except([
+//        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
+//    ]);
+
+    //User
     Route::resource('user', 'UserController')->except([
+        'show'
+    ]);
+
+    // Offres
+    Route::resource('offre', 'OffreController')->except([
         'show'
     ]);
 });

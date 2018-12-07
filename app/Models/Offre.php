@@ -32,7 +32,7 @@ class Offre extends Model {
     }
 
     public function niveau() {
-        return $this->hasOne('App\Models\Niveau');
+        return $this->belongsTo('App\Models\Niveau');
     }
 
     public function contact() {
