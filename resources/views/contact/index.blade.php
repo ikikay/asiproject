@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    Administration des sociétés
-    <small>- Rechercher, Modifier et Supprimer des sociétés</small>
+    Administration des contacts
+    <small>- Rechercher, Modifier et Supprimer des contacts</small>
 </h1>
 @stop
 
@@ -30,53 +30,53 @@
                         <thead class="thead-inverse" >
                             <tr>
 
-                                <th class="text-center">Libelle</th>
-                                <th class="text-center">Rue</th>
-                                <th class="text-center">Code Postal</th>
-                                <th class="text-center">ville</th>
+                                <th class="text-center">Fonction</th>
+                                <th class="text-center">Nom</th>
+                                <th class="text-center">Prenom</th>
                                 <th class="text-center">Telephone</th>
                                 <th class="text-center">Adresse courriel</th>
+                                <th class="text-center">Société</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($tab_societes as $uneSociete)
+                            @foreach ($tab_contacts as $unContact)
                             <tr>
 
-                                <td class="col-md-1 text-center"  id="maintd{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['libelle'] }} </h4>
+                                <td class="col-md-1 text-center"  id="fonctiontd{{ $unContact["id"] }}">
+                                    <h4>{{ $unContact['fonction'] }} </h4>
                                 </td>
 
-                                <td class="col-md-1 text-center"  id="ruetd{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['rue'] }} </h4>
+                                <td class="col-md-1 text-center"  id="maintd{{ $unContact["id"] }}">
+                                    <h4>{{ $unContact['nom'] }} </h4>
                                 </td>
 
-                                <td class="col-md-1 text-center"  id="code_postaltd{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['code_postal'] }} </h4>
+                                <td class="col-md-1 text-center"  id="prenomtd{{ $unContact["id"] }}">
+                                    <h4>{{ $unContact['prenom'] }} </h4>
                                 </td>
 
-                                <td class="col-md-1 text-center"  id="villetd{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['ville'] }} </h4>
+                                <td class="col-md-1 text-center"  id="telephonetd{{ $unContact["id"] }}">
+                                    <h4>{{ $unContact['telephone'] }} </h4>
                                 </td>
 
-                                <td class="col-md-2 text-center"  id="telephoneld{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['telephone'] }} </h4>
+                                <td class="col-md-2 text-center"  id="emaild{{ $unContact["id"] }}">
+                                    <h4>{{ $unContact['email'] }} </h4>
                                 </td>
 
-                                <td class="col-md-2 text-center"  id="emailtd{{ $uneSociete["id"] }}">
-                                    <h4> {{ $uneSociete['email'] }}</h4>
+                                <td class="col-md-2 text-center"  id="societetd{{ $unContact["id"] }}">
+                                    <h4> {{ $unContact->societe->libelle }}</h4>
                                 </td>
 
                                 <td class="col-md-3 text-center">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            {!! Form::open(['route' => ["societe.edit", $uneSociete->id], 'method' => 'get']) !!}
+                                            {!! Form::open(['route' => ["contact.edit", $unContact->id], 'method' => 'get']) !!}
                                             <button type="submit" class="btn btn-circle"><i class="fa fa-list"></i></button>
                                             {!! Form::close() !!}
                                         </div>
                                         <div class="col-md-6">
-                                            {!! Form::open(['route' => ["societe.destroy", $uneSociete->id], 'method' => 'delete', 'id' => "form".$uneSociete->id]) !!}
-                                            <button type="submit" id="{{ $uneSociete->id }}" class="jsDeleteButton btn btn-danger btn-circle "><i class="fa fa-times"></i></button>
+                                            {!! Form::open(['route' => ["contact.destroy", $unContact->id], 'method' => 'delete', 'id' => "form".$unContact->id]) !!}
+                                            <button type="submit" id="{{ $unContact->id }}" class="jsDeleteButton btn btn-danger btn-circle "><i class="fa fa-times"></i></button>
                                             {!! Form::close() !!}
                                         </div>
                                     </div>
@@ -85,8 +85,8 @@
                             @endforeach
                             <tr>
                                 <td class="col-md-9 text-center" colspan="6">
-                                    {!! Form::open(['route' => "societe.create", 'method' => 'get']) !!}
-                                    <button type="submit" class="btn bg-blue btn-lg btn-block">Nouvelle société</button>
+                                    {!! Form::open(['route' => "contact.create", 'method' => 'get']) !!}
+                                    <button type="submit" class="btn bg-blue btn-lg btn-block">Nouveau Contact</button>
                                     {!! Form::close() !!}
                                 </td>
                             </tr>

@@ -10,6 +10,7 @@ class Offre extends Model {
      * - - - - - static - - - - -  
      */
     public static $rules = [
+        
     ];
 
     /**

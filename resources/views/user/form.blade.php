@@ -5,7 +5,7 @@ if (Auth::user()) {
         $action = "Modifier";
     } else {
         $lesOptions = ['method' => 'post', 'url' => route('user.store')];
-        $action = "Créer";
+        $action = "Créer l'utilisateur";
     }
 } else {
     $lesOptions = ['method' => 'post', 'url' => route('register')];
@@ -21,7 +21,7 @@ if (Auth::user()) {
 {!! Form::label('prenom', 'Prenom') !!}
 {!! Form::text('prenom', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('email', 'E-mail') !!}
+{!! Form::label('email', 'Adresse courriel ') !!}
 {!! Form::text('email', null,['class'=> 'form-control'] ) !!}
 
 {!! Form::label('password', 'Mot de passe') !!}

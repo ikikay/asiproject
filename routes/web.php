@@ -24,18 +24,28 @@ Route::middleware('auth')->group(function () {
         route('dashboard');
     });
 
-//    //Example
+//    // Example
 //    Route::resource('model', 'Controller')->except([
 //        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
 //    ]);
 
-    //User
+    // User
     Route::resource('user', 'UserController')->except([
         'show'
     ]);
 
     // Offres
     Route::resource('offre', 'OffreController')->except([
+        'show'
+    ]);
+
+    // Contacts
+    Route::resource('contact', 'ContactController')->except([
+        'show'
+    ]);
+
+    // Societes
+    Route::resource('societe', 'SocieteController')->except([
         'show'
     ]);
 });

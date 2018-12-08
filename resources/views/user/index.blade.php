@@ -32,7 +32,7 @@
 
                                 <th class="text-center">Nom</th>
                                 <th class="text-center">Prenom</th>
-                                <th class="text-center">E-mail</th>
+                                <th class="text-center">Adresse courriel</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>

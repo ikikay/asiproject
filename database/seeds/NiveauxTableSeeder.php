@@ -15,15 +15,15 @@ class NiveauxTableSeeder extends Seeder {
                 [
                 'libelle' => "Aucun"
             ], [
-                'libelle' => "5"
+                'libelle' => "Niveau 5 (CAP, BEP)"
             ], [
-                'libelle' => "4"
+                'libelle' => "Niveau 4 (Baccalauréat)"
             ], [
-                'libelle' => "3"
+                'libelle' => "Niveau 3 (DEUG, BTS, DUT, DEUST)"
             ], [
-                'libelle' => "2"
+                'libelle' => "Niveau 2 (Licence, licence professionnelle | Maîtrise, master 1)"
             ], [
-                'libelle' => "1"
+                'libelle' => "Niveau 1 (Master, Doctorat, Ingénieur ...)"
             ], [
                 'libelle' => "Autres"
             ]
