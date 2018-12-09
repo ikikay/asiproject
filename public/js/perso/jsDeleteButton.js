@@ -1,6 +1,3 @@
-
-
-
 $(".jsDeleteButton").click(function ()
 {
     console.log("Clique d'un jsDeleteButton");

@@ -8,7 +8,9 @@ if ($leContact->id) {
 }
 ?>
 
+@if(!isset($boolNoFormContact))
 {!! Form::model($leContact, $lesOptions) !!}
+@endif
 
 {!! Form::label('fonction', 'Fonction') !!}
 {!! Form::text('fonction', null,['class'=> 'form-control'] ) !!}
@@ -53,7 +55,8 @@ if ($leContact->id) {
                 <!-- /.tab-pane -->
                 <div class="tab-pane" id="societe_create">
 
-                    <?php if (!isset($laSociete)) $laSociete = new \App\Models\Societe(); ?>                   
+                    <?php if (!isset($laSociete)) $laSociete = new \App\Models\Societe(); ?>
+                    <?php $boolNoFormSociete = true; ?>
                     @include('societe.form')
 
                 </div>
@@ -69,6 +72,8 @@ if ($leContact->id) {
 
 </br>
 
+@if(!isset($boolNoFormContact))
 {!! Form::submit($action, ['class'=> 'btn bg-blue btn-lg btn-block']) !!}
 
 {!! Form::close()!!}
+@endif

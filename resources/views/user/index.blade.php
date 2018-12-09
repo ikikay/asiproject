@@ -40,19 +40,19 @@
                             @foreach ($tab_users as $unUser)
                             <tr>
 
-                                <td class="col-md-2 text-center"  id="nomtd{{ $unUser["id"] }}">
+                                <td class="col-md-3 text-center"  id="nomtd{{ $unUser["id"] }}">
                                     <h4> {{ $unUser["nom"] }}</h4>
                                 </td>
 
-                                <td class="col-md-2 text-center"  id="prenomtd{{ $unUser["id"] }}">
+                                <td class="col-md-3 text-center"  id="prenomtd{{ $unUser["id"] }}">
                                     <h4> {{ $unUser["prenom"] }}</h4>
                                 </td>
 
-                                <td class="col-md-3 text-center"  id="maintd{{ $unUser["id"] }}">
+                                <td class="col-md-5 text-center"  id="maintd{{ $unUser["id"] }}">
                                     <h4> {{ $unUser["email"] }}</h4>
                                 </td>
 
-                                <td class="col-md-2 text-center">
+                                <td class="col-md-1 text-center">
                                     <div class="row">
                                         <div class="col-md-6">
                                             {!! Form::open(['route' => ["user.edit", $unUser->id], 'method' => 'get']) !!}
@@ -69,7 +69,7 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td class="col-md-9 text-center" colspan="5">
+                                <td class="col-md-12 text-center" colspan="4">
                                     {!! Form::open(['route' => "user.create", 'method' => 'get']) !!}
                                     <button type="submit" class="btn bg-blue btn-lg btn-block">Nouveau utilisateur</button>
                                     {!! Form::close() !!}

@@ -1,5 +1,7 @@
 @extends('layout_back')
 
+@include('offre.css')
+
 @section('title')
 <h1>
     Enregistrement d'une offre
@@ -13,6 +15,4 @@
 
 @stop
 
-
-@section('script')
-@stop
+@include('offre.script')

@@ -8,7 +8,9 @@ if ($laSociete->id) {
 }
 ?>
 
+@if(!isset($boolNoFormSociete))
 {!! Form::model($laSociete, $lesOptions) !!}
+@endif
 
 {!! Form::label('libelle', 'Libelle') !!}
 {!! Form::text('libelle', null,['class'=> 'form-control'] ) !!}
@@ -30,6 +32,8 @@ if ($laSociete->id) {
 
 </br>
 
+@if(!isset($boolNoFormSociete))
 {!! Form::submit($action, ['class'=> 'btn bg-blue btn-lg btn-block']) !!}
 
 {!! Form::close()!!}
+@endif

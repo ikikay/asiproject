@@ -6,9 +6,21 @@ if ($lOffre->id) {
     $lesOptions = ['method' => 'post', 'url' => route('offre.store')];
     $action = "Créer l'offre";
 }
+$date_offre = "dd/mm/yyyy";
 ?>
 
 {!! Form::model($lOffre, $lesOptions) !!}
+
+<div class="form-group">
+    <label>Date de l'annonce initial</label>
+
+    <div class="input-group date" id="input_datepicker_offre">
+        <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </div>
+        <input type="text" class="form-control pull-right datepicker" id="input_datepicker_offre" name="date_offre" value="{{$date_offre}}">
+    </div>
+</div>
 
 {!! Form::label('poste', 'Poste') !!}
 {!! Form::text('poste', null,['class'=> 'form-control'] ) !!}
@@ -47,7 +59,7 @@ if ($lOffre->id) {
 
                         <select name="contact_id" class="form-control select2" style="width: 100%;">
                             @foreach($lesContacts as $unContact)
-                            <option value="{{ $unContact->id }}">{{ $unContact->nom }}, {{ $unContact->prenom }}</option>
+                            <option value="{{ $unContact->id }}">{{ $unContact->nom }} {{ $unContact->prenom }}, {{ $unContact->societe->libelle }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -55,8 +67,9 @@ if ($lOffre->id) {
                 </div>
                 <!-- /.tab-pane -->
                 <div class="tab-pane" id="contact_create">
-                    
+
                     <?php if (!isset($leContact)) $leContact = new \App\Models\Contact(); ?>
+                    <?php $boolNoFormContact = true; ?>
                     @include('contact.form')
 
                 </div>

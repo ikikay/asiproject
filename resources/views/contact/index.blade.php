@@ -47,7 +47,7 @@
                                     <h4>{{ $unContact['fonction'] }} </h4>
                                 </td>
 
-                                <td class="col-md-1 text-center"  id="maintd{{ $unContact["id"] }}">
+                                <td class="col-md-4 text-center"  id="maintd{{ $unContact["id"] }}">
                                     <h4>{{ $unContact['nom'] }} </h4>
                                 </td>
 
@@ -67,7 +67,7 @@
                                     <h4> {{ $unContact->societe->libelle }}</h4>
                                 </td>
 
-                                <td class="col-md-3 text-center">
+                                <td class="col-md-1 text-center">
                                     <div class="row">
                                         <div class="col-md-6">
                                             {!! Form::open(['route' => ["contact.edit", $unContact->id], 'method' => 'get']) !!}

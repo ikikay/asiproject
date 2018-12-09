@@ -48,7 +48,7 @@ class Societe extends Model {
      * - - - - - Relations - - - - -  
      */
     public function contacts() {
-        return $this->belongsToMany('App\Models\Contact');
+        return $this->hasMany('App\Models\Contact');
     }
 
 }

@@ -94,9 +94,11 @@ class ContactController extends Controller {
      */
     public function edit($id) {
         $leContact = Contact::find($id);
+        $lesSocietes = Societe::all();
 
         return view('contact.edit')
-                        ->with("leContact", $leContact);
+                        ->with("leContact", $leContact)
+                        ->with('lesSocietes', $lesSocietes);
     }
 
     /**

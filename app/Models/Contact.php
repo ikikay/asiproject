@@ -43,11 +43,11 @@ class Contact extends Model {
     }
 
     public function societe() {
-        return $this->hasOne('App\Models\Societe');
+        return $this->belongsTo('App\Models\Societe');
     }
 
     public function offres() {
-        return $this->belongsToMany('App\Models\Offre');
+        return $this->hasMany('App\Models\Offre');
     }
 
 }

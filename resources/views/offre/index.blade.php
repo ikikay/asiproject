@@ -30,6 +30,7 @@
                         <thead class="thead-inverse" >
                             <tr>
 
+                                <th class="text-center">Entreprise</th>
                                 <th class="text-center">Nom du Poste</th>
                                 <th class="text-center">Date de l'offre</th>
                                 <th class="text-center">Niveau requis</th>
@@ -42,27 +43,31 @@
                             @foreach ($tab_offres as $uneOffre)
                             <tr>
 
-                                <td class="col-md-2 text-center"  id="maintd{{ $uneOffre["id"] }}">
+                                <td class="col-md-2 text-center"  id="societetd{{ $uneOffre["id"] }}">
+                                    <h4>{{ $uneOffre->contact->societe->libelle }}</h4>
+                                </td>
+
+                                <td class="col-md-3 text-center"  id="maintd{{ $uneOffre["id"] }}">
                                     <h4>{{ $uneOffre->poste }}</h4>
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="date_offretd{{ $uneOffre["id"] }}">
-                                    <h4>{{ $uneOffre['date_offre'] }} </h4>
+                                    <h4>{{ $uneOffre->date_offre->format('d/m/Y') }} </h4>
                                 </td>
-                                
+
                                 <td class="col-md-2 text-center"  id="niveautd{{ $uneOffre["id"] }}">
                                     <h4>{{ $uneOffre->niveau->libelle }} </h4>
                                 </td>
 
-                                <td class="col-md-2 text-center"  id="experiencetd{{ $uneOffre["id"] }}">
+                                <td class="col-md-1 text-center"  id="experiencetd{{ $uneOffre["id"] }}">
                                     <h4> {{ $uneOffre['mois_experience'] }} mois</h4>
                                 </td>
 
-                                <td class="col-md-3 text-center"  id="contrattd{{ $uneOffre["id"] }}">
+                                <td class="col-md-2 text-center"  id="contrattd{{ $uneOffre["id"] }}">
                                     <h4>TODO</h4>
                                 </td> 
 
-                                <td class="col-md-3 text-center">
+                                <td class="col-md-1 text-center">
                                     <div class="row">
                                         <div class="col-md-6">
                                             {!! Form::open(['route' => ["offre.edit", $uneOffre->id], 'method' => 'get']) !!}
@@ -79,7 +84,7 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td class="col-md-9 text-center" colspan="6">
+                                <td class="col-md-12 text-center" colspan="7">
                                     {!! Form::open(['route' => "offre.create", 'method' => 'get']) !!}
                                     <button type="submit" class="btn bg-blue btn-lg btn-block">Nouvelle offre</button>
                                     {!! Form::close() !!}

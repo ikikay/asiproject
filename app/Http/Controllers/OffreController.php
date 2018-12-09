@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 use App\Models\Offre;
 use App\Models\Niveau;
 use App\Models\Contact;
@@ -39,6 +40,7 @@ class OffreController extends Controller {
      */
     public function create() {
         $lOffre = new Offre();
+        $now = Carbon::now();
         $lesNiveaux = Niveau::all();
         $lesContacts = Contact::all();
         $lesSocietes = Societe::all();
@@ -47,7 +49,10 @@ class OffreController extends Controller {
                         ->with('lOffre', $lOffre)
                         ->with('lesNiveaux', $lesNiveaux)
                         ->with('lesContacts', $lesContacts)
-                        ->with('lesSocietes', $lesSocietes);
+                        ->with('lesSocietes', $lesSocietes)
+                        ->with("jours", $now->day)
+                        ->with("mois", $now->month)
+                        ->with("annee", $now->year);
     }
 
     /**
@@ -62,7 +67,8 @@ class OffreController extends Controller {
         $lOffre = new Offre();
 
         $lOffre->poste = $request->get('poste');
-        $lOffre->date_offre = $request->get('date_offre');
+        $date = Carbon::createFromFormat('d/m/Y', $request->get('date_offre'));
+        $lOffre->date_offre = $date;
         $lOffre->description = $request->get('description');
         $lOffre->niveau()->associate($request->get('niveau_id'));
         $lOffre->mois_experience = $request->get('mois_experience');
@@ -97,9 +103,18 @@ class OffreController extends Controller {
      */
     public function edit($id) {
         $lOffre = Offre::find($id);
+        $lesNiveaux = Niveau::all();
+        $lesContacts = Contact::all();
+        $lesSocietes = Societe::all();
 
         return view('offre.edit')
-                        ->with("lOffre", $lOffre);
+                        ->with('lOffre', $lOffre)
+                        ->with('lesNiveaux', $lesNiveaux)
+                        ->with('lesContacts', $lesContacts)
+                        ->with('lesSocietes', $lesSocietes)
+                        ->with("jours", $lOffre->date_offre->day)
+                        ->with("mois", $lOffre->date_offre->month)
+                        ->with("annee", $lOffre->date_offre->year);
     }
 
     /**
@@ -112,9 +127,11 @@ class OffreController extends Controller {
     public function update(Request $request, $id) {
         $this->validate($request, Offre::$rules);
 
-        $lOffre = User::find($id);
+        $lOffre = Offre::find($id);
 
-        $lOffre->update($request->all());
+        $lOffre->update($request->except(['date_offre']));
+        $lOffre->date_offre = Carbon::createFromFormat('d/m/Y', $request->get('date_offre'));
+        $lOffre->save();
 
         $request->session()->flash('success', 'L\'offre à été Modifié !');
         return redirect()->route("offre.index");
