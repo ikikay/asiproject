@@ -30,9 +30,9 @@ class User extends Authenticatable {
         'prenom' => 'nullable|min:0|max:75|regex:/^[\pL\s\-]+$/u',
         'date_de_naissance' => 'nullable|date_format:d/m/Y',
         'rue' => 'nullable|min:0|max:75',
-        'code_postal' => 'nullable|min:5|max:5|regex:[0-9]+',
+        'code_postal' => 'nullable|min:5|max:5|regex:/^[0-9]*$/',
         'ville' => 'nullable|min:0|max:45', // Anecdote, le noms de village le plus longs en France fait 45 signes (38 lettres et 7 tirets) "Saint-Remy-en-Bouzemont-Saint-Genest-et-Isson" 
-        'telephone' => 'nullable||min:10|max:10|regex:[0-9]+',
+        'telephone' => 'nullable|min:10|max:10|regex:/^[0-9]*$/',
         'email' => 'required|min:8|max:75|email|unique:users,email',
         'password' => 'required|min:8|max:255|confirmed',
         'status' => 'nullable',
@@ -44,7 +44,7 @@ class User extends Authenticatable {
         'rue' => 'nullable|min:0|max:75',
         'code_postal' => 'nullable|min:5|max:5',
         'ville' => 'nullable|min:0|max:45', // Anecdote, le noms de village le plus longs en France fait 45 signes (38 lettres et 7 tirets) "Saint-Remy-en-Bouzemont-Saint-Genest-et-Isson" 
-        'telephone' => 'nullable||min:10|max:10|regex:[0-9]+',
+        'telephone' => 'nullable||min:10|max:10|regex:/^[0-9]*$/',
         'email' => 'required|min:8|max:75|email', // SPECIFIQUE SUR UPDATE
         'password' => 'nullable|min:8|max:255|confirmed', // SPECIFIQUE SUR  UPDATE
         'status' => 'nullable',

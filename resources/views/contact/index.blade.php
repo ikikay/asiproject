@@ -56,11 +56,11 @@
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="telephonetd{{ $unContact["id"] }}">
-                                    <h4>{{ $unContact['telephone'] }} </h4>
+                                    <h4>{{ $unContact['contactTelephone'] }} </h4>
                                 </td>
 
                                 <td class="col-md-2 text-center"  id="emaild{{ $unContact["id"] }}">
-                                    <h4>{{ $unContact['email'] }} </h4>
+                                    <h4>{{ $unContact['contactEmail'] }} </h4>
                                 </td>
 
                                 <td class="col-md-2 text-center"  id="societetd{{ $unContact["id"] }}">
@@ -84,7 +84,7 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td class="col-md-9 text-center" colspan="6">
+                                <td class="col-md-12 text-center" colspan="7">
                                     {!! Form::open(['route' => "contact.create", 'method' => 'get']) !!}
                                     <button type="submit" class="btn bg-blue btn-lg btn-block">Nouveau Contact</button>
                                     {!! Form::close() !!}

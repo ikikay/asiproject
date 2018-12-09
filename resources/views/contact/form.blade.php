@@ -19,20 +19,12 @@ if ($leContact->id) {
 {!! Form::label('prenom', 'Prenom') !!}
 {!! Form::text('prenom', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('ville', 'Ville') !!}
-{!! Form::text('ville', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('rue', 'Rue') !!}
-{!! Form::text('rue', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('contactTelephone', 'Telephone') !!}
+{!! Form::text('contactTelephone', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('code_postal', 'Code Postal') !!}
-{!! Form::text('code_postal', null,['class'=> 'form-control'] ) !!}
-
-{!! Form::label('telephone', 'Telephone') !!}
-{!! Form::text('telephone', null,['class'=> 'form-control'] ) !!}
-
-{!! Form::label('email', 'Adresse courriel') !!}
-{!! Form::text('email', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('contactEmail', 'Adresse courriel') !!}
+{!! Form::text('contactEmail', null,['class'=> 'form-control'] ) !!}
 
 {!! Form::label('societe', 'Societe') !!}
 <div class="row">
@@ -52,7 +44,7 @@ if ($leContact->id) {
 
                         <select name="societe_id" class="form-control select2" style="width: 100%;">
                             @foreach($lesSocietes as $uneSociete)
-                            <option value="{{ $uneSociete->id }}">{{ $uneSociete->libelle }}, {{ $unContact->ville }}</option>
+                            <option value="{{ $uneSociete->id }}">{{ $uneSociete->libelle }} {{ $uneSociete->ville }}</option>
                             @endforeach
                         </select>
                     </div>

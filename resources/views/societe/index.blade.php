@@ -43,7 +43,7 @@
                             @foreach ($tab_societes as $uneSociete)
                             <tr>
 
-                                <td class="col-md-1 text-center"  id="maintd{{ $uneSociete["id"] }}">
+                                <td class="col-md-3 text-center"  id="maintd{{ $uneSociete["id"] }}">
                                     <h4>{{ $uneSociete['libelle'] }} </h4>
                                 </td>
 
@@ -59,12 +59,12 @@
                                     <h4>{{ $uneSociete['ville'] }} </h4>
                                 </td>
 
-                                <td class="col-md-2 text-center"  id="telephoneld{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['telephone'] }} </h4>
+                                <td class="col-md-1 text-center"  id="telephoneld{{ $uneSociete["id"] }}">
+                                    <h4>{{ $uneSociete['societeTelephone'] }} </h4>
                                 </td>
 
                                 <td class="col-md-2 text-center"  id="emailtd{{ $uneSociete["id"] }}">
-                                    <h4> {{ $uneSociete['email'] }}</h4>
+                                    <h4> {{ $uneSociete['societeEmail'] }}</h4>
                                 </td>
 
                                 <td class="col-md-3 text-center">
@@ -84,7 +84,7 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td class="col-md-9 text-center" colspan="6">
+                                <td class="col-md-12 text-center" colspan="7">
                                     {!! Form::open(['route' => "societe.create", 'method' => 'get']) !!}
                                     <button type="submit" class="btn bg-blue btn-lg btn-block">Nouvelle société</button>
                                     {!! Form::close() !!}

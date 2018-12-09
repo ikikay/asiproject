@@ -22,11 +22,11 @@ if ($laSociete->id) {
 {!! Form::label('ville', 'Ville') !!}
 {!! Form::text('ville', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('telephone', 'Telephone') !!}
-{!! Form::text('telephone', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('societeTelephone', 'Telephone') !!}
+{!! Form::text('societeTelephone', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('email', 'Adresse courriel') !!}
-{!! Form::text('email', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('societeEmail', 'Adresse courriel') !!}
+{!! Form::text('societeEmail', null,['class'=> 'form-control'] ) !!}
 
 </br>
 

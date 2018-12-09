@@ -19,8 +19,8 @@ class CreateContactsTable extends Migration
             $table->string('fonction');
             $table->string('nom');
             $table->string('prenom');
-            $table->string('telephone');
-            $table->string('email');
+            $table->string('contactTelephone')->nullable();
+            $table->string('contactEmail');
             $table->integer('societe_id')->unsigned();            
             
             $table->timestamps();

@@ -19,8 +19,8 @@ class CreateSocietesTable extends Migration {
             $table->string('rue')->nullable();
             $table->string('code_postal')->nullable();
             $table->string('ville')->nullable();
-            $table->string('telephone')->nullable();
-            $table->string('email')->unique();
+            $table->string('societeTelephone')->nullable();
+            $table->string('societeEmail')->unique();
 
             $table->timestamps();
         });

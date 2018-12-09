@@ -9,13 +9,21 @@ class Societe extends Model {
     /**
      * - - - - - static - - - - -  
      */
-    public static $rules = [
-        'libelle' => 'nullable|min:0|max:75|regex:/^[\p{L}\s\-]+$/u',
-        'rue' => 'nullable|min:0|max:75|regex:/^[\pL\s\-]+$/u',
-        'code_postal' => 'required|min:8|max:75|email|unique:users,email',
-        'ville' => 'required|min:8|max:255|confirmed',
-        'telephone' => 'required|min:8|max:255|confirmed',
-        'email' => 'required|min:8|max:255|confirmed',
+    public static $rulesOnCreate = [
+        'libelle' => 'required|min:0|max:75',
+        'rue' => 'nullable|min:0|max:75',
+        'code_postal' => 'nullable|min:5|max:5|regex:/^[0-9]*$/',
+        'ville' => 'nullable|min:0|max:45',
+        'societeTelephone' => 'nullable|min:10|max:10|regex:/^[0-9]*$/',
+        'societeEmail' => 'required|min:8|max:75|email|unique:societes,societeEmail',
+    ];
+    public static $rulesOnUpdate = [
+        'libelle' => 'required|min:0|max:75',
+        'rue' => 'nullable|min:0|max:75',
+        'code_postal' => 'nullable|min:5|max:5|regex:/^[0-9]*$/',
+        'ville' => 'nullable|min:0|max:45',
+        'societeTelephone' => 'nullable|min:10|max:10|regex:/^[0-9]*$/',
+        'societeEmail' => 'required|min:8|max:75|email', // SPECIFIQUE SUR UPDATE
     ];
 
     /**
@@ -32,8 +40,8 @@ class Societe extends Model {
         'rue',
         'code_postal',
         'ville',
-        'telephone',
-        'email',
+        'societeTelephone',
+        'societeEmail',
     ];
 
     /**

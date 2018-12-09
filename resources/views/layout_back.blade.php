@@ -129,8 +129,14 @@
                         <li class="header">Menu principal</li>
                         <!-- Optionally, you can add icons to the links -->
 
-                        <li class="treeview">
-                            <a href="{{ route("offre.index") }}"><i classe="fa fa-user"></i><span>Offres d'emplois</span></a>
+                        <li>
+                            <a href="{{ route("offre.index") }}"><i classe="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route("contact.index") }}"><i classe="fa fa-retweet"></i><span>Contacts</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route("societe.index") }}"><i classe="fa fa-building"></i><span>Societes</span></a>
                         </li>
 
                         <li class="header">Partie Admin</li>

@@ -3,17 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Societe;
 
-class SocieteController extends Controller
-{
+class SocieteController extends Controller {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        $lesSocietes = Societe::all();
+
+        return view('societe.index')
+                        ->with('tab_societes', $lesSocietes);
     }
 
     /**
@@ -21,9 +33,11 @@ class SocieteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+        $laSociete = new Societe();
+
+        return view('societe.create')
+                        ->with("laSociete", $laSociete);
     }
 
     /**
@@ -32,9 +46,26 @@ class SocieteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request, $boolRedirection = true) {
+        $this->validate($request, Societe::$rulesOnCreate);
+
+        $laSociete = new Societe();
+
+        $laSociete->libelle = $request->get('libelle');
+        $laSociete->rue = $request->get('rue');
+        $laSociete->code_postal = $request->get('code_postal');
+        $laSociete->ville = $request->get('ville');
+        $laSociete->societeTelephone = $request->get('societeTelephone');
+        $laSociete->societeEmail = $request->get('societeEmail');
+
+        $laSociete->save();
+
+        $request->session()->flash('success', 'La société à été Ajouté !');
+        if ($boolRedirection) {
+            return redirect()->route("societe.index");
+        } else {
+            return $laSociete;
+        }
     }
 
     /**
@@ -43,8 +74,7 @@ class SocieteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -54,9 +84,11 @@ class SocieteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        $laSociete = Societe::find($id);
+
+        return view('societe.edit')
+                        ->with("laSociete", $laSociete);
     }
 
     /**
@@ -66,9 +98,17 @@ class SocieteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id) {
+        $this->validate($request, Societe::$rulesOnUpdate);
+
+        $laSociete = Societe::find($id);
+
+        $laSociete->update($request->all());
+
+        $laSociete->save();
+
+        $request->session()->flash('success', 'La société à été Modifié !');
+        return redirect()->route("societe.index");
     }
 
     /**
@@ -77,8 +117,13 @@ class SocieteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Request $request, $id) {
+        $laSociete = Societe::find($id);
+
+        $laSociete->delete();
+
+        $request->session()->flash('success', 'La société à été Supprimé !');
+        return redirect()->route("societe.index");
     }
+
 }

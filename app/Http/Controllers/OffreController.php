@@ -43,7 +43,6 @@ class OffreController extends Controller {
         $lesContacts = Contact::all();
         $lesSocietes = Societe::all();
 
-
         return view('offre.create')
                         ->with('lOffre', $lOffre)
                         ->with('lesNiveaux', $lesNiveaux)
@@ -67,7 +66,12 @@ class OffreController extends Controller {
         $lOffre->description = $request->get('description');
         $lOffre->niveau()->associate($request->get('niveau_id'));
         $lOffre->mois_experience = $request->get('mois_experience');
-        $lOffre->contact()->associate($request->get('contact_id'));
+
+        if (!empty($request->input('fonction'))) {
+            $lOffre->contact()->associate(app('App\Http\Controllers\ContactController')->store($request, false));
+        } else {
+            $lOffre->contact()->associate($request->get('contact_id'));
+        }
 
         $lOffre->save();
 
