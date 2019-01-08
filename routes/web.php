@@ -38,6 +38,11 @@ Route::middleware('auth')->group(function () {
         'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
     ]);
 
+    // Questionnaire
+    Route::resource('questionnaire', 'QuestionnaireController')->except([
+        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
+    ]);
+
     // Offres
     Route::resource('offre', 'OffreController')->except([
         'show'
