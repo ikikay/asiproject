@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Promo;
 
 class PromoController extends Controller
 {
-/**
+     /**
      * Create a new controller instance.
      *
      * @return void
@@ -20,11 +21,12 @@ class PromoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $lesSocietes = Societe::all();
+    public function index()
+    {
+        $lesPromos = Promo::all();
 
-        return view('societe.index')
-                        ->with('tab_societes', $lesSocietes);
+        return view('promo.index')
+                        ->with('tab_promos', $lesPromos);
     }
 
     /**
@@ -32,11 +34,12 @@ class PromoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
-        $laSociete = new Societe();
+    public function create()
+    {
+        $laPromo = new Promo();
 
-        return view('societe.create')
-                        ->with("laSociete", $laSociete);
+        return view('promo.create')
+                        ->with("laPromo", $laPromo);
     }
 
     /**
@@ -45,25 +48,22 @@ class PromoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $boolRedirection = true) {
-        $this->validate($request, Societe::$rulesOnCreate);
+    public function store(Request $request, $boolRedirection = true)
+    {
+        $this->validate($request, Promo::$rules);
 
-        $laSociete = new Societe();
+        $laPromo = new Promo();
 
-        $laSociete->libelle = $request->get('libelle');
-        $laSociete->rue = $request->get('rue');
-        $laSociete->code_postal = $request->get('code_postal');
-        $laSociete->ville = $request->get('ville');
-        $laSociete->societeTelephone = $request->get('societeTelephone');
-        $laSociete->societeEmail = $request->get('societeEmail');
+        $laPromo->libelle = $request->get('libelle');
+        $laPromo->nom = $request->get('nom');
 
-        $laSociete->save();
+        $laPromo->save();
 
-        $request->session()->flash('success', 'La société à été Ajouté !');
+        $request->session()->flash('success', 'La promotion a été ajouté !');
         if ($boolRedirection) {
-            return redirect()->route("societe.index");
+            return redirect()->route("promo.index");
         } else {
-            return $laSociete;
+            return $laPromo;
         }
     }
 
@@ -73,7 +73,8 @@ class PromoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($id)
+    {
         //
     }
 
@@ -83,11 +84,12 @@ class PromoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
-        $laSociete = Societe::find($id);
+    public function edit($id)
+    {
+        $laPromo = Promo::find($id);
 
-        return view('societe.edit')
-                        ->with("laSociete", $laSociete);
+        return view('promo.edit')
+                        ->with("laPromo", $laPromo);
     }
 
     /**
@@ -97,17 +99,18 @@ class PromoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
-        $this->validate($request, Societe::$rulesOnUpdate);
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, Promo::$rules);
 
-        $laSociete = Societe::find($id);
+        $laPromo = Promo::find($id);
 
-        $laSociete->update($request->all());
+        $laPromo->update($request->all());
 
-        $laSociete->save();
+        $laPromo->save();
 
-        $request->session()->flash('success', 'La société à été Modifié !');
-        return redirect()->route("societe.index");
+        $request->session()->flash('success', 'La promotion a été modifié !');
+        return redirect()->route("promo.index");
     }
 
     /**
@@ -116,13 +119,13 @@ class PromoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id) {
-        $laSociete = Societe::find($id);
+    public function destroy($id)
+    {
+        $laPromo = Promo::find($id);
 
-        $laSociete->delete();
+        $laPromo->delete();
 
-        $request->session()->flash('success', 'La société à été Supprimé !');
-        return redirect()->route("societe.index");
+        $request->session()->flash('success', 'La promotion a été supprimé !');
+        return redirect()->route("promo.index");
     }
-
 }
