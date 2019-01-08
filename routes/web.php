@@ -28,10 +28,14 @@ Route::middleware('auth')->group(function () {
 //    Route::resource('model', 'Controller')->except([
 //        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
 //    ]);
-
     // User
     Route::resource('user', 'UserController')->except([
         'show'
+    ]);
+
+    // Promos
+    Route::resource('promo', 'PromoController')->except([
+        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
     ]);
 
     // Offres

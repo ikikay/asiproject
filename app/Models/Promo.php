@@ -22,6 +22,8 @@ class Promo extends Model {
      * @var array
      */
     protected $fillable = [
+        'libelle',
+        'nom',
     ];
 
     /**

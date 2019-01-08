@@ -77,7 +77,7 @@ class User extends Authenticatable {
      * - - - - - Relations - - - - -  
      */
     public function promos() {
-        return $this->hasMany('App\Models\Promo');
+        return $this->belongsToMany('App\Models\Promo');
     }
 
     public function reponses() {

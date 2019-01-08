@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(ContratsTableSeeder::class);
         $this->call(NiveauxTableSeeder::class);
+        $this->call(PromosTableSeeder::class);
     }
 }
