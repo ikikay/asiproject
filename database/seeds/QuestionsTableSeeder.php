@@ -55,215 +55,207 @@ class QuestionsTableSeeder extends Seeder {
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 11,
-                'libelle' => '',
+                'libelle' => 'Combien de temps à duré la période de recherche de votre premier emploi',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 12,
-                'libelle' => '',
+                'libelle' => 'A quelle date avez-vous eu votre premier emploi',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 13,
-                'libelle' => '',
+                'libelle' => 'sous quel type de contrat (CDI, CDD,...)',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 14,
-                'libelle' => '',
+                'libelle' => 'Quel est votre statut (Cadre, agent de maitrise, ...)',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 15,
-                'libelle' => '',
+                'libelle' => 'Quel est votre salaire BRUT',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 16,
-                'libelle' => '',
+                'libelle' => 'Avez-vous créé votre entreprise',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 17,
-                'libelle' => '',
+                'libelle' => 'Depuis quand',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 18,
-                'libelle' => '',
+                'libelle' => 'Quel type',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 19,
-                'libelle' => '',
+                'libelle' => 'Etes-vous associé de votre entreprise',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 20,
-                'libelle' => '',
+                'libelle' => 'Quelle est la designation de votre métier / de votre formations',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 21,
-                'libelle' => '',
+                'libelle' => 'Quelle sont vos activités les plus fréquentes',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 22,
-                'libelle' => '',
+                'libelle' => 'Une habilitation est elle nécessaire',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 23,
-                'libelle' => '',
+                'libelle' => 'Quel est votre niveau d"autonomie',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 24,
-                'libelle' => '',
+                'libelle' => 'Quelles sont la nature de vos responsabilités',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 25,
-                'libelle' => '',
+                'libelle' => 'Quel est votre niveau hiérarchique',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 26,
-                'libelle' => '',
+                'libelle' => 'Quelle est la fonction de votre supérieur hiérarchique',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 27,
-                'libelle' => '',
+                'libelle' => 'A quel service travaillez-vous le plus',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 28,
-                'libelle' => '',
+                'libelle' => 'Ou vous situez-vous dans l"organigramme de l"entreprise',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 29,
-                'libelle' => '',
+                'libelle' => 'Etes-vous en contact direct avec le client',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 30,
-                'libelle' => '',
+                'libelle' => 'Seul ou sous responsabilité',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 31,
-                'libelle' => '',
+                'libelle' => 'Combien de temps à duré la période de recherche de votre premier emploi',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 32,
-                'libelle' => '',
+                'libelle' => 'A quelle date avez-vous eu votre premier emploi',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 33,
-                'libelle' => '',
+                'libelle' => 'sous quel type de contrat (CDI, CDD,...)',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 34,
-                'libelle' => '',
+                'libelle' => 'Quel est votre statut (Cadre, agent de maitrise, ...)',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 35,
-                'libelle' => '',
+                'libelle' => 'Quel est votre salaire BRUT',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 36,
-                'libelle' => '',
+                'libelle' => 'Avez-vous créé votre entreprise',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 37,
-                'libelle' => '',
+                'libelle' => 'Depuis quand',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 38,
-                'libelle' => '',
+                'libelle' => 'Quel type',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 39,
-                'libelle' => '',
+                'libelle' => 'Etes-vous associé de votre entreprise',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 40,
-                'libelle' => '',
+                'libelle' => 'Quelle est la designation de votre métier / de votre formations',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 41,
-                'libelle' => '',
+                'libelle' => 'Quelle sont vos activités les plus fréquentes',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 42,
-                'libelle' => '',
+                'libelle' => 'Une habilitation est elle nécessaire',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 43,
-                'libelle' => '',
+                'libelle' => 'Quel est votre niveau d"autonomie',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 44,
-                'libelle' => '',
+                'libelle' => 'Quelles sont la nature de vos responsabilités',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 45,
-                'libelle' => '',
+                'libelle' => 'Quel est votre niveau hiérarchique',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 46,
-                'libelle' => '',
+                'libelle' => 'Quelle est la fonction de votre supérieur hiérarchique',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 47,
-                'libelle' => '',
+                'libelle' => 'A quel service travaillez-vous le plus',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 48,
-                'libelle' => '',
+                'libelle' => 'Ou vous situez-vous dans l"organigramme de l"entreprise',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 49,
-                'libelle' => '',
+                'libelle' => 'Etes-vous en contact direct avec le client',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 50,
-                'libelle' => '',
+                'libelle' => 'Seul ou sous responsabilité',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 51,
-                'libelle' => '',
+                'libelle' => 'Combien de temps à duré la période de recherche de votre premier emploi',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 52,
-                'libelle' => '',
+                'libelle' => 'Que vous a-t-il manqué en termes de contenus ou de méthodes',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 53,
-                'libelle' => '',
+                'libelle' => 'Avez-vous passé d"autres certifications, homologations, ou formations',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 54,
-                'libelle' => '',
+                'libelle' => 'Si oui, les compétences ou connaissances acquises en ASI étaient-elles nécessaires et suffisantes',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 55,
-                'libelle' => '',
+                'libelle' => 'En quoi jugez-vous cette certification pertinente au vu de votre métier',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 56,
-                'libelle' => '',
+                'libelle' => 'En quoi cette certification ne s"integre-t-elle pas dans votre champs d"activité professionnel',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 57,
-                'libelle' => '',
+                'libelle' => 'Pensez-vous etre surqualifié par rapport à l"emploi que vous occupez',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 58,
-                'libelle' => '',
+                'libelle' => 'Sur les pages suivantes, figure le référentiel de compétences de ASI. Indiquez les compétences que vous mettez le plus souvent en oeuvre',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 59,
-                'libelle' => '',
+                'libelle' => 'Pensez-vous exercer un métier conforme à ce qui vous a poussé à entrer dans la formation',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 60,
-                'libelle' => '',
+                'libelle' => 'Pensez-vous exercer un métier conforme à ce qui vous a espériez en sortant de la formation',
                 'questionnaire_id' => 1
             ], [
                 'ordre' => 61,
-                'libelle' => '',
-                'questionnaire_id' => 1
-            ], [
-                'ordre' => 61,
-                'libelle' => '',
-                'questionnaire_id' => 1
-            ], [
-                'ordre' => 61,
-                'libelle' => '',
+                'libelle' => 'Quelle modification à apporter à la formation ASI vous semble judicieuse',
                 'questionnaire_id' => 1
             ]
         ]);
