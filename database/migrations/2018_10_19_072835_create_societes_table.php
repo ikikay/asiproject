@@ -15,12 +15,12 @@ class CreateSocietesTable extends Migration {
         Schema::create('societes', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('libelle');
-            $table->string('rue')->nullable();
-            $table->string('code_postal')->nullable();
-            $table->string('ville')->nullable();
-            $table->string('societeTelephone')->nullable();
-            $table->string('societeEmail')->unique();
+            $table->string('societes_libelle');
+            $table->string('societes_rue')->nullable();
+            $table->string('societes_code_postal')->nullable();
+            $table->string('societes_ville')->nullable();
+            $table->string('societes_telephone')->nullable();
+            $table->string('societes_email')->unique();
 
             $table->timestamps();
         });

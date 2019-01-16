@@ -12,9 +12,8 @@ class CreateReponsesReponsesPredefiniesTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('reponse_reponsesPredefinie', function (Blueprint $table) {
+        Schema::create('reponse_reponses_predefinie', function (Blueprint $table) {
             $table->increments('id');
-
             $table->integer('reponse_id')->unsigned();
             $table->integer('reponse_predefinie_id')->unsigned();
 
@@ -28,7 +27,7 @@ class CreateReponsesReponsesPredefiniesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('reponse_reponsesPredefinie');
+        Schema::dropIfExists('reponse_reponses_predefinie');
     }
 
 }

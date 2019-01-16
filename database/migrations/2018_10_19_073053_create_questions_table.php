@@ -4,22 +4,21 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionsTable extends Migration
-{
+class CreateQuestionsTable extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
-            
-            $table->string('ordre');
-            $table->string('libelle');
-            $table->integer('questionnaire_id')->unsigned()->nullable();
-            
+            $table->integer('themes_id')->unsigned();
+
+            $table->integer('questions_ordre');
+            $table->string('questions_libelle');
+
             $table->timestamps();
         });
     }
@@ -29,8 +28,8 @@ class CreateQuestionsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('questions');
     }
+
 }

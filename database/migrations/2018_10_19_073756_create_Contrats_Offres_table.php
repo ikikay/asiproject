@@ -14,7 +14,6 @@ class CreateContratsOffresTable extends Migration {
     public function up() {
         Schema::create('contrats_offres', function (Blueprint $table) {
             $table->increments('id');
-
             $table->integer('contrat_id')->unsigned();
             $table->integer('offre_id')->unsigned();
 

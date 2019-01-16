@@ -12,11 +12,12 @@ class CreateReponsesPredefiniesTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('reponsesPredefinies', function (Blueprint $table) {
+        Schema::create('reponses_predefinies', function (Blueprint $table) {
             $table->increments('id');
-
-            $table->integer('reponse_predefinie_id')->unsigned();
             $table->integer('question_id')->unsigned();
+
+            $table->integer('reponses_predefinies_ordre');
+            $table->string('reponses_predefinies_libelle');
 
             $table->timestamps();
         });
@@ -28,7 +29,7 @@ class CreateReponsesPredefiniesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('reponsesPredefinies');
+        Schema::dropIfExists('reponses_predefinies');
     }
 
 }

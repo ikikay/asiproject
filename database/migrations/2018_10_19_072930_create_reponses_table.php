@@ -14,9 +14,10 @@ class CreateReponsesTable extends Migration {
     public function up() {
         Schema::create('reponses', function (Blueprint $table) {
             $table->increments('id');
-
             $table->integer('user_id')->unsigned();
             $table->integer('question_id')->unsigned();
+            
+            $table->string('reponse');
 
             $table->timestamps();
         });
