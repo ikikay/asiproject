@@ -10,17 +10,17 @@ class Offre extends Model {
      * - - - - - static - - - - -  
      */
     public static $rules = [
-        'poste' => 'required|min:5|max:75',
-        'date_offre' => 'required|date_format:d/m/Y',
-        'description' => 'required',
-        'mois_experience' => 'required|regex:/^[0-9]*$/',
+        'offres_poste' => 'required|min:5|max:75',
+        'offres_date_offre' => 'required|date_format:d/m/Y',
+        'offres_description' => 'required',
+        'offres_mois_experience' => 'required|regex:/^[0-9]*$/',
     ];
 
     /**
      * - - - - - Dates pour Laravels - - - - -  
      */
     public function getDates() {
-        return ['created_at', 'updated_at', 'date_offre'];
+        return ['created_at', 'updated_at', 'offres_date_offre'];
     }
 
     /**
@@ -33,11 +33,11 @@ class Offre extends Model {
      * @var array
      */
     protected $fillable = [
-        'poste',
-        'date_offre',
-        'description',
+        'offres_poste',
+        'offres_date_offre',
+        'offres_description',
         'niveau_id',
-        'mois_experience',
+        'offres_mois_experience',
         'contact_id',
     ];
 

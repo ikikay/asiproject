@@ -13,15 +13,15 @@ class ContratsTableSeeder extends Seeder {
     public function run() {
         DB::table('contrats')->insert([
                 [
-                'libelle' => "CDD"
+                'contrats_libelle' => "CDD"
             ], [
-                'libelle' => "CDI"
+                'contrats_libelle' => "CDI"
             ], [
-                'libelle' => "Interim"
+                'contrats_libelle' => "Interim"
             ], [
-                'libelle' => "Alternance"
+                'contrats_libelle' => "Alternance"
             ], [
-                'libelle' => "Autres"
+                'contrats_libelle' => "Autres"
             ]
         ]);
     }

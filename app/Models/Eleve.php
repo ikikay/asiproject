@@ -16,7 +16,7 @@ class Eleve extends Model {
      * - - - - - Dates pour Laravels - - - - -  
      */
     public function getDates() {
-        return ['created_at', 'updated_at', 'annee_debut', 'annee_fin'];
+        return ['created_at', 'updated_at', 'eleves_annee_debut', 'eleves_annee_fin'];
     }
 
     /**

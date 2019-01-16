@@ -47,9 +47,9 @@ use RegistersUsers;
      */
     protected function validator(array $data) {
         return Validator::make($data, [
-                    'name' => 'required|string|max:255',
-                    'email' => 'required|string|email|max:255|unique:users',
-                    'password' => 'required|string|min:6|confirmed',
+                    'users_nom' => 'required|string|max:255',
+                    'users_email' => 'required|string|email|max:255|unique:users',
+                    'users_password' => 'required|string|min:6|confirmed',
         ]);
     }
 
@@ -61,11 +61,10 @@ use RegistersUsers;
      */
     protected function create(array $data) {
         return User::create([
-                    'pseudo' => $data['pseudo'],
-                    'nom' => $data['nom'],
-                    'prenom' => $data['prenom'],
-                    'email' => $data['email'],
-                    'password' => Hash::make($data['password']),
+                    'users_nom' => $data['users_nom'],
+                    'users_prenom' => $data['users_prenom'],
+                    'users_email' => $data['users_email'],
+                    'users_password' => Hash::make($data['users_password']),
         ]);
     }
 
@@ -93,11 +92,10 @@ use RegistersUsers;
         $this->validate($request, User::$rulesOnCreate);
 
         $user = User::create([
-                    'pseudo' => $request->get('pseudo'),
-                    'nom' => $request->get('nom'),
-                    'prenom' => $request->get('prenom'),
-                    'email' => $request->get('email'),
-                    'password' => bcrypt($request->get('password')),
+                    'users_nom' => $request->get('users_nom'),
+                    'users_prenom' => $request->get('users_prenom'),
+                    'users_email' => $request->get('users_email'),
+                    'users_password' => bcrypt($request->get('users_password')),
         ]);
 
         $this->guard()->login($user);

@@ -15,7 +15,7 @@ class QuestionnaireTableSeeder extends Seeder {
         DB::table('questionnaires')->insert([
             [
                 'id' => 1,
-                'libelle' => 'Enquête ASI sur le devenir des certifiés sortis de la formation'
+                'questionnaires_libelle' => 'Enquête ASI sur le devenir des certifiés sortis de la formation'
             ]
         ]);
     }

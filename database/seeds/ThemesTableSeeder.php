@@ -15,42 +15,42 @@ class ThemesTableSeeder extends Seeder {
         DB::table('themes')->insert([
             [
                 'id' => 1,
-                'libelle' => 'Informations personnelles',
+                'themes_libelle' => 'Informations personnelles',
                 'questionnaires_id' => 1
             ],
             [
                 'id' => 2,
-                'libelle' => 'Votre employeur',
+                'themes_libelle' => 'Votre employeur',
                 'questionnaires_id' => 1
             ],
             [
                 'id' => 3,
-                'libelle' => 'Votre premier emploi',
+                'themes_libelle' => 'Votre premier emploi',
                 'questionnaires_id' => 1
             ],
             [
                 'id' => 4,
-                'libelle' => 'Votre emploi actuel',
+                'themes_libelle' => 'Votre emploi actuel',
                 'questionnaires_id' => 1
             ],
             [
                 'id' => 5,
-                'libelle' => 'La formation ASI',
+                'themes_libelle' => 'La formation ASI',
                 'questionnaires_id' => 1
             ],
             [
                 'id' => 6,
-                'libelle' => 'Vos compétences',
+                'themes_libelle' => 'Vos compétences',
                 'questionnaires_id' => 1
             ],
             [
                 'id' => 7,
-                'libelle' => 'Votre ressentis',
+                'themes_libelle' => 'Votre ressentis',
                 'questionnaires_id' => 1
             ],
             [
                 'id' => 8,
-                'libelle' => 'Votre avis',
+                'themes_libelle' => 'Votre avis',
                 'questionnaires_id' => 1
             ]
         ]);

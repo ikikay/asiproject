@@ -10,11 +10,11 @@ class Contact extends Model {
      * - - - - - static - - - - -  
      */
     public static $rules = [
-        'fonction' => 'required|min:5|max:75',
-        'nom' => 'required|min:5|max:75|regex:/^[\p{L}\s\-]+$/u',
-        'prenom' => 'required|min:5|max:75|regex:/^[\p{L}\s\-]+$/u',
-        'contactTelephone' => 'nullable|min:10|max:10|regex:/^[0-9]*$/',
-        'contactEmail' => 'required|min:8|max:75|email',
+        'contacts_fonction' => 'required|min:5|max:75',
+        'contacts_nom' => 'required|min:5|max:75|regex:/^[\p{L}\s\-]+$/u',
+        'contacts_prenom' => 'required|min:5|max:75|regex:/^[\p{L}\s\-]+$/u',
+        'contacts_telephone' => 'nullable|min:10|max:10|regex:/^[0-9]*$/',
+        'contacts_email' => 'required|min:8|max:75|email',
     ];
 
     /**
@@ -27,11 +27,11 @@ class Contact extends Model {
      * @var array
      */
     protected $fillable = [
-        'fonction',
-        'nom',
-        'prenom',
-        'contactTelephone',
-        'contactEmail',
+        'contacts_fonction',
+        'contacts_nom',
+        'contacts_prenom',
+        'contacts_telephone',
+        'contacts_email',
         'societe_id',
     ];
 
