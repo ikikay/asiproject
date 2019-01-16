@@ -54,13 +54,13 @@ class ContactController extends Controller {
 
         $leContact = new Contact();
 
-        $leContact->fonction = $request->get('fonction');
-        $leContact->nom = $request->get('nom');
-        $leContact->prenom = $request->get('prenom');
-        $leContact->contactTelephone = $request->get('contactTelephone');
-        $leContact->contactEmail = $request->get('contactEmail');
+        $leContact->contacts_fonction = $request->get('contacts_fonction');
+        $leContact->contacts_nom = $request->get('contacts_nom');
+        $leContact->contacts_prenom = $request->get('contacts_prenom');
+        $leContact->contacts_telephone = $request->get('contacts_telephone');
+        $leContact->contacts_email = $request->get('contacts_email');
 
-        if (!empty($request->input('libelle'))) {
+        if (!empty($request->input('societes_libelle'))) {
             $leContact->societe()->associate(app('App\Http\Controllers\SocieteController')->store($request, false));
         } else {
             $leContact->societe()->associate($request->get('societe_id'));

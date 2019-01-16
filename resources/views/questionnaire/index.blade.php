@@ -40,7 +40,7 @@
                             <tr>
 
                                 <td class="col-md-2 text-center"  id="maintd{{ $unQuestionnaire["id"] }}">
-                                    <h4>{{ $unQuestionnaire->libelle }}</h4>
+                                    <h4>{{ $unQuestionnaire->questionnaires_libelle }}</h4>
                                 </td>
 
                                 <td class="col-md-3 text-center"  id="nbrtd{{ $unQuestionnaire["id"] }}">

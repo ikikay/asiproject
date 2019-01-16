@@ -36,8 +36,8 @@ class Offre extends Model {
         'offres_poste',
         'offres_date_offre',
         'offres_description',
-        'niveau_id',
         'offres_mois_experience',
+        'niveau_id',
         'contact_id',
     ];
 

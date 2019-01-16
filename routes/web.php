@@ -33,13 +33,18 @@ Route::middleware('auth')->group(function () {
         'show'
     ]);
 
-    // Promos
-    Route::resource('promo', 'PromoController')->except([
+    // Questionnaire
+    Route::resource('questionnaire', 'QuestionnaireController')->except([
         'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
     ]);
 
-    // Questionnaire
-    Route::resource('questionnaire', 'QuestionnaireController')->except([
+    // Themes
+    Route::resource('themes', 'ThemeController')->except([
+        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
+    ]);
+
+    // Questions
+    Route::resource('questions', 'QuestionController')->except([
         'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
     ]);
 

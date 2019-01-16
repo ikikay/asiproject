@@ -48,8 +48,8 @@ use RegistersUsers;
     protected function validator(array $data) {
         return Validator::make($data, [
                     'users_nom' => 'required|string|max:255',
-                    'users_email' => 'required|string|email|max:255|unique:users',
-                    'users_password' => 'required|string|min:6|confirmed',
+                    'email' => 'required|string|email|max:255|unique:users',
+                    'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
@@ -63,8 +63,8 @@ use RegistersUsers;
         return User::create([
                     'users_nom' => $data['users_nom'],
                     'users_prenom' => $data['users_prenom'],
-                    'users_email' => $data['users_email'],
-                    'users_password' => Hash::make($data['users_password']),
+                    'email' => $data['email'],
+                    'password' => Hash::make($data['password']),
         ]);
     }
 
@@ -94,8 +94,8 @@ use RegistersUsers;
         $user = User::create([
                     'users_nom' => $request->get('users_nom'),
                     'users_prenom' => $request->get('users_prenom'),
-                    'users_email' => $request->get('users_email'),
-                    'users_password' => bcrypt($request->get('users_password')),
+                    'email' => $request->get('email'),
+                    'password' => bcrypt($request->get('password')),
         ]);
 
         $this->guard()->login($user);

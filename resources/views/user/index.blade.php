@@ -41,11 +41,11 @@
                             <tr>
 
                                 <td class="col-md-3 text-center"  id="nomtd{{ $unUser["id"] }}">
-                                    <h4> {{ $unUser["nom"] }}</h4>
+                                    <h4> {{ $unUser["users_nom"] }}</h4>
                                 </td>
 
                                 <td class="col-md-3 text-center"  id="prenomtd{{ $unUser["id"] }}">
-                                    <h4> {{ $unUser["prenom"] }}</h4>
+                                    <h4> {{ $unUser["users_prenom"] }}</h4>
                                 </td>
 
                                 <td class="col-md-5 text-center"  id="maintd{{ $unUser["id"] }}">

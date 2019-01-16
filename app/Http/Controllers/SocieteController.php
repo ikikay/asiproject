@@ -51,12 +51,12 @@ class SocieteController extends Controller {
 
         $laSociete = new Societe();
 
-        $laSociete->libelle = $request->get('libelle');
-        $laSociete->rue = $request->get('rue');
-        $laSociete->code_postal = $request->get('code_postal');
-        $laSociete->ville = $request->get('ville');
-        $laSociete->societeTelephone = $request->get('societeTelephone');
-        $laSociete->societeEmail = $request->get('societeEmail');
+        $laSociete->societes_libelle = $request->get('societes_libelle');
+        $laSociete->societes_rue = $request->get('societes_rue');
+        $laSociete->societes_code_postal = $request->get('societes_code_postal');
+        $laSociete->societes_ville = $request->get('societes_ville');
+        $laSociete->societes_telephone = $request->get('societes_telephone');
+        $laSociete->societes_email = $request->get('societes_email');
 
         $laSociete->save();
 

@@ -83,15 +83,15 @@
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                    <!-- TODO <span class="hidden-xs">{Auth::user()->nom } {Auth::user()->prenom }</span> -->
-                                    <span class="hidden-xs">{{Auth::user()->nom }} {{Auth::user()->prenom }}</span>
+                                    <!-- TODO <span class="hidden-xs">{Auth::user()->users_nom } {Auth::user()->users_prenom }</span> -->
+                                    <span class="hidden-xs">{{Auth::user()->users_nom }} {{Auth::user()->users_prenom }}</span>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
                                         <p>
-                                            {{Auth::user()->nom}}&nbsp {{Auth::user()->prenom}}
+                                            {{Auth::user()->users_nom}}&nbsp {{Auth::user()->users_prenom}}
                                             <small>Inscrit le : {{Auth::user()->created_at->format('d/m/Y')}}</small>
                                         </p>
                                     </li>
@@ -120,7 +120,7 @@
 
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
-                        <center><h5 style="color:white">{{Auth::user()->nom}}&nbsp {{Auth::user()->prenom}}</h5></center>
+                        <center><h5 style="color:white">{{Auth::user()->users_nom}}&nbsp {{Auth::user()->users_prenom}}</h5></center>
                     </div>
 
                     <!-- Sidebar Menu -->
@@ -137,9 +137,6 @@
                         </li>
                         <li>
                             <a href="{{ route("societe.index") }}"><i classe="fa fa-building"></i><span>Societes</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ route("promo.index") }}"><i classe="fa fa-building"></i><span>Promotions</span></a>
                         </li>
 
                         <li class="header">Partie Admin</li>

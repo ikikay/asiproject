@@ -66,12 +66,12 @@ class OffreController extends Controller {
 
         $lOffre = new Offre();
 
-        $lOffre->poste = $request->get('poste');
-        $date = Carbon::createFromFormat('d/m/Y', $request->get('date_offre'));
-        $lOffre->date_offre = $date;
-        $lOffre->description = $request->get('description');
+        $lOffre->offres_poste = $request->get('offres_poste');
+        $date = Carbon::createFromFormat('d/m/Y', $request->get('offres_date_offre'));
+        $lOffre->offres_date_offre = $date;
+        $lOffre->offres_description = $request->get('offres_description');
         $lOffre->niveau()->associate($request->get('niveau_id'));
-        $lOffre->mois_experience = $request->get('mois_experience');
+        $lOffre->offres_mois_experience = $request->get('offres_mois_experience');
 
         if (!empty($request->input('fonction'))) {
             $lOffre->contact()->associate(app('App\Http\Controllers\ContactController')->store($request, false));
@@ -112,9 +112,9 @@ class OffreController extends Controller {
                         ->with('lesNiveaux', $lesNiveaux)
                         ->with('lesContacts', $lesContacts)
                         ->with('lesSocietes', $lesSocietes)
-                        ->with("jours", $lOffre->date_offre->day)
-                        ->with("mois", $lOffre->date_offre->month)
-                        ->with("annee", $lOffre->date_offre->year);
+                        ->with("jours", $lOffre->offres_date_offre->day)
+                        ->with("mois", $lOffre->offres_date_offre->month)
+                        ->with("annee", $lOffre->offres_date_offre->year);
     }
 
     /**
@@ -129,8 +129,8 @@ class OffreController extends Controller {
 
         $lOffre = Offre::find($id);
 
-        $lOffre->update($request->except(['date_offre']));
-        $lOffre->date_offre = Carbon::createFromFormat('d/m/Y', $request->get('date_offre'));
+        $lOffre->update($request->except(['offres_date_offre']));
+        $lOffre->offres_date_offre = Carbon::createFromFormat('d/m/Y', $request->get('offres_date_offre'));
         $lOffre->save();
 
         $request->session()->flash('success', 'L\'offre à été Modifié !');

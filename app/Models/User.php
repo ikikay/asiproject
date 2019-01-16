@@ -19,7 +19,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $hidden = [
-        'users_password', 'remember_token',
+        'password', 'remember_token',
     ];
 
     /**
@@ -33,8 +33,8 @@ class User extends Authenticatable {
         'users_code_postal' => 'nullable|min:5|max:5|regex:/^[0-9]*$/',
         'users_ville' => 'nullable|min:0|max:45', // Anecdote, le noms de village le plus longs en France fait 45 signes (38 lettres et 7 tirets) "Saint-Remy-en-Bouzemont-Saint-Genest-et-Isson" 
         'users_telephone' => 'nullable|min:10|max:10|regex:/^[0-9]*$/',
-        'users_email' => 'required|min:8|max:75|email|unique:users,email',
-        'users_password' => 'required|min:8|max:255|confirmed',
+        'email' => 'required|min:8|max:75|email|unique:users,email',
+        'password' => 'required|min:8|max:255|confirmed',
         'users_status' => 'nullable',
     ];
     public static $rulesOnUpdate = [
@@ -45,8 +45,8 @@ class User extends Authenticatable {
         'users_code_postal' => 'nullable|min:5|max:5',
         'users_ville' => 'nullable|min:0|max:45', // Anecdote, le noms de village le plus longs en France fait 45 signes (38 lettres et 7 tirets) "Saint-Remy-en-Bouzemont-Saint-Genest-et-Isson" 
         'users_telephone' => 'nullable||min:10|max:10|regex:/^[0-9]*$/',
-        'users_email' => 'required|min:8|max:75|email', // SPECIFIQUE SUR UPDATE
-        'users_password' => 'nullable|min:8|max:255|confirmed', // SPECIFIQUE SUR  UPDATE
+        'email' => 'required|min:8|max:75|email', // SPECIFIQUE SUR UPDATE
+        'password' => 'nullable|min:8|max:255|confirmed', // SPECIFIQUE SUR  UPDATE
         'users_status' => 'nullable',
     ];
 
@@ -69,8 +69,8 @@ class User extends Authenticatable {
     protected $fillable = [
         'users_nom',
         'users_prenom',
-        'users_email',
-        'users_password',
+        'email',
+        'password',
     ];
 
     /**

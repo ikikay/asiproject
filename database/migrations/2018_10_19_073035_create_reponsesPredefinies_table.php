@@ -18,6 +18,8 @@ class CreateReponsesPredefiniesTable extends Migration {
 
             $table->integer('reponses_predefinies_ordre');
             $table->string('reponses_predefinies_libelle');
+            $table->boolean('reponses_predefinies_is_radio');
+            $table->boolean('reponses_predefinies_is_checkbox');
 
             $table->timestamps();
         });

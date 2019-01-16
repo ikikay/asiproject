@@ -44,23 +44,23 @@
                             <tr>
 
                                 <td class="col-md-2 text-center"  id="societetd{{ $uneOffre["id"] }}">
-                                    <h4>{{ $uneOffre->contact->societe->libelle }}</h4>
+                                    <h4>{{ $uneOffre->contact->societe->societes_libelle }}</h4>
                                 </td>
 
                                 <td class="col-md-3 text-center"  id="maintd{{ $uneOffre["id"] }}">
-                                    <h4>{{ $uneOffre->poste }}</h4>
+                                    <h4>{{ $uneOffre->offres_poste }}</h4>
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="date_offretd{{ $uneOffre["id"] }}">
-                                    <h4>{{ $uneOffre->date_offre->format('d/m/Y') }} </h4>
+                                    <h4>{{ $uneOffre->offres_date_offre->format('d/m/Y') }} </h4>
                                 </td>
 
                                 <td class="col-md-2 text-center"  id="niveautd{{ $uneOffre["id"] }}">
-                                    <h4>{{ $uneOffre->niveau->libelle }} </h4>
+                                    <h4>{{ $uneOffre->niveau->niveaux_libelle }} </h4>
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="experiencetd{{ $uneOffre["id"] }}">
-                                    <h4> {{ $uneOffre['mois_experience'] }} mois</h4>
+                                    <h4> {{ $uneOffre['offres_mois_experience'] }} mois</h4>
                                 </td>
 
                                 <td class="col-md-2 text-center"  id="contrattd{{ $uneOffre["id"] }}">

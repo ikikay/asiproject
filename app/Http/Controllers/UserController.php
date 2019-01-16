@@ -52,8 +52,8 @@ class UserController extends Controller {
 
         $leUser = new User();
 
-        $leUser->nom = $request->get('nom');
-        $leUser->prenom = $request->get('prenom');
+        $leUser->users_nom = $request->get('users_nom');
+        $leUser->users_prenom = $request->get('users_prenom');
         $leUser->email = $request->get('email');
         $leUser->password = bcrypt($request->get('password'));
 

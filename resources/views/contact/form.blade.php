@@ -12,21 +12,21 @@ if ($leContact->id) {
 {!! Form::model($leContact, $lesOptions) !!}
 @endif
 
-{!! Form::label('fonction', 'Fonction') !!}
-{!! Form::text('fonction', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('contacts_fonction', 'Fonction') !!}
+{!! Form::text('contacts_fonction', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('nom', 'Nom') !!}
-{!! Form::text('nom', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('contacts_nom', 'Nom') !!}
+{!! Form::text('contacts_nom', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('prenom', 'Prenom') !!}
-{!! Form::text('prenom', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('contacts_prenom', 'Prenom') !!}
+{!! Form::text('contacts_prenom', null,['class'=> 'form-control'] ) !!}
 
 
-{!! Form::label('contactTelephone', 'Telephone') !!}
-{!! Form::text('contactTelephone', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('contacts_telephone', 'Telephone') !!}
+{!! Form::text('contacts_telephone', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('contactEmail', 'Adresse courriel') !!}
-{!! Form::text('contactEmail', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('contacts_email', 'Adresse courriel') !!}
+{!! Form::text('contacts_email', null,['class'=> 'form-control'] ) !!}
 
 {!! Form::label('societe', 'Societe') !!}
 <div class="row">
@@ -46,7 +46,7 @@ if ($leContact->id) {
 
                         <select name="societe_id" class="form-control select2" style="width: 100%;">
                             @foreach($lesSocietes as $uneSociete)
-                            <option value="{{ $uneSociete->id }}">{{ $uneSociete->libelle }} {{ $uneSociete->ville }}</option>
+                            <option value="{{ $uneSociete->id }}">{{ $uneSociete->societes_libelle }} {{ $uneSociete->societes_ville }}</option>
                             @endforeach
                         </select>
                     </div>

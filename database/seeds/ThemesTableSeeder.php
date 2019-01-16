@@ -16,42 +16,42 @@ class ThemesTableSeeder extends Seeder {
             [
                 'id' => 1,
                 'themes_libelle' => 'Informations personnelles',
-                'questionnaires_id' => 1
+                'questionnaire_id' => 1
             ],
             [
                 'id' => 2,
                 'themes_libelle' => 'Votre employeur',
-                'questionnaires_id' => 1
+                'questionnaire_id' => 1
             ],
             [
                 'id' => 3,
                 'themes_libelle' => 'Votre premier emploi',
-                'questionnaires_id' => 1
+                'questionnaire_id' => 1
             ],
             [
                 'id' => 4,
                 'themes_libelle' => 'Votre emploi actuel',
-                'questionnaires_id' => 1
+                'questionnaire_id' => 1
             ],
             [
                 'id' => 5,
                 'themes_libelle' => 'La formation ASI',
-                'questionnaires_id' => 1
+                'questionnaire_id' => 1
             ],
             [
                 'id' => 6,
                 'themes_libelle' => 'Vos compétences',
-                'questionnaires_id' => 1
+                'questionnaire_id' => 1
             ],
             [
                 'id' => 7,
                 'themes_libelle' => 'Votre ressentis',
-                'questionnaires_id' => 1
+                'questionnaire_id' => 1
             ],
             [
                 'id' => 8,
                 'themes_libelle' => 'Votre avis',
-                'questionnaires_id' => 1
+                'questionnaire_id' => 1
             ]
         ]);
     }

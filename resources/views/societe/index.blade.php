@@ -44,27 +44,27 @@
                             <tr>
 
                                 <td class="col-md-5 text-center"  id="maintd{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['libelle'] }} </h4>
+                                    <h4>{{ $uneSociete['societes_libelle'] }} </h4>
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="ruetd{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['rue'] }} </h4>
+                                    <h4>{{ $uneSociete['societes_rue'] }} </h4>
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="code_postaltd{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['code_postal'] }} </h4>
+                                    <h4>{{ $uneSociete['societes_code_postal'] }} </h4>
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="villetd{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['ville'] }} </h4>
+                                    <h4>{{ $uneSociete['societes_ville'] }} </h4>
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="telephoneld{{ $uneSociete["id"] }}">
-                                    <h4>{{ $uneSociete['societeTelephone'] }} </h4>
+                                    <h4>{{ $uneSociete['societes_telephone'] }} </h4>
                                 </td>
 
                                 <td class="col-md-2 text-center"  id="emailtd{{ $uneSociete["id"] }}">
-                                    <h4> {{ $uneSociete['societeEmail'] }}</h4>
+                                    <h4> {{ $uneSociete['societes_email'] }}</h4>
                                 </td>
 
                                 <td class="col-md-1 text-center">

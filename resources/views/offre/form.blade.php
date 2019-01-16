@@ -18,28 +18,28 @@ $date_offre = "dd/mm/yyyy";
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        <input type="text" class="form-control pull-right datepicker" id="input_datepicker_offre" name="date_offre" value="{{$date_offre}}">
+        <input type="text" class="form-control pull-right datepicker" id="input_datepicker_offre" name="offres_date_offre" value="{{$offres_date_offre}}">
     </div>
 </div>
 
-{!! Form::label('poste', 'Poste') !!}
-{!! Form::text('poste', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('offres_poste', 'Poste') !!}
+{!! Form::text('offres_poste', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('description', 'Description') !!}
-{!! Form::textarea('description', null,['class'=> 'form-control', 'rows' => 3] ) !!}
+{!! Form::label('offres_description', 'Description') !!}
+{!! Form::textarea('offres_description', null,['class'=> 'form-control', 'rows' => 3] ) !!}
 
 <div class="form-group">
     <label for="niveau_id" class="form-label">Niveau requis</label>
 
     <select name="niveau_id" class="form-control select2" style="width: 100%;">
         @foreach($lesNiveaux as $unNiveau)
-        <option value="{{ $unNiveau->id }}">{{ $unNiveau->libelle }}</option>
+        <option value="{{ $unNiveau->id }}">{{ $unNiveau->niveaux_libelle }}</option>
         @endforeach
     </select>
 </div>
 
-{!! Form::label('mois_experience', 'Nombres d\'experiences exprimé en mois :') !!}
-{!! Form::text('mois_experience', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('offres_mois_experience', 'Nombres d\'experiences exprimé en mois :') !!}
+{!! Form::text('offres_mois_experience', null,['class'=> 'form-control'] ) !!}
 
 {!! Form::label('contact', 'Contact') !!}
 <div class="row">
@@ -59,7 +59,7 @@ $date_offre = "dd/mm/yyyy";
 
                         <select name="contact_id" class="form-control select2" style="width: 100%;">
                             @foreach($lesContacts as $unContact)
-                            <option value="{{ $unContact->id }}">{{ $unContact->nom }} {{ $unContact->prenom }}, {{ $unContact->societe->libelle }}</option>
+                            <option value="{{ $unContact->id }}">{{ $unContact->contacts_nom }} {{ $unContact->contacts_prenom }}, {{ $unContact->societe->societes_libelle }}</option>
                             @endforeach
                         </select>
                     </div>

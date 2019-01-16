@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ContratsTableSeeder::class);
         $this->call(NiveauxTableSeeder::class);
         $this->call(QuestionnaireTableSeeder::class);
+        $this->call(ThemesTableSeeder::class);
         $this->call(QuestionsTableSeeder::class);
     }
 }

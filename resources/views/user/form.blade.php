@@ -15,11 +15,11 @@ if (Auth::user()) {
 
 {!! Form::model($leUser, $lesOptions) !!}
 
-{!! Form::label('nom', 'Nom') !!}
-{!! Form::text('nom', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('users_nom', 'Nom') !!}
+{!! Form::text('users_nom', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('prenom', 'Prenom') !!}
-{!! Form::text('prenom', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('users_prenom', 'Prenom') !!}
+{!! Form::text('users_prenom', null,['class'=> 'form-control'] ) !!}
 
 {!! Form::label('email', 'Adresse courriel ') !!}
 {!! Form::text('email', null,['class'=> 'form-control'] ) !!}

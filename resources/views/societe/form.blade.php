@@ -12,23 +12,23 @@ if ($laSociete->id) {
 {!! Form::model($laSociete, $lesOptions) !!}
 @endif
 
-{!! Form::label('libelle', 'Libelle') !!}
-{!! Form::text('libelle', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('societes_libelle', 'Libelle') !!}
+{!! Form::text('societes_libelle', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('rue', 'Rue') !!}
-{!! Form::text('rue', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('societes_rue', 'Rue') !!}
+{!! Form::text('societes_rue', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('code_postal', 'Code Postal') !!}
-{!! Form::text('code_postal', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('societes_code_postal', 'Code Postal') !!}
+{!! Form::text('societes_code_postal', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('ville', 'Ville') !!}
-{!! Form::text('ville', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('societes_ville', 'Ville') !!}
+{!! Form::text('societes_ville', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('societeTelephone', 'Telephone') !!}
-{!! Form::text('societeTelephone', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('societes_telephone', 'Telephone') !!}
+{!! Form::text('societes_telephone', null,['class'=> 'form-control'] ) !!}
 
-{!! Form::label('societeEmail', 'Adresse courriel') !!}
-{!! Form::text('societeEmail', null,['class'=> 'form-control'] ) !!}
+{!! Form::label('societes_email', 'Adresse courriel') !!}
+{!! Form::text('societes_email', null,['class'=> 'form-control'] ) !!}
 
 </br>
 
