@@ -32,7 +32,7 @@
 
                                 <th class="text-center">Libelle</th>
                                 <th class="text-center">Nombre de questions</th>
-                                <th class="text-center">Action</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -45,21 +45,6 @@
 
                                 <td class="col-md-3 text-center"  id="nbrtd{{ $unQuestionnaire["id"] }}">
                                     <h4> TODO </h4>
-                                </td>
-
-                                <td class="col-md-1 text-center">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            {!! Form::open(['route' => ["questionnaire.edit", $unQuestionnaire->id], 'method' => 'get']) !!}
-                                            <button type="submit" class="btn btn-circle"><i class="fa fa-list"></i></button>
-                                            {!! Form::close() !!}
-                                        </div>
-                                        <div class="col-md-6">
-                                            {!! Form::open(['route' => ["questionnaire.destroy", $unQuestionnaire->id], 'method' => 'delete', 'id' => "form".$uneOffre->id]) !!}
-                                            <button type="submit" id="{{ $unQuestionnaire->id }}" class="jsDeleteButton btn btn-danger btn-circle "><i class="fa fa-times"></i></button>
-                                            {!! Form::close() !!}
-                                        </div>
-                                    </div>
                                 </td>
                             </tr>
                             @endforeach
