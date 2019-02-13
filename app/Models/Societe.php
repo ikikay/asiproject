@@ -15,7 +15,7 @@ class Societe extends Model {
         'societes_code_postal' => 'nullable|min:5|max:5|regex:/^[0-9]*$/',
         'societes_ville' => 'nullable|min:0|max:45',
         'societes_telephone' => 'nullable|min:10|max:10|regex:/^[0-9]*$/',
-        'societes_email' => 'required|min:8|max:75|email|unique:societes,societeEmail',
+        'societes_email' => 'required|min:8|max:75|email|unique:societes',
     ];
     public static $rulesOnUpdate = [
         'societes_libelle' => 'required|min:0|max:75',

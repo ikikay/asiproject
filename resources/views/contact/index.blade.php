@@ -44,27 +44,27 @@
                             <tr>
 
                                 <td class="col-md-1 text-center"  id="fonctiontd{{ $unContact["id"] }}">
-                                    <h4>{{ $unContact['contact_fonction'] }} </h4>
+                                    <h4>{{ $unContact['contacts_fonction'] }} </h4>
                                 </td>
 
                                 <td class="col-md-4 text-center"  id="maintd{{ $unContact["id"] }}">
-                                    <h4>{{ $unContact['contact_nom'] }} </h4>
+                                    <h4>{{ $unContact['contacts_nom'] }} </h4>
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="prenomtd{{ $unContact["id"] }}">
-                                    <h4>{{ $unContact['contact_prenom'] }} </h4>
+                                    <h4>{{ $unContact['contacts_prenom'] }} </h4>
                                 </td>
 
                                 <td class="col-md-1 text-center"  id="telephonetd{{ $unContact["id"] }}">
-                                    <h4>{{ $unContact['contact_telephone'] }} </h4>
+                                    <h4>{{ $unContact['contacts_telephone'] }} </h4>
                                 </td>
 
                                 <td class="col-md-2 text-center"  id="emaild{{ $unContact["id"] }}">
-                                    <h4>{{ $unContact['contact_email'] }} </h4>
+                                    <h4>{{ $unContact['contacts_email'] }} </h4>
                                 </td>
 
                                 <td class="col-md-2 text-center"  id="societetd{{ $unContact["id"] }}">
-                                    <h4> {{ $unContact->societe->contact_libelle }}</h4>
+                                    <h4> {{ $unContact->societe->societes_libelle }}</h4>
                                 </td>
 
                                 <td class="col-md-1 text-center">

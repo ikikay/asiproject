@@ -18,7 +18,7 @@ $date_offre = "dd/mm/yyyy";
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        <input type="text" class="form-control pull-right datepicker" id="input_datepicker_offre" name="offres_date_offre" value="{{$offres_date_offre}}">
+        <input type="text" class="form-control pull-right datepicker" id="input_datepicker_offre" name="offres_date_offre" value="">
     </div>
 </div>
 

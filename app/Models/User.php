@@ -71,6 +71,13 @@ class User extends Authenticatable {
         'users_prenom',
         'email',
         'password',
+        'users_date_de_naissance',
+        'users_code_postal',
+        'users_telephone',
+        'users_status',
+        'users_ville',
+        'users_rue',
+        
     ];
 
     /**
