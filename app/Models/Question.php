@@ -32,11 +32,11 @@ class Question extends Model {
     }
 
     public function reponsesPredefinie() {
-        return $this->belongsToMany('App\Models\ReponsePredefinie');
+        return $this->hasMany('App\Models\ReponsePredefinie');
     }
 
     public function reponses() {
-        return $this->belongsToMany('App\Models\Reponse');
+        return $this->hasMany('App\Models\Reponse');
     }
 
 }

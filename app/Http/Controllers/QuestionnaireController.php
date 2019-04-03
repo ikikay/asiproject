@@ -13,7 +13,7 @@ class QuestionnaireController extends Controller {
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth');
+	$this->middleware('auth');
     }
 
     /**
@@ -22,10 +22,10 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $lesQuestionnaires = Questionnaire::with('themes')->get();
+	$lesQuestionnaires = Questionnaire::with('themes')->get();
 
-        return view('questionnaire.index')
-                        ->with('tab_questionnaires', $lesQuestionnaires);
+	return view('questionnaire.index')
+			->with('tab_questionnaires', $lesQuestionnaires);
     }
 
     /**
@@ -34,7 +34,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
+	//
     }
 
     /**
@@ -44,7 +44,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+	//
     }
 
     /**
@@ -54,7 +54,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+	//
     }
 
     /**
@@ -64,7 +64,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        //
+	//
     }
 
     /**
@@ -75,7 +75,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        //
+	//
     }
 
     /**
@@ -85,12 +85,23 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, $id) {
-        $leQuestionnaire = Questionnaire::find($id);
+	$leQuestionnaire = Questionnaire::find($id);
 
-        $leQuestionnaire->delete();
+	$leQuestionnaire->delete();
 
-        $request->session()->flash('success', 'Le questionnaire à été Supprimé !');
-        return redirect()->route("questionnaire.index");
+	$request->session()->flash('success', 'Le questionnaire à été Supprimé !');
+	return redirect()->route("questionnaire.index");
+    }
+
+    public function response() {
+	$leQuestionnaire = Questionnaire::with('themes', 'themes.questions', 'themes.questions.reponsesPredefinie')->find(1);		//Attention c'est moche, id en dur ...
+
+	return view('questionnaire.response.create')
+			->with("leQuestionnaire", $leQuestionnaire);
+    }
+
+    public function ValideResponse() {
+	
     }
 
 }

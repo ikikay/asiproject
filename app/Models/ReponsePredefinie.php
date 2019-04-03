@@ -9,6 +9,7 @@ class ReponsePredefinie extends Model {
     /**
      * - - - - - static - - - - -  
      */
+    protected $table = 'reponses_predefinies';
     public static $rules = [
     ];
 
