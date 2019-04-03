@@ -27,8 +27,8 @@ class Question extends Model {
     /**
      * - - - - - Relations - - - - -  
      */
-    public function questionnaire() {
-        return $this->belongsTo('App\Models\Questionnaire');
+    public function themes() {
+        return $this->belongsTo('App\Models\Theme');
     }
 
     public function reponsesPredefinie() {

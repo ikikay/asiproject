@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         route('dashboard');
     });
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
 //    // Example
 //    Route::resource('model', 'Controller')->except([
@@ -35,16 +36,11 @@ Route::middleware('auth')->group(function () {
 
     // Questionnaire
     Route::resource('questionnaire', 'QuestionnaireController')->except([
-        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
+        'store', 'show', 'update'
     ]);
 
     // Themes
-    Route::resource('themes', 'ThemeController')->except([
-        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
-    ]);
-
-    // Questions
-    Route::resource('questions', 'QuestionController')->except([
+    Route::resource('theme', 'ThemeController')->except([
         'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
     ]);
 

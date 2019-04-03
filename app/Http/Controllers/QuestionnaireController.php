@@ -22,7 +22,7 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $lesQuestionnaires = Questionnaire::all();
+        $lesQuestionnaires = Questionnaire::with('themes')->get();
 
         return view('questionnaire.index')
                         ->with('tab_questionnaires', $lesQuestionnaires);
@@ -84,8 +84,13 @@ class QuestionnaireController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
-        //
+    public function destroy(Request $request, $id) {
+        $leQuestionnaire = Questionnaire::find($id);
+
+        $leQuestionnaire->delete();
+
+        $request->session()->flash('success', 'Le questionnaire à été Supprimé !');
+        return redirect()->route("questionnaire.index");
     }
 
 }
