@@ -28,7 +28,7 @@ class Theme extends Model {
      * - - - - - Relations - - - - -  
      */
     public function questions() {
-        return $this->hasMany('App\Models\Questions');
+        return $this->hasMany('App\Models\Question');
     }
 
     public function questionnaire() {
