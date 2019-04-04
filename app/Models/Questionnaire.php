@@ -31,8 +31,4 @@ class Questionnaire extends Model {
         return $this->hasMany('App\Models\Theme');
     }
 
-    public function questions() {
-        return $this->hasMany('App\Models\Question');
-    }
-
 }

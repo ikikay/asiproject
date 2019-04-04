@@ -103,7 +103,7 @@
                                             <a href="#" class="btn btn-default btn-flat">Profil</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="#" class="btn btn-default btn-flat">Se déconnecter</a>
+                                            <a href="{{ route("logout") }}" class="btn btn-default btn-flat">Se déconnecter</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -139,7 +139,7 @@
                             <a href="{{ route("societe.index") }}"><i classe="fa fa-building"></i><span>Societes</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("questionnaire.indexVu") }}"><i classe="fa fa-building"></i><span>Questionnaire</span></a>
+                            <a href="{{ route("questionnaire.index") }}"><i classe="fa fa-building"></i><span>Questionnaires</span></a>
                         </li>
 
                         <li class="header">Partie Admin</li>

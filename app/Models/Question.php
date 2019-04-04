@@ -27,16 +27,16 @@ class Question extends Model {
     /**
      * - - - - - Relations - - - - -  
      */
-    public function theme() {
+    public function themes() {
         return $this->belongsTo('App\Models\Theme');
     }
 
     public function reponsesPredefinie() {
-        return $this->belongsToMany('App\Models\ReponsePredefinie');
+        return $this->hasMany('App\Models\ReponsePredefinie');
     }
 
     public function reponses() {
-        return $this->belongsToMany('App\Models\Reponse');
+        return $this->hasMany('App\Models\Reponse');
     }
 
 }

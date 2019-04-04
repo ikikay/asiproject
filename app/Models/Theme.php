@@ -27,12 +27,12 @@ class Theme extends Model {
     /**
      * - - - - - Relations - - - - -  
      */
-    public function questionnaires() {
-        return $this->belongsToMany('App\Models\Questionnaire');
+    public function questions() {
+        return $this->hasMany('App\Models\Question');
     }
 
-    public function question() {
-        return $this->hasMany('App\Models\Question');
+    public function questionnaire() {
+        return $this->belongsTo('App\Models\Questionnaire');
     }
 
 }
