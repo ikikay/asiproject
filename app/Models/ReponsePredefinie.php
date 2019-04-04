@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReponsePredefinie extends Model {
 
+    protected $table = 'reponses_predefinies';
     /**
      * - - - - - static - - - - -  
      */

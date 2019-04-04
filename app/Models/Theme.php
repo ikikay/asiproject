@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Categorie extends Model {
+class Theme extends Model {
 
     /**
      * - - - - - static - - - - -  
@@ -29,6 +29,10 @@ class Categorie extends Model {
      */
     public function questionnaires() {
         return $this->belongsToMany('App\Models\Questionnaire');
+    }
+
+    public function question() {
+        return $this->hasMany('App\Models\Question');
     }
 
 }

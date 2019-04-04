@@ -27,8 +27,8 @@ class Questionnaire extends Model {
     /**
      * - - - - - Relations - - - - -  
      */
-    public function categories() {
-        return $this->hasMany('App\Models\Categorie');
+    public function themes() {
+        return $this->hasMany('App\Models\Theme');
     }
 
     public function questions() {

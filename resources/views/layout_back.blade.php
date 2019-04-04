@@ -138,6 +138,9 @@
                         <li>
                             <a href="{{ route("societe.index") }}"><i classe="fa fa-building"></i><span>Societes</span></a>
                         </li>
+                        <li>
+                            <a href="{{ route("questionnaire.indexVu") }}"><i classe="fa fa-building"></i><span>Questionnaire</span></a>
+                        </li>
 
                         <li class="header">Partie Admin</li>
 

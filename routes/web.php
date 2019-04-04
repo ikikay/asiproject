@@ -35,8 +35,9 @@ Route::middleware('auth')->group(function () {
 
     // Questionnaire
     Route::resource('questionnaire', 'QuestionnaireController')->except([
-        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
+        'store', 'show', 'update'
     ]);
+    Route::get('/questionnaire/indexVu', 'QuestionnaireController@indexVu')->name('questionnaire.indexVu');
 
     // Themes
     Route::resource('themes', 'ThemeController')->except([
@@ -63,5 +64,7 @@ Route::middleware('auth')->group(function () {
         'show'
     ]);
 });
+
+
 
 Auth::routes();

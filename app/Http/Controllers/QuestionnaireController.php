@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Questionnaire;
+use App\Models\Question;
+use App\Models\ReponsePredefinie;
 
 class QuestionnaireController extends Controller {
 
@@ -12,9 +14,9 @@ class QuestionnaireController extends Controller {
      *
      * @return void
      */
-    public function __construct() {
+    /*public function __construct() {
         $this->middleware('auth');
-    }
+    }*/
 
     /**
      * Display a listing of the resource.
@@ -23,9 +25,20 @@ class QuestionnaireController extends Controller {
      */
     public function index() {
         $lesQuestionnaires = Questionnaire::all();
-
         return view('questionnaire.index')
                         ->with('tab_questionnaires', $lesQuestionnaires);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexVu(Request $request) {
+        $lesQuestionnaires = Questionnaire::with("themes")->get();
+        /*$lesReponsesPredefinies = ReponsePredefinie::all();*/
+        /*return response()->json($lesQuestionnaires); */
+        /*return view('questionnaire.indexVu')->with('questionnaires', $lesQuestionnaires);*/
     }
 
     /**
