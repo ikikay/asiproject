@@ -11,7 +11,7 @@ class ReponsesPredefiniesTableSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        DB::table('||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||--')->insert([
+        DB::table('reponses_predefinies')->insert([
             [
                 'id' => 1,
                 'question_id' => 9,
@@ -538,21 +538,21 @@ class ReponsesPredefiniesTableSeeder extends Seeder {
                 'reponses_predefinies_is_radio	' => true,
                 'reponses_predefinies_is_checkbox' => false,
             ],[
-                'id' => 75,
+                'id' => 76,
                 'question_id' => 53,
                 'reponses_predefinies_ordre' => 2,
                 'reponses_predefinies_libelle' => "Non",
                 'reponses_predefinies_is_radio	' => true,
                 'reponses_predefinies_is_checkbox' => false,
             ],[
-                'id' => 76,
+                'id' => 77,
                 'question_id' => 56,
                 'reponses_predefinies_ordre' => 1,
                 'reponses_predefinies_libelle' => "Oui",
                 'reponses_predefinies_is_radio	' => true,
                 'reponses_predefinies_is_checkbox' => false,
             ],[
-                'id' => 77,
+                'id' => 78,
                 'question_id' => 56,
                 'reponses_predefinies_ordre' => 2,
                 'reponses_predefinies_libelle' => "Non",

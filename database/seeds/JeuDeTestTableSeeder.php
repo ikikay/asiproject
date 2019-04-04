@@ -65,7 +65,7 @@ class JeuDeTestTableSeeder extends Seeder {
                 'id' => 9,
                 'user_id' => 1,
                 'question_id' => 9,
-                'reponse' => 'Informatique'
+                'reponse' => 'Informatique/Télécoms'
             ],
             [
                 'id' => 10,
@@ -385,101 +385,97 @@ class JeuDeTestTableSeeder extends Seeder {
             [
                 'id' => 1,
                 'reponse_id' => 9,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 15,
             ],
             [
                 'id' => 2,
                 'reponse_id' => 13,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 24,
             ],
             [
                 'id' => 3,
                 'reponse_id' => 14,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 28,
             ],
             [
                 'id' => 4,
                 'reponse_id' => 16,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 33,
             ],
             [
                 'id' => 5,
                 'reponse_id' => 18,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 39,
             ],
             [
                 'id' => 6,
                 'reponse_id' => 19,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 41,
             ],
             [
                 'id' => 7,
                 'reponse_id' => 22,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 43,
             ],
             [
                 'id' => 8,
                 'reponse_id' => 29,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 45,
             ],
             [
                 'id' => 9,
                 'reponse_id' => 30,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 46,
             ],
             [
                 'id' => 10,
                 'reponse_id' => 33,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 49,
             ],
             [
                 'id' => 11,
                 'reponse_id' => 34,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 53,
             ],
             [
                 'id' => 12,
                 'reponse_id' => 36,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 58,
             ],
             [
                 'id' => 13,
                 'reponse_id' => 38,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 64,
             ],
             [
                 'id' => 14,
                 'reponse_id' => 39,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 66,
             ],
             [
                 'id' => 15,
                 'reponse_id' => 42,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 68,
             ],
             [
                 'id' => 16,
                 'reponse_id' => 49,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 70,
             ],
             [
                 'id' => 17,
                 'reponse_id' => 50,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 71,
             ],
+            --
             [
                 'id' => 18,
                 'reponse_id' => 53,
-                'reponse_predefinie_id' => ,
-            ],
-            [
-                'id' => 19,
-                'reponse_id' => 54,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 75,
             ],
             [
                 'id' => 20,
-                'reponse_id' => 57,
+                'reponse_id' => 56,
                 'reponse_predefinie_id' => ,
             ],
             [
