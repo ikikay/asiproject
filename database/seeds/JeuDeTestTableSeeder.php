@@ -467,7 +467,6 @@ class JeuDeTestTableSeeder extends Seeder {
                 'reponse_id' => 50,
                 'reponse_predefinie_id' => 71,
             ],
-            --
             [
                 'id' => 18,
                 'reponse_id' => 53,
@@ -475,18 +474,18 @@ class JeuDeTestTableSeeder extends Seeder {
             ],
             [
                 'id' => 20,
-                'reponse_id' => 56,
-                'reponse_predefinie_id' => ,
+                'reponse_id' => 57,
+                'reponse_predefinie_id' => 78,
             ],
             [
                 'id' => 21,
                 'reponse_id' => 59,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 80,
             ],
             [
                 'id' => 22,
                 'reponse_id' => 60,
-                'reponse_predefinie_id' => ,
+                'reponse_predefinie_id' => 82,
             ]
         ]);
     }
