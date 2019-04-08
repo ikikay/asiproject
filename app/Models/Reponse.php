@@ -28,7 +28,7 @@ class Reponse extends Model {
      * - - - - - Relations - - - - -  
      */
     public function user() {
-        return $this->hasOne('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function reponsesPredefinie() {
@@ -36,7 +36,7 @@ class Reponse extends Model {
     }
 
     public function question() {
-        return $this->hasOne('App\Models\Question');
+        return $this->belongsTo('App\Models\Question');
     }
 
 }

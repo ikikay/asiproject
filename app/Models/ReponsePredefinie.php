@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReponsePredefinie extends Model {
 
-    protected $table = 'reponses_predefinies';
     /**
      * - - - - - static - - - - -  
      */
@@ -30,11 +29,11 @@ class ReponsePredefinie extends Model {
      * - - - - - Relations - - - - -  
      */
     public function question() {
-        return $this->hasOne('App\Models\Question');
+        return $this->belongsTo('App\Models\Question');
     }
 
     public function reponses() {
-        return $this->belongsToMany('App\Models\Reponse');
+        return $this->hasMany('App\Models\Reponse');
     }
 
 }
