@@ -36,10 +36,10 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function indexVu(Request $request) {
-        $lesQuestionnaires = Questionnaire::with("themes")->get();
-        /*$lesReponsesPredefinies = ReponsePredefinie::all();*/
-        /*return response()->json($lesQuestionnaires); */
-        /*return view('questionnaire.indexVu')->with('questionnaires', $lesQuestionnaires);*/
+	$lesQuestionnaires = Questionnaire::with("themes")->get();
+	/* $lesReponsesPredefinies = ReponsePredefinie::all(); */
+	/* return response()->json($lesQuestionnaires); */
+	/* return view('questionnaire.indexVu')->with('questionnaires', $lesQuestionnaires); */
     }
 
     /**
@@ -108,13 +108,15 @@ class QuestionnaireController extends Controller {
     }
 
     public function response() {
-	$leQuestionnaire = Questionnaire::with('themes', 'themes.questions', 'themes.questions.reponsesPredefinie')->find(1);		//Attention c'est moche, id en dur ...
+	$leQuestionnaire = Questionnaire::with('themes', 'themes.questions')->with('themes.questions.reponsesPredefinie')->find(1);  //Attention c'est moche, id en dur ...
+	$lesReponsesPredefinies = ReponsePredefinie::orderBy('question_id', 'ASC')->orderBy('reponses_predefinies_ordre', 'ASC')->get();
 
 	return view('questionnaire.response.create')
-			->with("leQuestionnaire", $leQuestionnaire);
+			->with("leQuestionnaire", $leQuestionnaire)
+			->with("lesReponsesPredefinies", $lesReponsesPredefinies);
     }
 
-    public function ValideResponse() {
+    public function valideResponse(Request $request) {
 	
     }
 

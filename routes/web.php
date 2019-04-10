@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
         'store', 'show', 'update'
     ]);
     Route::get('response', 'QuestionnaireController@response')->name('response');
-    Route::get('ValideResponse', 'QuestionnaireController@ValideResponse')->name('ValideResponse');
+    Route::get('valideResponse', 'QuestionnaireController@valideResponse')->name('valideResponse');
 
     // Themes
     Route::resource('theme', 'ThemeController')->except([
