@@ -141,7 +141,7 @@
                         <li>
                             <a href="{{ route("questionnaire.index") }}"><i classe="fa fa-building"></i><span>Questionnaires</span></a>
                         </li>
-
+                        @if (Auth::user()->users_status == "admin")
                         <li class="header">Partie Admin</li>
 
                         <li class="treeview">
@@ -155,6 +155,7 @@
                                 <li><a href="{{ route("user.index") }}"><i classe="fa fa-user"></i>Administrer</a></li>
                             </ul>	
                         </li>
+                        @endif
 
                     </ul>
                     <!-- /.sidebar-menu -->

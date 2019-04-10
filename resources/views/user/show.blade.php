@@ -9,16 +9,16 @@
         </div>
         <div class="row">
             @if ($aRep)
-            <div class="alert alert-success">
+            <div class="alert alert-success text-center">
                 Le questionnaire a bien été fait !
             </div>
             @else
-            <div class="alert alert-danger">
-                vous n'avez pas fait le questionnaire !
+            <div class="alert alert-danger text-center">
+                Vous n'avez pas fait le questionnaire !
             </div>
             @endif
 
-            <h1 class="text-center">Mon profile</h1>
+            
         </div>
     </div>    
 </div>

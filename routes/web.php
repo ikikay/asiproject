@@ -29,10 +29,15 @@ Route::middleware('auth')->group(function () {
 //    Route::resource('model', 'Controller')->except([
 //        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
 //    ]);
+// Routes pour le Back-office
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     // User
     Route::resource('user', 'UserController')->except([
         'show'
     ]);
+    });   
+
+   
 
     // Questionnaire
     Route::resource('questionnaire', 'QuestionnaireController')->except([
