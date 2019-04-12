@@ -2,14 +2,14 @@
 
 @section('title')
 <h1>
-    Enregistrement d'une société
-    <small>- Enregistrement d'une société</small>
+    Répondre au questionnaire
+    <small>- </small>
 </h1>
 @stop
 
 @section('content')
 
-@include('societe.form')
+@include('admin.questionnaire.response.form')
 
 @stop
 

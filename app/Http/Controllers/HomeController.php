@@ -33,7 +33,7 @@ class HomeController extends Controller {
         } else {
             $bool = true;
         }
-        return view('user.show')->with('aRep',$bool);
+        return view('admin.user.show')->with('aRep',$bool);
     }
 
 }

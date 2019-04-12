@@ -1,6 +1,6 @@
 @extends('layout_back')
 
-@include('offre.css')
+@include('admin.offre.css')
 
 @section('title')
 <h1>
@@ -11,8 +11,8 @@
 
 @section('content')
 
-@include('offre.form')
+@include('admin.offre.form')
 
 @stop
 
-@include('offre.script')
+@include('admin.offre.script')

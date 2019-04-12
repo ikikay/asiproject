@@ -29,7 +29,7 @@ class OffreController extends Controller {
     public function index() {
         $lesOffres = Offre::all();
 
-        return view('offre.index')
+        return view('admin.offre.index')
                         ->with('tab_offres', $lesOffres);
     }
 
@@ -45,7 +45,7 @@ class OffreController extends Controller {
         $lesContacts = Contact::all();
         $lesSocietes = Societe::all();
 
-        return view('offre.create')
+        return view('admin.offre.create')
                         ->with('lOffre', $lOffre)
                         ->with('lesNiveaux', $lesNiveaux)
                         ->with('lesContacts', $lesContacts)
@@ -107,7 +107,7 @@ class OffreController extends Controller {
         $lesContacts = Contact::all();
         $lesSocietes = Societe::all();
 
-        return view('offre.edit')
+        return view('admin.offre.edit')
                         ->with('lOffre', $lOffre)
                         ->with('lesNiveaux', $lesNiveaux)
                         ->with('lesContacts', $lesContacts)

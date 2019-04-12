@@ -128,7 +128,10 @@
 
                         <li class="header">Menu principal</li>
                         <!-- Optionally, you can add icons to the links -->
-
+			
+			
+			@if (Auth::user()->users_status == "admin")
+                        <li class="header">Partie Admin</li>
                         <li>
                             <a href="{{ route("offre.index") }}"><i classe="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
                         </li>
@@ -141,9 +144,6 @@
                         <li>
                             <a href="{{ route("questionnaire.index") }}"><i classe="fa fa-building"></i><span>Questionnaires</span></a>
                         </li>
-                        @if (Auth::user()->users_status == "admin")
-                        <li class="header">Partie Admin</li>
-
                         <li class="treeview">
                             <a href="#"><i class="fa fa-users"></i><span>Utilisateurs</span>
                                 <span class="pull-right-container">

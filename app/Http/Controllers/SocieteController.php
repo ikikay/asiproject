@@ -24,7 +24,7 @@ class SocieteController extends Controller {
     public function index() {
         $lesSocietes = Societe::all();
 
-        return view('societe.index')
+        return view('admin.societe.index')
                         ->with('tab_societes', $lesSocietes);
     }
 
@@ -36,7 +36,7 @@ class SocieteController extends Controller {
     public function create() {
         $laSociete = new Societe();
 
-        return view('societe.create')
+        return view('admin.societe.create')
                         ->with("laSociete", $laSociete);
     }
 
@@ -87,7 +87,7 @@ class SocieteController extends Controller {
     public function edit($id) {
         $laSociete = Societe::find($id);
 
-        return view('societe.edit')
+        return view('admin.societe.edit')
                         ->with("laSociete", $laSociete);
     }
 
