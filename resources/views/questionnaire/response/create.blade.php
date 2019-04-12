@@ -3,7 +3,7 @@
 @section('title')
 <h1>
     Répondre au questionnaire
-    <small>- {!! $leQuestionnaire->questionnaires_libelle !!}</small>
+    <small>- </small>
 </h1>
 @stop
 

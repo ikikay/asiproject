@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Reponse;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller {
@@ -25,7 +25,15 @@ class HomeController extends Controller {
     }
 
     public function toDashboard() {
-        return view('user.show');
+        $id = Auth::id();
+        $reponse = Reponse::where('user_id', $id)->get();
+        //dd($reponse);
+        if ($reponse->isEmpty()) {
+            $bool = false;
+        } else {
+            $bool = true;
+        }
+        return view('user.show')->with('aRep',$bool);
     }
 
 }

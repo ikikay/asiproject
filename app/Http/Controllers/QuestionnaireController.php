@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Questionnaire;
 use App\Models\Question;
+use \App\Models\Reponse;
 use App\Models\ReponsePredefinie;
 
 class QuestionnaireController extends Controller {
@@ -36,10 +38,10 @@ class QuestionnaireController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function indexVu(Request $request) {
-        $lesQuestionnaires = Questionnaire::with("themes")->get();
-        /*$lesReponsesPredefinies = ReponsePredefinie::all();*/
-        /*return response()->json($lesQuestionnaires); */
-        /*return view('questionnaire.indexVu')->with('questionnaires', $lesQuestionnaires);*/
+	$lesQuestionnaires = Questionnaire::with("themes")->get();
+	/* $lesReponsesPredefinies = ReponsePredefinie::all(); */
+	/* return response()->json($lesQuestionnaires); */
+	/* return view('questionnaire.indexVu')->with('questionnaires', $lesQuestionnaires); */
     }
 
     /**
@@ -107,15 +109,49 @@ class QuestionnaireController extends Controller {
 	return redirect()->route("questionnaire.index");
     }
 
-    public function response() {
-	$leQuestionnaire = Questionnaire::with('themes', 'themes.questions', 'themes.questions.reponsesPredefinie')->find(1);		//Attention c'est moche, id en dur ...
+    public function response($id) {
+	$leQuestionnaire = Questionnaire::with('themes', 'themes.questions')
+			->with('themes.questions.reponsesPredefinie')->find($id);
 
-	return view('questionnaire.response.create')
-			->with("leQuestionnaire", $leQuestionnaire);
+	if (empty($leQuestionnaire)) {
+	    abort(404);  //Erreur 404
+	} else {
+	    return view('questionnaire.response.create')
+			    ->with("leQuestionnaire", $leQuestionnaire);
+	}
     }
 
-    public function ValideResponse() {
-	
+    public function valideResponse(Request $request) {
+	$idUser = Auth::id();
+	$i = 1;
+	$reponseMultiple = "";
+	foreach ($request->all() as $key => $reponse) {
+	    if ($i > 1) {
+		$idQuestion = explode("_", $key);
+
+		$uneReponse = new Reponse();
+		$uneReponse->user_id = $idUser;
+		$uneReponse->question_id = $idQuestion[1];
+
+
+		if (isset($idQuestion[2])) {
+		    $reponseMultiple = $reponseMultiple . $reponse;
+		    if (false) {
+			//save
+			$reponseMultiple = "";
+		    } else {
+			$reponseMultiple = $reponseMultiple . ", ";
+		    }
+		    if ($i == 12) {
+			dd($reponseMultiple);
+		    }
+		} else {
+		    $uneReponse->reponse = $reponse;
+		}
+	    }
+	    $i++;
+	    //dd($request->all());
+	}
     }
 
 }
