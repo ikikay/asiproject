@@ -18,9 +18,7 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/', 'HomeController@toDashboard')->name('dashboard');
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('dashboard', 'HomeController@toDashboard');
-
-    Route::get('dashboard', function () {
+    Route::get('/dashboard', function () {
         route('dashboard');
     });
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
@@ -38,8 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('questionnaire', 'QuestionnaireController')->except([
         'store', 'show', 'update'
     ]);
-    Route::get('response', 'QuestionnaireController@response')->name('response');
-    Route::get('valideResponse', 'QuestionnaireController@valideResponse')->name('valideResponse');
+    Route::get('response/{id}', 'QuestionnaireController@response')->where('id', '[0-9]+')->name('response');
+    Route::post('valideResponse', 'QuestionnaireController@valideResponse')->name('valideResponse');
 
     // Themes
     Route::resource('theme', 'ThemeController')->except([
