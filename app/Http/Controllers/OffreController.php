@@ -80,8 +80,8 @@ class OffreController extends Controller {
         }
 
         $lOffre->save();
-dd($lOffre);
-        $request->session()->flash('success', 'L\'offre Ã  Ã©tÃ© AjoutÃ© !');
+	
+        $request->session()->flash('success', 'L\'offre à été Ajouté !');
         return redirect()->route("offre.index");
     }
 
@@ -133,7 +133,7 @@ dd($lOffre);
         $lOffre->offres_date_offre = Carbon::createFromFormat('d/m/Y', $request->get('offres_date_offre'));
         $lOffre->save();
 
-        $request->session()->flash('success', 'L\'offre Ã  Ã©tÃ© ModifiÃ© !');
+        $request->session()->flash('success', 'L\'offre à été Modifié !');
         return redirect()->route("offre.index");
     }
 
@@ -148,7 +148,7 @@ dd($lOffre);
 
         $lOffre->delete();
 
-        $request->session()->flash('success', 'L\'offre Ã  Ã©tÃ© SupprimÃ© !');
+        $request->session()->flash('success', 'L\'offre à été Supprimé !');
         return redirect()->route("offre.index");
     }
 
