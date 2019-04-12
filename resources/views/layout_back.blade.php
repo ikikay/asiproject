@@ -60,12 +60,12 @@
             <header class="main-header">
 
                 <!-- Logo -->
-                <a href="{{ route("dashboard") }}" class="logo">
+                <a href="{{ route('dashboard') }}" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini">[[TODO]]</span>
+                    <span class="logo-mini">Q.ASI</span>
                     <!-- logo for regular state and mobile devices -->
                     <!-- TODO <span class="logo-lg">[[TODO NOM DU PROJET]]</span> -->
-                    <span class="logo-lg">PROJET</span>
+                    <span class="logo-lg">Questionnaire ASI</span>
                 </a>
 
 
@@ -103,7 +103,7 @@
                                             <a href="#" class="btn btn-default btn-flat">Profil</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="{{ route("logout") }}" class="btn btn-default btn-flat">Se déconnecter</a>
+                                            <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Se déconnecter</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -120,7 +120,7 @@
 
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
-                        <center><h5 style="color:white">{{Auth::user()->users_nom}}&nbsp {{Auth::user()->users_prenom}}</h5></center>
+                        <center><h5 style="color:white">Menu</h5></center>
                     </div>
 
                     <!-- Sidebar Menu -->
@@ -130,16 +130,16 @@
                         <!-- Optionally, you can add icons to the links -->
 
                         <li>
-                            <a href="{{ route("offre.index") }}"><i classe="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
+                            <a href="{{ route('offre.index') }}"><i class="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("contact.index") }}"><i classe="fa fa-retweet"></i><span>Contacts</span></a>
+                            <a href="{{ route('contact.index') }}"><i class="fa fa-retweet"></i><span>Contacts</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("societe.index") }}"><i classe="fa fa-building"></i><span>Societes</span></a>
+                            <a href="{{ route('societe.index') }}"><i class="fa fa-building"></i><span>Societes</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("questionnaire.index") }}"><i classe="fa fa-building"></i><span>Questionnaires</span></a>
+                            <a href="{{ route('questionnaire.index') }}"><i class="fa fa-building"></i><span>Questionnaires</span></a>
                         </li>
                         @if (Auth::user()->users_status == "admin")
                         <li class="header">Partie Admin</li>
@@ -151,8 +151,8 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">                            
-                                <li><a href="{{ route("user.create") }}"><i classe="fa fa-user"></i>Ajouter</a></li>
-                                <li><a href="{{ route("user.index") }}"><i classe="fa fa-user"></i>Administrer</a></li>
+                                <li><a href="{{ route('user.create') }}"><i classe="fa fa-user"></i>Ajouter</a></li>
+                                <li><a href="{{ route('user.index') }}"><i classe="fa fa-user"></i>Administrer</a></li>
                             </ul>	
                         </li>
                         @endif
@@ -214,7 +214,7 @@
                     <!-- TODO NOM DU PROJET -->
                     PROJET
                 </div>
-                <strong>Copyright &copy; 2018/2019 <a href="{{ route("dashboard") }}">Jurandev</a>.</strong> tous droits reservés.
+                <strong>Copyright &copy; 2018/2019 <a href="{{ route('dashboard') }}">Jurandev</a>.</strong> tous droits reservés.
             </footer>
 
             <!-- /.control-sidebar -->
