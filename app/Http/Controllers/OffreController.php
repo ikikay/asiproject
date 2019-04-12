@@ -80,7 +80,7 @@ class OffreController extends Controller {
         }
 
         $lOffre->save();
-
+dd($lOffre);
         $request->session()->flash('success', 'L\'offre à été Ajouté !');
         return redirect()->route("offre.index");
     }
