@@ -16,9 +16,7 @@
 //        'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
 //    ]);
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Auth::routes();
 
 // ---------------------------
 // Routes pour le front-office
