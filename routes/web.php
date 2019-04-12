@@ -60,6 +60,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('societe', 'SocieteController')->except([
         'show'
     ]);
+    Route::get('search','StatController@search')->name('search.search'); 
+    Route::post('stat/livesearch','StatController@liveSearch'); 
+    Route::get('admin/stat', 'StatController@stats')->name('stat.stat');
 });
 
 

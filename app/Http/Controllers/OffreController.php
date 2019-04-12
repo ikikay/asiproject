@@ -45,6 +45,7 @@ class OffreController extends Controller {
         $lesContacts = Contact::all();
         $lesSocietes = Societe::all();
 
+        
         return view('offre.create')
                         ->with('lOffre', $lOffre)
                         ->with('lesNiveaux', $lesNiveaux)
@@ -80,7 +81,7 @@ class OffreController extends Controller {
         }
 
         $lOffre->save();
-
+dd($lOffre);
         $request->session()->flash('success', 'L\'offre à été Ajouté !');
         return redirect()->route("offre.index");
     }

@@ -27,7 +27,7 @@ class Question extends Model {
     /**
      * - - - - - Relations - - - - -  
      */
-    public function themes() {
+    public function theme() {
         return $this->belongsTo('App\Models\Theme');
     }
 

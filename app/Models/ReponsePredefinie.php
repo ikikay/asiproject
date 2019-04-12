@@ -10,7 +10,6 @@ class ReponsePredefinie extends Model {
     /**
      * - - - - - static - - - - -  
      */
-    protected $table = 'reponses_predefinies';
     public static $rules = [
     ];
 
@@ -30,11 +29,11 @@ class ReponsePredefinie extends Model {
      * - - - - - Relations - - - - -  
      */
     public function question() {
-        return $this->hasOne('App\Models\Question');
+        return $this->belongsTo('App\Models\Question');
     }
 
     public function reponses() {
-        return $this->belongsToMany('App\Models\Reponse');
+        return $this->hasMany('App\Models\Reponse');
     }
 
 }
