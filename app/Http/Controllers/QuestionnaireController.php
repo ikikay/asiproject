@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Questionnaire;
 use App\Models\Question;
+use \App\Models\Reponse;
 use App\Models\ReponsePredefinie;
 
 class QuestionnaireController extends Controller {
@@ -107,17 +109,49 @@ class QuestionnaireController extends Controller {
 	return redirect()->route("questionnaire.index");
     }
 
-    public function response() {
-	$leQuestionnaire = Questionnaire::with('themes', 'themes.questions')->with('themes.questions.reponsesPredefinie')->find(1);  //Attention c'est moche, id en dur ...
-	$lesReponsesPredefinies = ReponsePredefinie::orderBy('question_id', 'ASC')->orderBy('reponses_predefinies_ordre', 'ASC')->get();
+    public function response($id) {
+	$leQuestionnaire = Questionnaire::with('themes', 'themes.questions')
+			->with('themes.questions.reponsesPredefinie')->find($id);
 
-	return view('questionnaire.response.create')
-			->with("leQuestionnaire", $leQuestionnaire)
-			->with("lesReponsesPredefinies", $lesReponsesPredefinies);
+	if (empty($leQuestionnaire)) {
+	    abort(404);  //Erreur 404
+	} else {
+	    return view('questionnaire.response.create')
+			    ->with("leQuestionnaire", $leQuestionnaire);
+	}
     }
 
     public function valideResponse(Request $request) {
-	
+	$idUser = Auth::id();
+	$i = 1;
+	$reponseMultiple = "";
+	foreach ($request->all() as $key => $reponse) {
+	    if ($i > 1) {
+		$idQuestion = explode("_", $key);
+
+		$uneReponse = new Reponse();
+		$uneReponse->user_id = $idUser;
+		$uneReponse->question_id = $idQuestion[1];
+
+
+		if (isset($idQuestion[2])) {
+		    $reponseMultiple = $reponseMultiple . $reponse;
+		    if (false) {
+			//save
+			$reponseMultiple = "";
+		    } else {
+			$reponseMultiple = $reponseMultiple . ", ";
+		    }
+		    if ($i == 12) {
+			dd($reponseMultiple);
+		    }
+		} else {
+		    $uneReponse->reponse = $reponse;
+		}
+	    }
+	    $i++;
+	    //dd($request->all());
+	}
     }
 
 }

@@ -1,1 +1,5 @@
 textarea { resize:vertical; }
+hr { 	
+    border-top: 3px dotted grey;
+    width : 75%;
+}
