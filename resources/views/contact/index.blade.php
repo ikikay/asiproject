@@ -17,17 +17,21 @@
                 <div class="box-body">
                     <!-- search form (Optional) -->
                     <form action="#" method="get">
-                        <div class="input-group margin">
+                        <div class="input-group margin col-md-4">
                             <input type="text" name="q" class="form-control" placeholder="Rechercher . . .">
+                            
                             <span class="input-group-btn">
                                 <button type="submit" name="search" id="search-btn" class="btn bg-blue btn-flat"><i class="fa fa-search"></i>
                                 </button>
                             </span>
                         </div>
                     </form>
+                    <br/>
+                    
 
-                    <table class="table table-bordered" >
-                        <thead class="thead-inverse" >
+            <div class="box-body" style="padding-left:150px;padding-right:150px">
+              <table id="example1" class="table table-bordered table-striped" >
+                <thead>
                             <tr>
 
                                 <th class="text-center">Fonction</th>
@@ -83,21 +87,25 @@
                                 </td>
                             </tr>
                             @endforeach
-                            <tr>
-                                <td class="col-md-12 text-center" colspan="7">
+                                                    </tbody> 
+                    </table>   
+                </div>
+
+
+
+    <div  style=" margin-left:37%; width: 100%" >
+                                <div class="col-md-3 text-center" colspan="7">
                                     {!! Form::open(['route' => "contact.create", 'method' => 'get']) !!}
                                     <button type="submit" class="btn bg-blue btn-lg btn-block">Nouveau Contact</button>
                                     {!! Form::close() !!}
-                                </td>
-                            </tr>
-                        </tbody> 
-                    </table>   
-                </div>
-            </div>
-        </div>
+                                </div>
+    </div>
+                            
+                       </div>
+         </div>
+                        </div>    
     </div>
 </div>
-
 @stop
 
 @section('script')
