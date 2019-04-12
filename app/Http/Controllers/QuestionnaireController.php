@@ -111,7 +111,7 @@ class QuestionnaireController extends Controller {
 
     public function response($id) {
 	$leQuestionnaire = Questionnaire::with('themes', 'themes.questions')
-			->with('admin.themes.questions.reponsesPredefinie')->find($id);
+			->with('themes.questions.reponsesPredefinie')->find($id);
 
 	if (empty($leQuestionnaire)) {
 	    abort(404);  //Erreur 404
