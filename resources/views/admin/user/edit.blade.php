@@ -9,7 +9,7 @@
 
 @section('content')
 
-@include('user.form')
+@include('admin.user.form')
 
 @stop
 

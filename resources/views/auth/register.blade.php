@@ -25,7 +25,7 @@
 
                 <div class="card-body">
 
-                    @include('user.form')
+                    @include('admin.user.form')
 
                 </div>
             </div>

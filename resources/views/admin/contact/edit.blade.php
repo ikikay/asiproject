@@ -2,17 +2,18 @@
 
 @section('title')
 <h1>
-    Enregistrement d'un utilisateur
-    <small>- Enregistrement d'un utilisateur</small>
+    Modication d'un contact
+    <small>- Modication d'un contact</small>
 </h1>
 @stop
 
 @section('content')
 
-@include('user.form')
+@include('admin.contact.form')
 
 @stop
 
 
 @section('script')
+
 @stop

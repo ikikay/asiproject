@@ -29,7 +29,7 @@ class OffreController extends Controller {
     public function index() {
         $lesOffres = Offre::all();
 
-        return view('offre.index')
+        return view('admin.offre.index')
                         ->with('tab_offres', $lesOffres);
     }
 
@@ -45,8 +45,7 @@ class OffreController extends Controller {
         $lesContacts = Contact::all();
         $lesSocietes = Societe::all();
 
-        
-        return view('offre.create')
+        return view('admin.offre.create')
                         ->with('lOffre', $lOffre)
                         ->with('lesNiveaux', $lesNiveaux)
                         ->with('lesContacts', $lesContacts)
@@ -81,8 +80,8 @@ class OffreController extends Controller {
         }
 
         $lOffre->save();
-dd($lOffre);
-        $request->session()->flash('success', 'L\'offre Ã  Ã©tÃ© AjoutÃ© !');
+	
+        $request->session()->flash('success', 'L\'offre à été Ajouté !');
         return redirect()->route("offre.index");
     }
 
@@ -108,7 +107,7 @@ dd($lOffre);
         $lesContacts = Contact::all();
         $lesSocietes = Societe::all();
 
-        return view('offre.edit')
+        return view('admin.offre.edit')
                         ->with('lOffre', $lOffre)
                         ->with('lesNiveaux', $lesNiveaux)
                         ->with('lesContacts', $lesContacts)
@@ -134,7 +133,7 @@ dd($lOffre);
         $lOffre->offres_date_offre = Carbon::createFromFormat('d/m/Y', $request->get('offres_date_offre'));
         $lOffre->save();
 
-        $request->session()->flash('success', 'L\'offre Ã  Ã©tÃ© ModifiÃ© !');
+        $request->session()->flash('success', 'L\'offre à été Modifié !');
         return redirect()->route("offre.index");
     }
 
@@ -149,7 +148,7 @@ dd($lOffre);
 
         $lOffre->delete();
 
-        $request->session()->flash('success', 'L\'offre Ã  Ã©tÃ© SupprimÃ© !');
+        $request->session()->flash('success', 'L\'offre à été Supprimé !');
         return redirect()->route("offre.index");
     }
 

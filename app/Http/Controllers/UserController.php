@@ -25,7 +25,7 @@ class UserController extends Controller {
     public function index() {
         $lesUsers = User::all();
 
-        return view('user.index')
+        return view('admin.user.index')
                         ->with('tab_users', $lesUsers);
     }
 
@@ -37,7 +37,7 @@ class UserController extends Controller {
     public function create() {
         $leUser = new User();
 
-        return view('user.create')
+        return view('admin.user.create')
                         ->with("leUser", $leUser);
     }
 
@@ -82,7 +82,7 @@ class UserController extends Controller {
     public function edit($id) {
         $leUser = User::find($id);
 
-        return view('user.edit')
+        return view('admin.user.edit')
                         ->with("leUser", $leUser);
     }
 

@@ -70,7 +70,7 @@ $date_offre = "dd/mm/yyyy";
 
                     <?php if (!isset($leContact)) $leContact = new \App\Models\Contact(); ?>
                     <?php $boolNoFormContact = true; ?>
-                    @include('contact.form')
+                    @include('admin.contact.form')
 
                 </div>
                 <!-- /.tab-pane -->

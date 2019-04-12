@@ -28,7 +28,7 @@ class QuestionnaireController extends Controller {
     public function index() {
 	$lesQuestionnaires = Questionnaire::with('themes')->get();
 
-	return view('questionnaire.index')
+	return view('admin.questionnaire.index')
 			->with('tab_questionnaires', $lesQuestionnaires);
     }
 
@@ -41,7 +41,7 @@ class QuestionnaireController extends Controller {
 	$lesQuestionnaires = Questionnaire::with("themes")->get();
 	/* $lesReponsesPredefinies = ReponsePredefinie::all(); */
 	/* return response()->json($lesQuestionnaires); */
-	/* return view('questionnaire.indexVu')->with('questionnaires', $lesQuestionnaires); */
+	/* return view('admin.questionnaire.indexVu')->with('questionnaires', $lesQuestionnaires); */
     }
 
     /**
@@ -116,7 +116,7 @@ class QuestionnaireController extends Controller {
 	if (empty($leQuestionnaire)) {
 	    abort(404);  //Erreur 404
 	} else {
-	    return view('questionnaire.response.create')
+	    return view('admin.questionnaire.response.create')
 			    ->with("leQuestionnaire", $leQuestionnaire);
 	}
     }

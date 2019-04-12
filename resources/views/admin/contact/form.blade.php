@@ -57,7 +57,7 @@ if ($leContact->id) {
 
                     <?php if (!isset($laSociete)) $laSociete = new \App\Models\Societe(); ?>
                     <?php $boolNoFormSociete = true; ?>
-                    @include('societe.form')
+                    @include('admin.societe.form')
 
                 </div>
                 <!-- /.tab-pane -->

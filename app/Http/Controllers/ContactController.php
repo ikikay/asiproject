@@ -25,7 +25,7 @@ class ContactController extends Controller {
     public function index() {
         $lesContacts = Contact::all();
 
-        return view('contact.index')
+        return view('admin.contact.index')
                         ->with('tab_contacts', $lesContacts);
     }
 
@@ -38,7 +38,7 @@ class ContactController extends Controller {
         $leContact = new Contact();
         $lesSocietes = Societe::all();
 
-        return view('contact.create')
+        return view('admin.contact.create')
                         ->with("leContact", $leContact)
                         ->with('lesSocietes', $lesSocietes);
     }
@@ -96,7 +96,7 @@ class ContactController extends Controller {
         $leContact = Contact::find($id);
         $lesSocietes = Societe::all();
 
-        return view('contact.edit')
+        return view('admin.contact.edit')
                         ->with("leContact", $leContact)
                         ->with('lesSocietes', $lesSocietes);
     }

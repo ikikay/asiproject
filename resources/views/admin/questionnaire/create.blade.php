@@ -9,7 +9,7 @@
 
 @section('content')
 
-@include('questionnaire.form')
+@include('admin.questionnaire.form')
 
 @stop
 
