@@ -3,3 +3,12 @@ hr {
     border-top: 3px dotted grey;
     width : 75%;
 }
+.nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    color: #fff;
+    background-color: transparent;
+}

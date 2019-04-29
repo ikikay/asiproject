@@ -1073,7 +1073,7 @@ a:focus {
   border-bottom-left-radius: 4px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
-  height: 175px;
+  height: 115px;
   padding: 10px;
   text-align: center;
 }
@@ -2416,8 +2416,8 @@ a:focus {
 .nav > li > a:hover,
 .nav > li > a:active,
 .nav > li > a:focus {
-  color: #444;
-  background: #f7f7f7;
+  color: #4b7ccc;
+  background-color: black;
 }
 /* NAV PILLS */
 .nav-pills > li > a {

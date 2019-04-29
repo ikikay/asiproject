@@ -76,7 +76,7 @@ class JeuDeTestTableSeeder extends Seeder {
             [
                 'id' => 11,
                 'user_id' => 1,
-                'question_id' => 1,
+                'question_id' => 11,
                 'reponse' => '2 mois'
             ],
             [
@@ -442,7 +442,7 @@ class JeuDeTestTableSeeder extends Seeder {
             [
                 'id' => 72,
                 'user_id' => 2,
-                'question_id' => 1,
+                'question_id' => 11,
                 'reponse' => '2 mois'
             ],
             [

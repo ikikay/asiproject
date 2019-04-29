@@ -8,7 +8,7 @@
         <!-- Pour vue.js -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
-        <title>Laravel</title>
+        <title>Questionnaire ASI</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
