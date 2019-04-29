@@ -40,7 +40,7 @@ class StatController extends Controller {
 
         $questions = Question::findMany($idDesQuestions);
 
-
+        
         return view('stat.livesearch')->with('questions', $questions);
     }
 
@@ -70,7 +70,7 @@ class StatController extends Controller {
             $array[++$key] = [$value->reponse, $value->number];
         }
         
- 
+        
      
  
 //        $view = view('stat.livesearchajax', ['reponses' => json_encode($arrayReponses), 'nombres' => json_encode($arrayNumbers)])->render();
