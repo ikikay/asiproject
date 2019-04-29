@@ -8,7 +8,7 @@ if ($lOffre->id) {
 }
 $date_offre = "dd/mm/yyyy";
 ?>
-
+<div class="" style="padding-left:10%;padding-right: 10%">
 {!! Form::model($lOffre, $lesOptions) !!}
 
 <div class="form-group">
@@ -78,13 +78,16 @@ $date_offre = "dd/mm/yyyy";
             <!-- /.tab-content -->
         </div>
         <!-- nav-tabs-custom -->
-    </div>
-    <!-- /.col -->
 </div>
 <!-- /.row -->
 
 </br>
-
+</div>
+<div class="text-center" style="width:190px">
 {!! Form::submit($action, ['class'=> 'btn bg-blue btn-lg btn-block']) !!}
 
 {!! Form::close()!!}
+</div>
+   
+    <!-- /.col -->
+</div>

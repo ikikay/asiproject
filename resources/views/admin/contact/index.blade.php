@@ -11,7 +11,7 @@
 
 <!-- Main content -->
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12"  style="padding-left:10%;padding-right: 10%">
         <div class="box">
             <div class="box-header with-border">
                 <div class="box-body">
@@ -83,20 +83,23 @@
                                 </td>
                             </tr>
                             @endforeach
-                            <tr>
-                                <td class="col-md-12 text-center" colspan="7">
-                                    {!! Form::open(['route' => "contact.create", 'method' => 'get']) !!}
-                                    <button type="submit" class="btn bg-blue btn-lg btn-block">Nouveau Contact</button>
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
+                        
                         </tbody> 
                     </table>   
                 </div>
             </div>
         </div>
+            
+                                <td class="col-md-12 text-center" colspan="7" >
+                                    {!! Form::open(['route' => "contact.create", 'method' => 'get']) !!}
+                                    <button type="submit" class="btn bg-blue btn-lg btn-block" style="width:190px">Nouveau Contact</button>
+                                    {!! Form::close() !!}
+                                </td>
+                            
     </div>
+    
 </div>
+
 
 @stop
 

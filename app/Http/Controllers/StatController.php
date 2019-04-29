@@ -24,14 +24,14 @@ class StatController extends Controller {
             $array[++$key] = [$value->reponse, $value->number];
         }
 //     dd($data);
-        return view('stat.stat')->with('reponse', json_encode($array))->with('libelle', $libelle);
+        return view('admin.stat.stat')->with('reponse', json_encode($array))->with('libelle', $libelle);
     }
 
     public function index($param) {
 
         $param = $_POST['quest'];
 
-        return view('stat.stat')->with('id', $id);
+        return view('admin.stat.stat')->with('id', $id);
     }
 
     public function search() {
@@ -40,8 +40,8 @@ class StatController extends Controller {
 
         $questions = Question::findMany($idDesQuestions);
 
-        
-        return view('stat.livesearch')->with('questions', $questions);
+
+        return view('admin.stat.livesearch')->with('questions', $questions);
     }
 
     public function liveSearch(Request $request) {
@@ -74,7 +74,7 @@ class StatController extends Controller {
      
  
 //        $view = view('stat.livesearchajax', ['reponses' => json_encode($arrayReponses), 'nombres' => json_encode($arrayNumbers)])->render();
-        $view = view('stat.livesearchajax', ['reponses' => json_encode($arrayReponses), 'nombres' => json_encode($arrayNumbers)])->render();
+        $view = view('admin.stat.livesearchajax', ['reponses' => json_encode($arrayReponses), 'nombres' => json_encode($arrayNumbers)])->render();
         
       
 //            var_dump($posts->toSql());

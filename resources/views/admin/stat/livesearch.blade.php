@@ -31,7 +31,7 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">({{$j->theme->themes_libelle}})   {{$j->questions_libelle}}</h3>
+                <h3 class="panel-title">!!!!</h3>
             </div>
             <div class="panel-body" align="center">
 
@@ -93,7 +93,7 @@
                
              $.ajax({
                 method: "POST",
-                url: '{{url("stat/livesearch")}}',
+                url: '{{url("admin/stat/livesearch")}}',
                 data: {
                     "_token": "{{ csrf_token() }}",
                     id: id_question

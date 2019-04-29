@@ -71,5 +71,8 @@ Route::middleware('auth')->group(function () {
 	Route::resource('societe', 'SocieteController')->except([
 	    'show'
 	]);
+        
+        Route::get('stat','StatController@search')->name('search.search'); 
+        Route::post('stat/livesearch','StatController@liveSearch'); 
     });
 });

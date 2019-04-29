@@ -11,7 +11,7 @@
 
 <!-- Main content -->
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12"style="padding-left:10%;padding-right: 10%">
         <div class="box">
             <div class="box-header with-border">
                 <div class="box-body">

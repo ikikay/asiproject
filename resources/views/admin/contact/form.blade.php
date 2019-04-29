@@ -7,6 +7,7 @@ if ($leContact->id) {
     $action = "Créer le contact";
 }
 ?>
+<div class="" style="padding-left:10%;padding-right: 10%">
 
 @if(!isset($boolNoFormContact))
 {!! Form::model($leContact, $lesOptions) !!}
@@ -71,9 +72,12 @@ if ($leContact->id) {
 <!-- /.row -->
 
 </br>
-
+<div class="text-center" style="width:190px">
 @if(!isset($boolNoFormContact))
 {!! Form::submit($action, ['class'=> 'btn bg-blue btn-lg btn-block']) !!}
 
 {!! Form::close()!!}
+</div>
+
+</div>
 @endif

@@ -62,7 +62,7 @@
             <header class="main-header">
 
                 <!-- Logo -->
-                <a href="{{ route("dashboard") }}" class="logo">
+                <a href="{{ route('dashboard') }}" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini">ASI</span>
                     <!-- logo for regular state and mobile devices -->
@@ -107,7 +107,7 @@
                                             <a href="#" class="btn btn-default btn-flat">Profil</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="{{ route("logout") }}" class="btn btn-default btn-flat">Se déconnecter</a>
+                                            <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Se déconnecter</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -158,8 +158,8 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">                            
-                                <li><a href="{{ route("user.create") }}"><i classe="fa fa-user"></i>Ajouter</a></li>
-                                <li><a href="{{ route("user.index") }}"><i classe="fa fa-user"></i>Administrer</a></li>
+                                <li><a href="{{ route('user.create') }}"><i classe="fa fa-user"></i>Ajouter</a></li>
+                                <li><a href="{{ route('user.index') }}"><i classe="fa fa-user"></i>Administrer</a></li>
                             </ul>	
                         </li>
                         @endif
@@ -221,7 +221,7 @@
                     <!-- TODO NOM DU PROJET -->
                     PROJET
                 </div>
-                <strong>Copyright &copy; 2018/2019 <a href="{{ route("dashboard") }}">Jurandev</a>.</strong> tous droits reservés.
+                <strong>Copyright &copy; 2018/2019 <a href="{{ route('dashboard') }}">Jurandev</a>.</strong> tous droits reservés.
             </footer>
 
             <!-- /.control-sidebar -->

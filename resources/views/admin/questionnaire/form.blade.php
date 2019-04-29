@@ -7,7 +7,7 @@ if ($laSociete->id) {
     $action = "Créer la société";
 }
 ?>
-
+<div class="" style="padding-left:10%;padding-right: 10%">
 @if(!isset($boolNoFormSociete))
 {!! Form::model($laSociete, $lesOptions) !!}
 @endif
@@ -31,9 +31,11 @@ if ($laSociete->id) {
 {!! Form::text('societes_email', null,['class'=> 'form-control'] ) !!}
 
 </br>
+</div><div class="text-center" style="width:190px">
 
 @if(!isset($boolNoFormSociete))
 {!! Form::submit($action, ['class'=> 'btn bg-blue btn-lg btn-block']) !!}
 
 {!! Form::close()!!}
 @endif
+</div>
