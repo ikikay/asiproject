@@ -93,7 +93,7 @@
                
              $.ajax({
                 method: "POST",
-                url: '{{url("stat/livesearch")}}',
+                url: '{{url("admin/stat/livesearch")}}',
                 data: {
                     "_token": "{{ csrf_token() }}",
                     id: id_question
