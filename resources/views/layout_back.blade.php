@@ -7,7 +7,7 @@
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-        <title>[[TODO NOM DU PROJET]]</title>
+        <title>Questionnaire ASI</title>
 
         <!-- Bootstrap 3.3.7 -->
         <link rel="stylesheet" href="{{url('css/bootstrap.min.css') }}">
@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="{{url('css/skins/skin-blue.min.css') }}">
 
         <link rel="stylesheet" href="{{url('css/style_back.css') }}" >
+        <link rel="stylesheet" href="{{url('css/barMenu.css') }}" >
+        <link rel="stylesheet" href="{{url('css/barMenu2.css') }}" >
 
         @yield('css')
 
@@ -53,7 +55,7 @@
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
     -->
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition sidebar-mini">
         <div class="wrapper">
 
             <!-- Main Header -->
@@ -62,36 +64,38 @@
                 <!-- Logo -->
                 <a href="{{ route("dashboard") }}" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini">[[TODO]]</span>
+                    <span class="logo-mini">ASI</span>
                     <!-- logo for regular state and mobile devices -->
                     <!-- TODO <span class="logo-lg">[[TODO NOM DU PROJET]]</span> -->
-                    <span class="logo-lg">PROJET</span>
+                    <span class="logo-lg">Questionnaire ASI</span>
                 </a>
 
 
                 <!-- Header Navbar -->
-                <nav class="navbar navbar-static-top" role="navigation">
+                <nav class="navbar navbar-static-top backgroundbis" role="navigation">
                     <!-- Sidebar toggle button-->
                     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                         <span class="sr-only">Menu déroulant</span>
                     </a>
                     <!-- Navbar Right Menu -->
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
+                    <div class="navbar-custom-menu" style="width:100%">
+                        <ul class="nav navbar-nav" style="float:right">
                             <!-- User Account Menu -->
-                            <li class="dropdown user user-menu">
+                            <li class="dropdown user user-menu" >
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <!-- TODO <span class="hidden-xs">{Auth::user()->users_nom } {Auth::user()->users_prenom }</span> -->
                                     <span class="hidden-xs">{{Auth::user()->users_nom }} {{Auth::user()->users_prenom }}</span>
 
+                                    
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
-                                    <li class="user-header">
-                                        <p>
+                                    <li class="user-header" style="background-color:#333333">
+                                        <p style="color:white">
                                             {{Auth::user()->users_nom}}&nbsp {{Auth::user()->users_prenom}}
+                                            <br />
                                             <small>Inscrit le : {{Auth::user()->created_at->format('d/m/Y')}}</small>
                                         </p>
                                     </li>
@@ -113,18 +117,21 @@
                 </nav>
             </header>
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar">
+            <aside class="main-sidebar skin-blue" style="background-color:black">
 
                 <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
 
+                    <ul class="sidebar-menu" data-widget="tree">
                     <!-- Sidebar user panel (optional) -->
-                    <div class="user-panel">
-                        <center><h5 style="color:white">{{Auth::user()->users_nom}}&nbsp {{Auth::user()->users_prenom}}</h5></center>
+                    <div class="user-panel" >
+                        <center>
+                            <li class="header" style="color:white;font-size:16px;">{{Auth::user()->users_nom}}&nbsp {{Auth::user()->users_prenom}}</li>
+                        </center>
                     </div>
 
                     <!-- Sidebar Menu -->
-                    <ul class="sidebar-menu" data-widget="tree">
+                    
 
                         <li class="header">Menu principal</li>
                         <!-- Optionally, you can add icons to the links -->
@@ -133,16 +140,16 @@
 			@if (Auth::user()->users_status == "admin")
                         <li class="header">Partie Admin</li>
                         <li>
-                            <a href="{{ route("offre.index") }}"><i classe="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
+                            <a href="{{ route("offre.index") }}"><i class="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("contact.index") }}"><i classe="fa fa-retweet"></i><span>Contacts</span></a>
+                            <a href="{{ route("contact.index") }}"><i class="fa fa-retweet"></i><span>Contacts</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("societe.index") }}"><i classe="fa fa-building"></i><span>Societes</span></a>
+                            <a href="{{ route("societe.index") }}"><i class="fa fa-building"></i><span>Societes</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("questionnaire.index") }}"><i classe="fa fa-building"></i><span>Questionnaires</span></a>
+                            <a href="{{ route("questionnaire.index") }}"><i class="fa fa-building"></i><span>Questionnaires</span></a>
                         </li>
                         <li class="treeview">
                             <a href="#"><i class="fa fa-users"></i><span>Utilisateurs</span>
