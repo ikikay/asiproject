@@ -154,4 +154,10 @@ class QuestionnaireController extends Controller {
 	}
     }
 
+        public function indexFront() {
+	$lesQuestionnaires = Questionnaire::with('themes')->get();
+
+	return view('front.questionnaire.index')
+			->with('tab_questionnaires', $lesQuestionnaires);
+    }
 }

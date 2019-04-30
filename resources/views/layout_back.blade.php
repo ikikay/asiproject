@@ -132,24 +132,35 @@
 
                     <!-- Sidebar Menu -->
                     
-
+                    @if (Auth::user()->users_status == "admin" || Auth::user()->users_status == "user"  )
                         <li class="header">Menu principal</li>
-                        <!-- Optionally, you can add icons to the links -->
+                                                <li>
+                            <a href="{{ route('offre.indexFront') }}"><i class="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('contact.indexFront') }}"><i class="fa fa-retweet"></i><span>Contacts</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('societe.indexFront') }}"><i class="fa fa-building"></i><span>Societes</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('questionnaire.indexFront') }}"><i class="fa fa-building"></i><span>Questionnaires</span></a>
+                        </li>
 			
-			
+                    @endif
 			@if (Auth::user()->users_status == "admin")
                         <li class="header">Partie Admin</li>
                         <li>
-                            <a href="{{ route("offre.index") }}"><i class="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
+                            <a href="{{ route('offre.index') }}"><i class="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("contact.index") }}"><i class="fa fa-retweet"></i><span>Contacts</span></a>
+                            <a href="{{ route('contact.index') }}"><i class="fa fa-retweet"></i><span>Contacts</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("societe.index") }}"><i class="fa fa-building"></i><span>Societes</span></a>
+                            <a href="{{ route('societe.index') }}"><i class="fa fa-building"></i><span>Societes</span></a>
                         </li>
                         <li>
-                            <a href="{{ route("questionnaire.index") }}"><i class="fa fa-building"></i><span>Questionnaires</span></a>
+                            <a href="{{ route('questionnaire.index') }}"><i class="fa fa-building"></i><span>Questionnaires</span></a>
                         </li>
                         <li class="treeview">
                             <a href="#"><i class="fa fa-users"></i><span>Utilisateurs</span>

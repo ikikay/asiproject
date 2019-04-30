@@ -74,9 +74,7 @@ class SocieteController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -124,6 +122,20 @@ class SocieteController extends Controller {
 
         $request->session()->flash('success', 'La société à été Supprimé !');
         return redirect()->route("societe.index");
+    }
+    
+    
+        public function indexFront() {
+        $lesSocietes = Societe::all();
+
+        return view('front.societe.index')
+                        ->with('tab_societes', $lesSocietes);
+    }
+    
+        public function show($id) {
+          $laSociete=Societe::find($id);
+//        dd($leContact->societe->societes_libelle);
+        return view('front.societe.show')->with('laSociete',$laSociete);
     }
 
 }

@@ -24,6 +24,19 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     Route::get('/', 'HomeController@toDashboard')->name('dashboard');
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('offre/indexFront','OffreController@indexFront')->name('offre.indexFront'); 
+    Route::get('contact/indexFront','ContactController@indexFront')->name('contact.indexFront'); 
+    Route::get('questionnaire/indexFront','QuestionnaireController@indexFront')->name('questionnaire.indexFront'); 
+    Route::get('societe/indexFront','SocieteController@indexFront')->name('societe.indexFront'); 
+    Route::get('contact/createFront','ContactController@createFront')->name('contact.createFront');
+    Route::put('contact/createFront/store','ContactController@storeFront')->name('contact.storeFront');
+    Route::get('contact/show/{id}','ContactController@show')->name('contact.show');
+    Route::get('societe/createFront','SocieteController@createFront')->name('societe.createFront'); 
+    Route::put('societe/createFront/store','ContactController@storeFront')->name('societe.storeFront');
+    Route::get('societe/show/{id}','SocieteController@show')->name('societe.show');
+    Route::get('offre/createFront','OffreController@createFront')->name('offre.createFront');  
+    Route::put('offre/createFront/store','OffreController@storeFront')->name('offre.storeFront');
+    Route::get('offre/show/{id}','OffreController@show')->name('offre.show');
     Route::get('/dashboard', function () {
 	route('dashboard');
     });
@@ -75,4 +88,14 @@ Route::middleware('auth')->group(function () {
         Route::get('stat','StatController@search')->name('search.search'); 
         Route::post('stat/livesearch','StatController@liveSearch'); 
     });
+    
+    
+    
+    
+    
+       
+            
+            
+
+
 });

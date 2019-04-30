@@ -70,15 +70,11 @@
                                 <td class="col-md-1 text-center">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            {!! Form::open(['route' => ["societe.edit", $uneSociete->id], 'method' => 'get']) !!}
-                                            <button type="submit" class="btn btn-circle"><i class="fa fa-list"></i></button>
+                                            {!! Form::open(['route' => ["societe.show", $uneSociete->id], 'method' => 'get']) !!}
+                                            <button type="submit" class="btn btn-circle">Voir<i class=""></i></button>
                                             {!! Form::close() !!}
                                         </div>
-                                        <div class="col-md-6">
-                                            {!! Form::open(['route' => ["societe.destroy", $uneSociete->id], 'method' => 'delete', 'id' => "form".$uneSociete->id]) !!}
-                                            <button type="submit" id="{{ $uneSociete->id }}" class="jsDeleteButton btn btn-danger btn-circle "><i class="fa fa-times"></i></button>
-                                            {!! Form::close() !!}
-                                        </div>
+                                        
                                     </div>
                                 </td>
                             </tr>

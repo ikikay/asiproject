@@ -82,9 +82,7 @@ class ContactController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -134,6 +132,76 @@ class ContactController extends Controller {
 
         $request->session()->flash('success', 'Le contact à été Supprimé !');
         return redirect()->route("contact.index");
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        public function indexFront() {
+        $lesContacts = Contact::all();
+
+        return view('front.contact.index')
+                        ->with('tab_contacts', $lesContacts);
+    }
+    
+    
+    
+        public function createFront() {
+        $leContact = new Contact();
+        $lesSocietes = Societe::all();
+
+        return view('front.contact.create')
+                        ->with("leContact", $leContact)
+                        ->with('lesSocietes', $lesSocietes);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeFront(Request $request, $boolRedirection = true) {
+        $this->validate($request, Contact::$rules);
+
+        $leContact = new Contact();
+
+        $leContact->contacts_fonction = $request->get('contacts_fonction');
+        $leContact->contacts_nom = $request->get('contacts_nom');
+        $leContact->contacts_prenom = $request->get('contacts_prenom');
+        $leContact->contacts_telephone = $request->get('contacts_telephone');
+        $leContact->contacts_email = $request->get('contacts_email');
+
+        if (!empty($request->input('societes_libelle'))) {
+            $leContact->societe()->associate(app('App\Http\Controllers\SocieteController')->store($request, false));
+        } else {
+            $leContact->societe()->associate($request->get('societe_id'));
+        }
+
+        $leContact->save();
+
+        $request->session()->flash('success', 'Le contact à été Ajouté !');
+        if ($boolRedirection) {
+            return redirect()->route("contact.indexFront");
+        } else {
+            return $leContact;
+        }
+        
+        
+        
+    }
+    
+    public function show($id) {
+        
+        $leContact=Contact::find($id);
+//        dd($leContact->societe->societes_libelle);
+        return view('front.contact.show')->with('leContact',$leContact);
     }
 
 }

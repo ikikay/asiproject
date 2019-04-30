@@ -60,9 +60,7 @@
             </div>
         </div>
             <div class="col-md-3 text-center"
-      {!! Form::open(['route' => "questionnaire.create", 'method' => 'get']) !!}
-                                    <button type="submit" class="btn bg-blue btn-lg btn-block">Nouveau questionnaire</button>
-                                    {!! Form::close() !!}
+
     </div>
     </div>
 

@@ -81,19 +81,11 @@ class OffreController extends Controller {
 
         $lOffre->save();
 	
-        $request->session()->flash('success', 'L\'offre à été Ajouté !');
+        $request->session()->flash('success', 'L\'offre ï¿½ ï¿½tï¿½ Ajoutï¿½ !');
         return redirect()->route("offre.index");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id) {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -133,7 +125,7 @@ class OffreController extends Controller {
         $lOffre->offres_date_offre = Carbon::createFromFormat('d/m/Y', $request->get('offres_date_offre'));
         $lOffre->save();
 
-        $request->session()->flash('success', 'L\'offre à été Modifié !');
+        $request->session()->flash('success', 'L\'offre ï¿½ ï¿½tï¿½ Modifiï¿½ !');
         return redirect()->route("offre.index");
     }
 
@@ -148,8 +140,27 @@ class OffreController extends Controller {
 
         $lOffre->delete();
 
-        $request->session()->flash('success', 'L\'offre à été Supprimé !');
+        $request->session()->flash('success', 'L\'offre ï¿½ ï¿½tï¿½ Supprimï¿½ !');
         return redirect()->route("offre.index");
     }
 
+    
+    
+         
+    public function show($id) {
+        $lOffre=Offre::find($id);
+//        dd($leContact->societe->societes_libelle);
+        return view('front.offre.show')->with('lOffre',$lOffre);
+    }
+    
+    
+    
+    
+    
+            public function indexFront() {
+        $lesOffres = Offre::all();
+
+        return view('front.offre.index')
+                        ->with('tab_offres', $lesOffres);
+    }
 }

@@ -69,14 +69,10 @@
 
                                 <td class="col-md-1 text-center">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            {!! Form::open(['route' => ["contact.edit", $unContact->id], 'method' => 'get']) !!}
-                                            <button type="submit" class="btn btn-circle"><i class="fa fa-list"></i></button>
-                                            {!! Form::close() !!}
-                                        </div>
-                                        <div class="col-md-6">
-                                            {!! Form::open(['route' => ["contact.destroy", $unContact->id], 'method' => 'delete', 'id' => "form".$unContact->id]) !!}
-                                            <button type="submit" id="{{ $unContact->id }}" class="jsDeleteButton btn btn-danger btn-circle "><i class="fa fa-times"></i></button>
+                        
+                                    <div class="col-md-6">
+                                            {!! Form::open(['route' => ["contact.show", $unContact->id], 'method' => 'get']) !!}
+                                            <button type="submit" class="btn btn-circle">Voir<i class=""></i></button>
                                             {!! Form::close() !!}
                                         </div>
                                     </div>
@@ -92,7 +88,7 @@
         </div>
             
                                 <div class="col-md-3">
-                                    {!! Form::open(['route' => "contact.create", 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => "contact.createFront", 'method' => 'get']) !!}
                                     <button type="submit" class="btn bg-blue btn-lg btn-block" style="">Nouveau Contact</button>
                                     {!! Form::close() !!}
                                 </div>
