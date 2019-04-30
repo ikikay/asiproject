@@ -28,7 +28,7 @@ class User extends Authenticatable {
     public static $rulesOnCreate = [
         'users_nom' => 'nullable|min:0|max:75|regex:/^[\p{L}\s\-]+$/u', // Anecdote, le noms le plus long actuellement en France fait 47 lettres(sans espaces):  Pourroy de L'Auberivière de Quinsonas-Oudinot de Reggio
         'users_prenom' => 'nullable|min:0|max:75|regex:/^[\pL\s\-]+$/u',
-        'users_date_de_naissance' => 'nullable|date_format:d/m/Y',
+        'users_date_de_naissance' => '',
         'users_rue' => 'nullable|min:0|max:75',
         'users_code_postal' => 'nullable|min:5|max:5|regex:/^[0-9]*$/',
         'users_ville' => 'nullable|min:0|max:45', // Anecdote, le noms de village le plus longs en France fait 45 signes (38 lettres et 7 tirets) "Saint-Remy-en-Bouzemont-Saint-Genest-et-Isson" 
@@ -40,7 +40,7 @@ class User extends Authenticatable {
     public static $rulesOnUpdate = [
         'users_nom' => 'nullable|min:0|max:75|regex:/^[\p{L}\s\-]+$/u', // Anecdote, le noms le plus long actuellement en France fait 47 lettres(sans espaces):  Pourroy de L'Auberivière de Quinsonas-Oudinot de Reggio
         'users_prenom' => 'nullable|min:0|max:75|regex:/^[\pL\s\-]+$/u',
-        'users_date_de_naissance' => 'nullable|date_format:d/m/Y',
+        'users_date_de_naissance' => '',
         'users_rue' => 'nullable|min:0|max:75',
         'users_code_postal' => 'nullable|min:5|max:5',
         'users_ville' => 'nullable|min:0|max:45', // Anecdote, le noms de village le plus longs en France fait 45 signes (38 lettres et 7 tirets) "Saint-Remy-en-Bouzemont-Saint-Genest-et-Isson" 

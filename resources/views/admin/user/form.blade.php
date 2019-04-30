@@ -14,24 +14,34 @@ if (Auth::user()) {
 ?>
 
 {!! Form::model($leUser, $lesOptions) !!}
+<div style="margin-bottom:10px;">
+    {!! Form::label('users_nom', 'Nom') !!}
+    {!! Form::text('users_nom', null,['class'=> 'form-control'] ) !!}
+</div>
 
-{!! Form::label('users_nom', 'Nom') !!}
-{!! Form::text('users_nom', null,['class'=> 'form-control'] ) !!}
+<div style="margin-bottom:10px;">
+    {!! Form::label('users_prenom', 'Prenom') !!}
+    {!! Form::text('users_prenom', null,['class'=> 'form-control'] ) !!}
+</div>
 
-{!! Form::label('users_prenom', 'Prenom') !!}
-{!! Form::text('users_prenom', null,['class'=> 'form-control'] ) !!}
+<div style="margin-bottom:10px;">
+    {!! Form::label('users_date_de_naissance', 'Date de naissance') !!}
+    {!! Form::date('users_date_de_naissance', null,['class'=> 'form-control'] ) !!}
+</div>
 
-{!! Form::label('email', 'Adresse courriel ') !!}
-{!! Form::text('email', null,['class'=> 'form-control'] ) !!}
+<div style="margin-bottom:10px;">
+    {!! Form::label('email', 'Adresse courriel ') !!}
+    {!! Form::text('email', null,['class'=> 'form-control'] ) !!}
+</div>
 
 {!! Form::label('password', 'Mot de passe') !!}
 <input id="password" type="password" class="form-control" name="password" value="">
-
 {!! Form::label('password-confirm', 'Confirmation du mot de passe') !!}
 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
 
 
 </br>
+
 
 {!! Form::submit($action, ['class'=> 'btn bg-blue btn-lg btn-block']) !!}
 

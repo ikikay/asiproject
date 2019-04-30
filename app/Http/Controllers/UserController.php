@@ -54,6 +54,7 @@ class UserController extends Controller {
 
         $leUser->users_nom = $request->get('users_nom');
         $leUser->users_prenom = $request->get('users_prenom');
+        $leUser->users_date_de_naissance = $request->get('users_date_de_naissance');
         $leUser->email = $request->get('email');
         $leUser->password = bcrypt($request->get('password'));
 
