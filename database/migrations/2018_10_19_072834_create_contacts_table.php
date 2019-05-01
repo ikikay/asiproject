@@ -21,8 +21,13 @@ class CreateContactsTable extends Migration {
             $table->string('contacts_prenom');
             $table->string('contacts_telephone')->nullable();
             $table->string('contacts_email');
-
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+        });
+        
+        
+        Schema::table('contacts', function($table) {
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

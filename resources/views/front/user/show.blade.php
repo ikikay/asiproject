@@ -17,11 +17,15 @@
                 Vous n'avez pas fait le questionnaire !
             </div>
             @endif
-
             
+
         </div>
+        
+
     </div>    
+    
 </div>
+
 @stop
 
 @section('content')

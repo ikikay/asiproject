@@ -74,10 +74,9 @@ class User extends Authenticatable {
         'users_date_de_naissance',
         'users_code_postal',
         'users_telephone',
-        'users_status',
         'users_ville',
         'users_rue',
-        
+        'role'
     ];
 
     /**
@@ -97,5 +96,9 @@ class User extends Authenticatable {
 
     public function professeur() {
         return $this->belongsTo('App\Models\Professeur');
+    }
+    
+    public function contacts(){
+        return $this->hasMany('App\Models\Contact', 'user_id');
     }
 }

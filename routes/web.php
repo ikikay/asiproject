@@ -57,6 +57,8 @@ Route::middleware('auth')->group(function () {
 	Route::resource('user', 'UserController')->except([
 	    'show'
 	]);
+        
+        Route::get('user/confirmerInscription/{id}', 'UserController@confirmerInscription');
 
 	// Questionnaire
 	Route::resource('questionnaire', 'QuestionnaireController')->except([

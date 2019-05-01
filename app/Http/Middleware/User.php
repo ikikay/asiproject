@@ -27,7 +27,7 @@ class User {
      * @return mixed 
      */
     public function handle($request, Closure $next) {
-	if ($this->auth->user()->users_status != "user") {
+	if ($this->auth->user()->role !== "user") {
 	    if ($request->ajax()) {
 		return response('Unauthorized.', 401);
 	    } else {

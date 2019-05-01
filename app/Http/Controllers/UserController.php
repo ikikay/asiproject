@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ConfirmationInscription;
 
 class UserController extends Controller {
 
@@ -41,6 +43,20 @@ class UserController extends Controller {
                         ->with("leUser", $leUser);
     }
 
+    
+    public function confirmerInscription($id, Request $request){
+        
+        $user = User::find($id);
+        $user->role = "user";
+        $user->save();
+        
+        
+       
+        
+        $request->session()->flash('success', 'L\'utilisateur à été approuvé !');
+        return back();
+    }
+    
     /**
      * Store a newly created resource in storage.
      *

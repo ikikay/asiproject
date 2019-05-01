@@ -33,7 +33,15 @@ class HomeController extends Controller {
         } else {
             $bool = true;
         }
-        return view('admin.user.show')->with('aRep',$bool);
+        
+        $contact = false;
+        if(count(Auth::user()->contacts()->get()) > 0){
+            $contact = true;
+        }
+        
+     
+        
+        return view('admin.user.show')->with( ['aRep' => $bool, 'contact' => $contact]);
     }
 
 }

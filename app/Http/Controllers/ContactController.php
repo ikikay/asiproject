@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Societe;
+use Auth;
 
 class ContactController extends Controller {
 
@@ -59,7 +60,8 @@ class ContactController extends Controller {
         $leContact->contacts_prenom = $request->get('contacts_prenom');
         $leContact->contacts_telephone = $request->get('contacts_telephone');
         $leContact->contacts_email = $request->get('contacts_email');
-
+        $leContact->user_id = Auth::user()->id;
+        
         if (!empty($request->input('societes_libelle'))) {
             $leContact->societe()->associate(app('App\Http\Controllers\SocieteController')->store($request, false));
         } else {

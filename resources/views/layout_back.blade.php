@@ -132,7 +132,7 @@
 
                     <!-- Sidebar Menu -->
                     
-                    @if (Auth::user()->users_status == "admin" || Auth::user()->users_status == "user"  )
+                    @if (Auth::user()->role == "admin" || Auth::user()->role == "user"  )
                         <li class="header">Menu principal</li>
                                                 <li>
                             <a href="{{ route('offre.indexFront') }}"><i class="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
@@ -148,7 +148,7 @@
                         </li>
 			
                     @endif
-			@if (Auth::user()->users_status == "admin")
+			@if (Auth::user()->role == "admin")
                         <li class="header">Partie Admin</li>
                         <li>
                             <a href="{{ route('offre.index') }}"><i class="fa fa-black-tie"></i><span>Offres d'emplois</span></a>

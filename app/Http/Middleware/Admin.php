@@ -27,7 +27,7 @@ class Admin {
      * @return mixed 
      */
     public function handle($request, Closure $next) {
-	if ($this->auth->user()->users_status != "admin") {
+	if ($this->auth->user()->role !== "admin") {
 	    if ($request->ajax()) {
 		return response('Unauthorized.', 401);
 	    } else {

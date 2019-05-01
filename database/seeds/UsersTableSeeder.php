@@ -18,14 +18,14 @@ class UsersTableSeeder extends Seeder {
                 'users_prenom' => 'Admin',
                 'email' => 'admin@admin.fr',
                 'password' => bcrypt('P@ssw0rd'),
-                'users_status' => 'admin',
+                'role' => 'admin',
                 'created_at' => Carbon::parse('2000-01-01'),
                 'updated_at' => Carbon::parse('2000-01-01')
             ], [
                 'users_nom' => 'COURBEZ',
                 'users_prenom' => 'Julian',
                 'email' => 'julian.courbez@gmail.com',
-                'users_status' => 'admin',
+                'role' => 'admin',
                 'password' => bcrypt('P@ssw0rd'),
                 'created_at' => Carbon::parse('2000-01-01'),
                 'updated_at' => Carbon::parse('2000-01-01')
@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder {
                 'users_nom' => 'MONROLIN',
                 'users_prenom' => 'Lucas',
                 'email' => 'lucas.monrolin@gmail.com',
-                'users_status' => 'user',
+                'role' => 'user',
                 'password' => bcrypt('Momolin'),
                 'created_at' => Carbon::parse('2000-01-01'),
                 'updated_at' => Carbon::parse('2000-01-01')

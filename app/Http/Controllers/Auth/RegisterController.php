@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\DemandeInscription;
 
 class RegisterController extends Controller {
     /*
@@ -48,6 +50,7 @@ use RegistersUsers;
     protected function validator(array $data) {
         return Validator::make($data, [
                     'users_nom' => 'required|string|max:255',
+                    'users_prenom' => 'required|string|max:255',
                     'email' => 'required|string|email|max:255|unique:users',
                     'password' => 'required|string|min:6|confirmed',
         ]);
@@ -65,6 +68,7 @@ use RegistersUsers;
                     'users_prenom' => $data['users_prenom'],
                     'email' => $data['email'],
                     'password' => Hash::make($data['password']),
+                    'role' => 'en attente'
         ]);
     }
 
@@ -96,10 +100,15 @@ use RegistersUsers;
                     'users_prenom' => $request->get('users_prenom'),
                     'email' => $request->get('email'),
                     'password' => bcrypt($request->get('password')),
+                    'role' => 'en attente'
         ]);
 
         $this->guard()->login($user);
-
+        
+        $emailAdmin = User::where('role', 'admin')->first();
+        
+        Mail::to($emailAdmin)->send(new DemandeInscription($user));
+        
         return redirect()->route("home");
     }
 

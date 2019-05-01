@@ -18,7 +18,11 @@
             </div>
             @endif
 
-            
+            @if($contact == false)
+            <div class="col-md-12">
+                <p> N'oubliez pas de renseigner un contact ! <a href='{{url('contact/createFront')}}'>Ajouter un contact</a></p>
+            </div>
+            @endif
         </div>
     </div>    
 </div>
