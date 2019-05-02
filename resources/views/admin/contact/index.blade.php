@@ -16,15 +16,7 @@
             <div class="box-header with-border">
                 <div class="box-body">
                     <!-- search form (Optional) -->
-                    <form action="#" method="get">
-                        <div class="input-group margin">
-                            <input type="text" name="q" class="form-control" placeholder="Rechercher . . .">
-                            <span class="input-group-btn">
-                                <button type="submit" name="search" id="search-btn" class="btn bg-blue btn-flat"><i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
+                   
 <div class="table-responsive">
                     <table class="table table-bordered" >
                         <thead class="thead-inverse" >
