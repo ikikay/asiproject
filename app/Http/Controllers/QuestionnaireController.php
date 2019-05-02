@@ -105,7 +105,7 @@ class QuestionnaireController extends Controller {
 
 	$leQuestionnaire->delete();
 
-	$request->session()->flash('success', 'Le questionnaire à été Supprimé !');
+	$request->session()->flash('success', 'Le questionnaire a été Supprimé !');
 	return redirect()->route("questionnaire.index");
     }
 
@@ -154,10 +154,11 @@ class QuestionnaireController extends Controller {
 	}
     }
 
-        public function indexFront() {
+    public function indexFront() {
 	$lesQuestionnaires = Questionnaire::with('themes')->get();
 
 	return view('front.questionnaire.index')
 			->with('tab_questionnaires', $lesQuestionnaires);
     }
+
 }

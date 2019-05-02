@@ -18,7 +18,7 @@ class OffreController extends Controller {
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth');
+	$this->middleware('auth');
     }
 
     /**
@@ -27,10 +27,10 @@ class OffreController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $lesOffres = Offre::all();
+	$lesOffres = Offre::all();
 
-        return view('admin.offre.index')
-                        ->with('tab_offres', $lesOffres);
+	return view('admin.offre.index')
+			->with('tab_offres', $lesOffres);
     }
 
     /**
@@ -39,20 +39,20 @@ class OffreController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $lOffre = new Offre();
-        $now = Carbon::now();
-        $lesNiveaux = Niveau::all();
-        $lesContacts = Contact::all();
-        $lesSocietes = Societe::all();
+	$lOffre = new Offre();
+	$now = Carbon::now();
+	$lesNiveaux = Niveau::all();
+	$lesContacts = Contact::all();
+	$lesSocietes = Societe::all();
 
-        return view('admin.offre.create')
-                        ->with('lOffre', $lOffre)
-                        ->with('lesNiveaux', $lesNiveaux)
-                        ->with('lesContacts', $lesContacts)
-                        ->with('lesSocietes', $lesSocietes)
-                        ->with("jours", $now->day)
-                        ->with("mois", $now->month)
-                        ->with("annee", $now->year);
+	return view('admin.offre.create')
+			->with('lOffre', $lOffre)
+			->with('lesNiveaux', $lesNiveaux)
+			->with('lesContacts', $lesContacts)
+			->with('lesSocietes', $lesSocietes)
+			->with("jours", $now->day)
+			->with("mois", $now->month)
+			->with("annee", $now->year);
     }
 
     /**
@@ -62,30 +62,28 @@ class OffreController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $this->validate($request, Offre::$rules);
+	$this->validate($request, Offre::$rules);
 
-        $lOffre = new Offre();
+	$lOffre = new Offre();
 
-        $lOffre->offres_poste = $request->get('offres_poste');
-        $date = Carbon::createFromFormat('d/m/Y', $request->get('offres_date_offre'));
-        $lOffre->offres_date_offre = $date;
-        $lOffre->offres_description = $request->get('offres_description');
-        $lOffre->niveau()->associate($request->get('niveau_id'));
-        $lOffre->offres_mois_experience = $request->get('offres_mois_experience');
+	$lOffre->offres_poste = $request->get('offres_poste');
+	$date = Carbon::createFromFormat('d/m/Y', $request->get('offres_date_offre'));
+	$lOffre->offres_date_offre = $date;
+	$lOffre->offres_description = $request->get('offres_description');
+	$lOffre->niveau()->associate($request->get('niveau_id'));
+	$lOffre->offres_mois_experience = $request->get('offres_mois_experience');
 
-        if (!empty($request->input('fonction'))) {
-            $lOffre->contact()->associate(app('App\Http\Controllers\ContactController')->store($request, false));
-        } else {
-            $lOffre->contact()->associate($request->get('contact_id'));
-        }
+	if (!empty($request->input('contacts_fonction'))) {
+	    $lOffre->contact()->associate(app('App\Http\Controllers\ContactController')->store($request, false));
+	} else {
+	    $lOffre->contact()->associate($request->get('contact_id'));
+	}
 
-        $lOffre->save();
-	
-        $request->session()->flash('success', 'L\'offre � �t� Ajout� !');
-        return redirect()->route("offre.index");
+	$lOffre->save();
+
+	$request->session()->flash('success', 'L\'offre a été Ajouté !');
+	return redirect()->route("offre.index");
     }
-
-
 
     /**
      * Show the form for editing the specified resource.
@@ -94,19 +92,19 @@ class OffreController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $lOffre = Offre::find($id);
-        $lesNiveaux = Niveau::all();
-        $lesContacts = Contact::all();
-        $lesSocietes = Societe::all();
+	$lOffre = Offre::find($id);
+	$lesNiveaux = Niveau::all();
+	$lesContacts = Contact::all();
+	$lesSocietes = Societe::all();
 
-        return view('admin.offre.edit')
-                        ->with('lOffre', $lOffre)
-                        ->with('lesNiveaux', $lesNiveaux)
-                        ->with('lesContacts', $lesContacts)
-                        ->with('lesSocietes', $lesSocietes)
-                        ->with("jours", $lOffre->offres_date_offre->day)
-                        ->with("mois", $lOffre->offres_date_offre->month)
-                        ->with("annee", $lOffre->offres_date_offre->year);
+	return view('admin.offre.edit')
+			->with('lOffre', $lOffre)
+			->with('lesNiveaux', $lesNiveaux)
+			->with('lesContacts', $lesContacts)
+			->with('lesSocietes', $lesSocietes)
+			->with("jours", $lOffre->offres_date_offre->day)
+			->with("mois", $lOffre->offres_date_offre->month)
+			->with("annee", $lOffre->offres_date_offre->year);
     }
 
     /**
@@ -117,16 +115,16 @@ class OffreController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        $this->validate($request, Offre::$rules);
+	$this->validate($request, Offre::$rules);
 
-        $lOffre = Offre::find($id);
+	$lOffre = Offre::find($id);
 
-        $lOffre->update($request->except(['offres_date_offre']));
-        $lOffre->offres_date_offre = Carbon::createFromFormat('d/m/Y', $request->get('offres_date_offre'));
-        $lOffre->save();
+	$lOffre->update($request->except(['offres_date_offre']));
+	$lOffre->offres_date_offre = Carbon::createFromFormat('d/m/Y', $request->get('offres_date_offre'));
+	$lOffre->save();
 
-        $request->session()->flash('success', 'L\'offre � �t� Modifi� !');
-        return redirect()->route("offre.index");
+	$request->session()->flash('success', 'L\'offre a été Modifié !');
+	return redirect()->route("offre.index");
     }
 
     /**
@@ -136,31 +134,25 @@ class OffreController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, $id) {
-        $lOffre = Offre::find($id);
+	$lOffre = Offre::find($id);
 
-        $lOffre->delete();
+	$lOffre->delete();
 
-        $request->session()->flash('success', 'L\'offre � �t� Supprim� !');
-        return redirect()->route("offre.index");
+	$request->session()->flash('success', 'L\'offre a été Supprimé !');
+	return redirect()->route("offre.index");
     }
 
-    
-    
-         
     public function show($id) {
-        $lOffre=Offre::find($id);
+	$lOffre = Offre::find($id);
 //        dd($leContact->societe->societes_libelle);
-        return view('front.offre.show')->with('lOffre',$lOffre);
+	return view('front.offre.show')->with('lOffre', $lOffre);
     }
-    
-    
-    
-    
-    
-            public function indexFront() {
-        $lesOffres = Offre::all();
 
-        return view('front.offre.index')
-                        ->with('tab_offres', $lesOffres);
+    public function indexFront() {
+	$lesOffres = Offre::all();
+
+	return view('front.offre.index')
+			->with('tab_offres', $lesOffres);
     }
+
 }
