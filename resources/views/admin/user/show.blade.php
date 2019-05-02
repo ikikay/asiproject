@@ -18,10 +18,10 @@
                     <button type="button" class="btn btn-danger"><a href="{{url('questionnaire/indexFront')}}">!!! Remplir le questionnaire !!!</a> </button>
                 </div>
             @endif
-
+<br/>
             @if($contact == false)
-            <div class="col-md-12">
-                <p> N'oubliez pas de renseigner un contact ! <a href="{{url('contact/createFront')}}">Ajouter un contact</a></p>
+            <div class="col-md-12 text-center">
+                <p> N'oubliez pas de renseigner un contact ! <button type="button" class="btn btn-secondary"><a href="{{url('contact/createFront')}}">Ajouter un contact</a> </button></p>
             </div>
             @endif
         </div>
