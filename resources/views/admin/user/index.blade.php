@@ -59,11 +59,13 @@
                                             <button type="submit" class="btn btn-circle"><i class="fa fa-list"></i></button>
                                             {!! Form::close() !!}
                                         </div>
+                                        @if ($unUser->role == "en attente")
                                         <div class="col-md-4">
                                             {!! Form::open(['url' => ["admin/user/confirmerInscription", $unUser->id], 'method' => 'get']) !!}
                                             <button type="submit" class="btn btn-circle"><i class="fa fa-check"></i></button>
                                             {!! Form::close() !!}
                                         </div>
+                                        @endif
                                         <div class="col-md-4">
                                             {!! Form::open(['route' => ["user.destroy", $unUser->id], 'method' => 'delete', 'id' => "form".$unUser->id]) !!}
                                             <button type="submit" id="{{ $unUser->id }}" class="jsDeleteButton btn btn-danger btn-circle "><i class="fa fa-times"></i></button>
