@@ -31,7 +31,6 @@
                             <tr>
 
                                 <th class="text-center">Libelle</th>
-                                <th class="text-center">Nombre de questions</th>
                                 
                             </tr>
                         </thead>
@@ -41,10 +40,6 @@
 
                                 <td class="col-md-2 text-center"  id="maintd{{ $unQuestionnaire["id"] }}">
                                     <h4>{{ $unQuestionnaire->questionnaires_libelle }}</h4>
-                                </td>
-
-                                <td class="col-md-3 text-center"  id="nbrtd{{ $unQuestionnaire["id"] }}">
-                                    <h4> TODO </h4>
                                 </td>
                             </tr>
                             @endforeach

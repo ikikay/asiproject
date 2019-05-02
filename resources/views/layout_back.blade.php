@@ -65,8 +65,6 @@
                 <a href="{{ route('dashboard') }}" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini">ASI</span>
-                    <!-- logo for regular state and mobile devices -->
-                    <!-- TODO <span class="logo-lg">[[TODO NOM DU PROJET]]</span> -->
                     <span class="logo-lg">Questionnaire ASI</span>
                 </a>
 
@@ -85,7 +83,6 @@
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                    <!-- TODO <span class="hidden-xs">{Auth::user()->users_nom } {Auth::user()->users_prenom }</span> -->
                                     <span class="hidden-xs">{{Auth::user()->users_nom }} {{Auth::user()->users_prenom }}</span>
 
                                     
@@ -228,7 +225,7 @@
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
                     <!-- TODO NOM DU PROJET -->
-                    PROJET
+                    QUESTIONNAIRE ASI
                 </div>
                 <strong>Copyright &copy; 2018/2019 <a href="{{ route('dashboard') }}">Jurandev</a>.</strong> tous droits reservés.
             </footer>
