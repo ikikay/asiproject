@@ -132,7 +132,7 @@
 
                     <!-- Sidebar Menu -->
                     
-                    @if (Auth::user()->role == "admin" || Auth::user()->role == "user"  )
+                    @if ( Auth::user()->role == "user"  )
                         <li class="header">Menu principal</li>
                                                 <li>
                             <a href="{{ route('offre.indexFront') }}"><i class="fa fa-black-tie"></i><span>Offres d'emplois</span></a>
@@ -160,7 +160,10 @@
                             <a href="{{ route('societe.index') }}"><i class="fa fa-building"></i><span>Societes</span></a>
                         </li>
                         <li>
-                            <a href="{{ route('questionnaire.index') }}"><i class="fa fa-building"></i><span>Questionnaires</span></a>
+                            <a href="{{ route('questionnaire.index') }}"><i class="fa fa-table"></i><span>Questionnaires</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('search.search') }}"><i class="fa fa-tablet"></i><span>Statistique</span></a>
                         </li>
                         <li class="treeview">
                             <a href="#"><i class="fa fa-users"></i><span>Utilisateurs</span>

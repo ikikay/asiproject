@@ -98,6 +98,11 @@ use RegistersUsers;
         $user = User::create([
                     'users_nom' => $request->get('users_nom'),
                     'users_prenom' => $request->get('users_prenom'),
+                    'users_date_de_naissance' => $request->get('users_date_de_naissance'),
+                    'users_telephone' => $request->get('users_telephone'),
+                    'users_code_postal' => $request->get('users_code_postal'),
+                    'users_rue' => $request->get('users_rue'),
+                    'users_ville' => $request->get('users_ville'),
                     'email' => $request->get('email'),
                     'password' => bcrypt($request->get('password')),
                     'role' => 'en attente'

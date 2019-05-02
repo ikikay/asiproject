@@ -34,6 +34,26 @@ if (Auth::user()) {
     {!! Form::text('email', null,['class'=> 'form-control'] ) !!}
 </div>
 
+<div style="margin-bottom:10px;">
+    {!! Form::label('users_rue', 'Rue') !!}
+    {!! Form::text('users_rue', null,['class'=> 'form-control'] ) !!}
+</div>
+
+<div style="margin-bottom:10px;">
+    {!! Form::label('users_ville', 'Ville') !!}
+    {!! Form::text('users_ville', null,['class'=> 'form-control'] ) !!}
+</div>
+
+<div style="margin-bottom:10px;">
+    {!! Form::label('users_code_postal', 'CP') !!}
+    {!! Form::text('users_code_postal', null,['class'=> 'form-control'] ) !!}
+</div>
+
+<div style="margin-bottom:10px;">
+    {!! Form::label('users_telephone', 'Telephone') !!}
+    {!! Form::text('users_telephone', null,['class'=> 'form-control'] ) !!}
+</div>
+
 {!! Form::label('password', 'Mot de passe') !!}
 <input id="password" type="password" class="form-control" name="password" value="">
 {!! Form::label('password-confirm', 'Confirmation du mot de passe') !!}
