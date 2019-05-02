@@ -15,13 +15,18 @@
             </div>
             @else
             <div class="text-center">
-                    <button type="button" class="btn btn-danger"><a href="{{url('questionnaire/indexFront')}}">!!! Remplir le questionnaire !!!</a> </button>
-                </div>
+            {!! Form::open(['url' => ["questionnaire/indexFront",], 'method' => 'get']) !!}
+            <button type="submit" class="btn btn-danger btn-lg">Remplir le questionnaire</button>
+            {!! Form::close() !!}   
+            </div>
             @endif
-<br/>
+            <br/>
+            
             @if($contact == false)
             <div class="text-center">
-                <button type="button" class="btn btn-warning"><a href="{{url('contact/createFront')}}">Ajouter un contact</a> </button>
+            {!! Form::open(['url' => ["contact/createFront",], 'method' => 'get']) !!}
+            <button type="submit" class="btn btn-warning btn-lg">Ajoutez un contact</button>
+            {!! Form::close() !!} 
             </div>
             @endif
         </div>
