@@ -53,7 +53,7 @@ class UserController extends Controller {
         
        
         
-        $request->session()->flash('success', 'L\'utilisateur à été approuvé !');
+        $request->session()->flash('success', 'L\'utilisateur a été approuvé !');
         return back();
     }
     
@@ -76,7 +76,7 @@ class UserController extends Controller {
 
         $leUser->save();
 
-        $request->session()->flash('success', 'L\'utilisateur à été Ajouté !');
+        $request->session()->flash('success', 'L\'utilisateur a été Ajouté !');
         return redirect()->route("user.index");
     }
 
@@ -121,7 +121,7 @@ class UserController extends Controller {
 
         $leUser->update($request->except(['password']));
 
-        $request->session()->flash('success', 'L\'utilisateur à été Modifié !');
+        $request->session()->flash('success', 'L\'utilisateur a été Modifié !');
         return redirect()->route("user.index");
     }
 
@@ -136,7 +136,7 @@ class UserController extends Controller {
 
         $leUser->delete();
 
-        $request->session()->flash('success', 'L\'utilisateur à été Supprimé !');
+        $request->session()->flash('success', 'L\'utilisateur a été Supprimé !');
         return redirect()->route("user.index");
     }
 

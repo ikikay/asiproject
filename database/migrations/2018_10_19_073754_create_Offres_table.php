@@ -19,7 +19,7 @@ class CreateOffresTable extends Migration {
 
             $table->String('offres_poste');
             $table->dateTime('offres_date_offre');
-            $table->String('offres_description');
+            $table->longText('offres_description');
             $table->integer('offres_mois_experience');
 
             $table->timestamps();

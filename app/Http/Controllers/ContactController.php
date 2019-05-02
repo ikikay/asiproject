@@ -15,7 +15,7 @@ class ContactController extends Controller {
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth');
+	$this->middleware('auth');
     }
 
     /**
@@ -24,10 +24,10 @@ class ContactController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $lesContacts = Contact::all();
+	$lesContacts = Contact::all();
 
-        return view('admin.contact.index')
-                        ->with('tab_contacts', $lesContacts);
+	return view('admin.contact.index')
+			->with('tab_contacts', $lesContacts);
     }
 
     /**
@@ -36,12 +36,12 @@ class ContactController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $leContact = new Contact();
-        $lesSocietes = Societe::all();
+	$leContact = new Contact();
+	$lesSocietes = Societe::all();
 
-        return view('admin.contact.create')
-                        ->with("leContact", $leContact)
-                        ->with('lesSocietes', $lesSocietes);
+	return view('admin.contact.create')
+			->with("leContact", $leContact)
+			->with('lesSocietes', $lesSocietes);
     }
 
     /**
@@ -51,31 +51,31 @@ class ContactController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, $boolRedirection = true) {
-        $this->validate($request, Contact::$rules);
+	$this->validate($request, Contact::$rules);
 
-        $leContact = new Contact();
+	$leContact = new Contact();
 
-        $leContact->contacts_fonction = $request->get('contacts_fonction');
-        $leContact->contacts_nom = $request->get('contacts_nom');
-        $leContact->contacts_prenom = $request->get('contacts_prenom');
-        $leContact->contacts_telephone = $request->get('contacts_telephone');
-        $leContact->contacts_email = $request->get('contacts_email');
-        $leContact->user_id = Auth::user()->id;
-        
-        if (!empty($request->input('societes_libelle'))) {
-            $leContact->societe()->associate(app('App\Http\Controllers\SocieteController')->store($request, false));
-        } else {
-            $leContact->societe()->associate($request->get('societe_id'));
-        }
+	$leContact->contacts_fonction = $request->get('contacts_fonction');
+	$leContact->contacts_nom = $request->get('contacts_nom');
+	$leContact->contacts_prenom = $request->get('contacts_prenom');
+	$leContact->contacts_telephone = $request->get('contacts_telephone');
+	$leContact->contacts_email = $request->get('contacts_email');
+	$leContact->user_id = Auth::user()->id;
 
-        $leContact->save();
+	if (!empty($request->input('societes_libelle'))) {
+	    $leContact->societe()->associate(app('App\Http\Controllers\SocieteController')->store($request, false));
+	} else {
+	    $leContact->societe()->associate($request->get('societe_id'));
+	}
 
-        $request->session()->flash('success', 'Le contact à été Ajouté !');
-        if ($boolRedirection) {
-            return redirect()->route("contact.index");
-        } else {
-            return $leContact;
-        }
+	$leContact->save();
+
+	$request->session()->flash('success', 'Le contact a été Ajouté !');
+	if ($boolRedirection) {
+	    return redirect()->route("contact.index");
+	} else {
+	    return $leContact;
+	}
     }
 
     /**
@@ -84,7 +84,6 @@ class ContactController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
 
     /**
      * Show the form for editing the specified resource.
@@ -93,12 +92,12 @@ class ContactController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $leContact = Contact::find($id);
-        $lesSocietes = Societe::all();
+	$leContact = Contact::find($id);
+	$lesSocietes = Societe::all();
 
-        return view('admin.contact.edit')
-                        ->with("leContact", $leContact)
-                        ->with('lesSocietes', $lesSocietes);
+	return view('admin.contact.edit')
+			->with("leContact", $leContact)
+			->with('lesSocietes', $lesSocietes);
     }
 
     /**
@@ -109,16 +108,16 @@ class ContactController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        $this->validate($request, Contact::$rules);
+	$this->validate($request, Contact::$rules);
 
-        $leContact = Contact::find($id);
+	$leContact = Contact::find($id);
 
-        $leContact->update($request->all());
+	$leContact->update($request->all());
 
-        $leContact->save();
+	$leContact->save();
 
-        $request->session()->flash('success', 'Le contact à été Modifié !');
-        return redirect()->route("contact.index");
+	$request->session()->flash('success', 'Le contact a été Modifié !');
+	return redirect()->route("contact.index");
     }
 
     /**
@@ -128,39 +127,28 @@ class ContactController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, $id) {
-        $leContact = Contact::find($id);
+	$leContact = Contact::find($id);
 
-        $leContact->delete();
+	$leContact->delete();
 
-        $request->session()->flash('success', 'Le contact à été Supprimé !');
-        return redirect()->route("contact.index");
+	$request->session()->flash('success', 'Le contact a été Supprimé !');
+	return redirect()->route("contact.index");
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        public function indexFront() {
-        $lesContacts = Contact::all();
 
-        return view('front.contact.index')
-                        ->with('tab_contacts', $lesContacts);
+    public function indexFront() {
+	$lesContacts = Contact::all();
+
+	return view('front.contact.index')
+			->with('tab_contacts', $lesContacts);
     }
-    
-    
-    
-        public function createFront() {
-        $leContact = new Contact();
-        $lesSocietes = Societe::all();
 
-        return view('front.contact.create')
-                        ->with("leContact", $leContact)
-                        ->with('lesSocietes', $lesSocietes);
+    public function createFront() {
+	$leContact = new Contact();
+	$lesSocietes = Societe::all();
+
+	return view('front.contact.create')
+			->with("leContact", $leContact)
+			->with('lesSocietes', $lesSocietes);
     }
 
     /**
@@ -170,40 +158,37 @@ class ContactController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function storeFront(Request $request, $boolRedirection = true) {
-        $this->validate($request, Contact::$rules);
+	$this->validate($request, Contact::$rules);
 
-        $leContact = new Contact();
+	$leContact = new Contact();
 
-        $leContact->contacts_fonction = $request->get('contacts_fonction');
-        $leContact->contacts_nom = $request->get('contacts_nom');
-        $leContact->contacts_prenom = $request->get('contacts_prenom');
-        $leContact->contacts_telephone = $request->get('contacts_telephone');
-        $leContact->contacts_email = $request->get('contacts_email');
+	$leContact->contacts_fonction = $request->get('contacts_fonction');
+	$leContact->contacts_nom = $request->get('contacts_nom');
+	$leContact->contacts_prenom = $request->get('contacts_prenom');
+	$leContact->contacts_telephone = $request->get('contacts_telephone');
+	$leContact->contacts_email = $request->get('contacts_email');
 
-        if (!empty($request->input('societes_libelle'))) {
-            $leContact->societe()->associate(app('App\Http\Controllers\SocieteController')->store($request, false));
-        } else {
-            $leContact->societe()->associate($request->get('societe_id'));
-        }
+	if (!empty($request->input('societes_libelle'))) {
+	    $leContact->societe()->associate(app('App\Http\Controllers\SocieteController')->store($request, false));
+	} else {
+	    $leContact->societe()->associate($request->get('societe_id'));
+	}
 
-        $leContact->save();
+	$leContact->save();
 
-        $request->session()->flash('success', 'Le contact à été Ajouté !');
-        if ($boolRedirection) {
-            return redirect()->route("contact.indexFront");
-        } else {
-            return $leContact;
-        }
-        
-        
-        
+	$request->session()->flash('success', 'Le contact a été Ajouté !');
+	if ($boolRedirection) {
+	    return redirect()->route("contact.indexFront");
+	} else {
+	    return $leContact;
+	}
     }
-    
+
     public function show($id) {
-        
-        $leContact=Contact::find($id);
+
+	$leContact = Contact::find($id);
 //        dd($leContact->societe->societes_libelle);
-        return view('front.contact.show')->with('leContact',$leContact);
+	return view('front.contact.show')->with('leContact', $leContact);
     }
 
 }

@@ -60,7 +60,7 @@ class SocieteController extends Controller {
 
         $laSociete->save();
 
-        $request->session()->flash('success', 'La société à été Ajouté !');
+        $request->session()->flash('success', 'La société a été Ajouté !');
         if ($boolRedirection) {
             return redirect()->route("societe.index");
         } else {
@@ -105,7 +105,7 @@ class SocieteController extends Controller {
 
         $laSociete->save();
 
-        $request->session()->flash('success', 'La société à été Modifié !');
+        $request->session()->flash('success', 'La société a été Modifié !');
         return redirect()->route("societe.index");
     }
 
@@ -120,7 +120,7 @@ class SocieteController extends Controller {
 
         $laSociete->delete();
 
-        $request->session()->flash('success', 'La société à été Supprimé !');
+        $request->session()->flash('success', 'La société a été Supprimé !');
         return redirect()->route("societe.index");
     }
     

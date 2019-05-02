@@ -27,9 +27,9 @@ if (false) {
 	@endforeach
 	
 	@if( !next( $theme ))
-	    </br><hr/></br> {{ !next( $theme ) }}
+	    </br><hr/></br>
 	@else
-	    </br><hr/></br> {{ !next( $theme ) }}
+	    </br><hr/></br>
 	@endif
 	
 	
