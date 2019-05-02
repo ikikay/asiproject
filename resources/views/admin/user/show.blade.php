@@ -20,8 +20,8 @@
             @endif
 <br/>
             @if($contact == false)
-            <div class="col-md-12 text-center">
-                <p> N'oubliez pas de renseigner un contact ! <button type="button" class="btn btn-secondary"><a href="{{url('contact/createFront')}}">Ajouter un contact</a> </button></p>
+            <div class="text-center">
+                <button type="button" class="btn btn-warning"><a href="{{url('contact/createFront')}}">Ajouter un contact</a> </button>
             </div>
             @endif
         </div>

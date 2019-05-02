@@ -96,20 +96,15 @@
                                         <p style="color:white">
                                             {{Auth::user()->users_nom}}&nbsp {{Auth::user()->users_prenom}}
                                             <br />
-                                            <small>Inscrit le : {{Auth::user()->created_at->format('d/m/Y')}}</small>
+                                            <small>Inscrit le : {{Auth::user()->created_at->format('d/m/Y')}}</small><br />
+                                            <div class="text-center">
+                                            <a href="{{ route('logout') }}" class="btn btn-info btn-flat">Se déconnecter</a>
+                                        </div>
                                         </p>
+                                        
                                     </li>
+                                    
                                     <!-- Menu Body -->
-
-                                    <!-- Menu Footer-->
-                                    <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">Profil</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Se déconnecter</a>
-                                        </div>
-                                    </li>
                                 </ul>
                             </li>
                         </ul>

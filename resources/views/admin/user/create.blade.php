@@ -3,7 +3,6 @@
 @section('title')
 <h1>
     Enregistrement d'un utilisateur
-    <small>- Enregistrement d'un utilisateur</small>
 </h1>
 @stop
 
