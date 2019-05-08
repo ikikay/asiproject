@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="{{url('css/bootstrap.min.css') }}">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="{{url('css/font-awesome.min.css') }}">
+        <!-- Favicon site -->
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
         <!-- Ionicons -->
         <link rel="stylesheet" href="{{url('css/ionicons.min.css') }}">
         <!-- Theme style -->
