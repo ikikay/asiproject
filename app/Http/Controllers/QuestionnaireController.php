@@ -122,36 +122,76 @@ class QuestionnaireController extends Controller {
     }
 
     public function valideResponse(Request $request) {
+	/**
+	  $idUser = Auth::id();
+	  $i = 1;
+	  $reponseMultiple = "";
+	  foreach ($request->all() as $key => $reponse) {
+	  if ($i > 1) {
+	  $idQuestion = explode("_", $key);
+
+	  $uneReponse = new Reponse();
+	  $uneReponse->user_id = $idUser;
+	  $uneReponse->question_id = $idQuestion[1];
+
+
+	  if (isset($idQuestion[2])) {
+	  $reponseMultiple = $reponseMultiple . $reponse;
+	  if (false) {
+	  //save
+	  $reponseMultiple = "";
+	  } else {
+	  $reponseMultiple = $reponseMultiple . ", ";
+	  }
+	  if ($i == 12) {
+	  dd($reponseMultiple);
+	  }
+	  } else {
+	  $uneReponse->reponse = $reponse;
+	  }
+	  }
+	  $i++;
+	  //dd($request->all());
+	  }
+	 * */
+	// Attention, ceci est moche, mais c'est demandé par Antoine le chef de projet
+	// Je décline toute responsabilité en cas de crise cardiaque après lecture de ce code
+	// Il faudrait bien entendu, modifier ceci, afin de le rendre universelle
+	//
+	//  |
+	//  v
+
 	$idUser = Auth::id();
-	$i = 1;
-	$reponseMultiple = "";
+
+	//dd($request->all());
 	foreach ($request->all() as $key => $reponse) {
-	    if ($i > 1) {
-		$idQuestion = explode("_", $key);
+	    $idQuestion = explode("_", $key);
 
-		$uneReponse = new Reponse();
-		$uneReponse->user_id = $idUser;
-		$uneReponse->question_id = $idQuestion[1];
-
-
-		if (isset($idQuestion[2])) {
-		    $reponseMultiple = $reponseMultiple . $reponse;
-		    if (false) {
-			//save
-			$reponseMultiple = "";
-		    } else {
-			$reponseMultiple = $reponseMultiple . ", ";
-		    }
-		    if ($i == 12) {
-			dd($reponseMultiple);
-		    }
-		} else {
-		    $uneReponse->reponse = $reponse;
-		}
+	    if ($idQuestion[1] == "token") {
+		continue;
 	    }
-	    $i++;
-	    //dd($request->all());
+
+	    $uneReponse = new Reponse();
+	    $uneReponse->user_id = $idUser;
+	    $uneReponse->question_id = $idQuestion[1];
+	    $uneReponse->reponse = "";
+
+	    $reponseMultiple = false;
+	    if (isset($idQuestion[2])) {
+
+		if ($reponseMultiple) {
+		    $uneReponse->reponse = $reponse;
+		    $reponseMultiple = true;
+		} else {
+		    $uneReponse->reponse = $uneReponse->reponse . "; " . $reponse;
+		}
+	    } else if (($reponse == null) || ($reponse == "")) {
+		$uneReponse->reponse = "Non répondu";
+	    }
+
+	    $uneReponse->save();
 	}
+	return redirect()->route("home");
     }
 
     public function indexFront() {
