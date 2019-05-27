@@ -15,7 +15,7 @@
             </div>
             @else
             <div class="text-center">
-            {!! Form::open(['url' => ["questionnaire/indexFront",], 'method' => 'get']) !!}
+            {!! Form::open(['route' => ["response", 1], 'method' => 'get']) !!}
             <button type="submit" class="btn btn-danger btn-lg">Remplir le questionnaire</button>
             {!! Form::close() !!}   
             </div>
