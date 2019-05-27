@@ -65,7 +65,7 @@
  <body>
   <br />
   <div class="container">
-   <h3 align="center">Statistique du questionnaire </h3><br />
+   <h3 align="center">Statistiques du questionnaire </h3><br />
    
    <div class="panel panel-default">
     <div class="panel-heading">

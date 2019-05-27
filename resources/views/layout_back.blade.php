@@ -157,7 +157,7 @@
                             <a href="{{ route('questionnaire.index') }}"><i class="fa fa-table"></i><span>Questionnaires</span></a>
                         </li>
                         <li>
-                            <a href="{{ route('search.search') }}"><i class="fa fa-tablet"></i><span>Statistique</span></a>
+                            <a href="{{ route('search.search') }}"><i class="fa fa-tablet"></i><span>Statistiques</span></a>
                         </li>
                         <li class="treeview">
                             <a href="#"><i class="fa fa-users"></i><span>Utilisateurs</span>
