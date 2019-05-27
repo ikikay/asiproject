@@ -176,17 +176,10 @@ class QuestionnaireController extends Controller {
 	    $uneReponse->question_id = $idQuestion[1];
 	    $uneReponse->reponse = "";
 
-	    $reponseMultiple = false;
-	    if (isset($idQuestion[2])) {
-
-		if ($reponseMultiple) {
-		    $uneReponse->reponse = $reponse;
-		    $reponseMultiple = true;
-		} else {
-		    $uneReponse->reponse = $uneReponse->reponse . "; " . $reponse;
-		}
-	    } else if (($reponse == null) || ($reponse == "")) {
+	    if (($reponse == null) || ($reponse == "")) {
 		$uneReponse->reponse = "Non répondu";
+	    } else {
+		$uneReponse->reponse = $reponse;
 	    }
 
 	    $uneReponse->save();
